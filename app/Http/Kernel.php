@@ -69,6 +69,7 @@ class Kernel extends HttpKernel
         'checkWebsiteOwner' => \App\Http\Middleware\CheckWebsiteOwner::class,
         'accountStatus' => \App\Http\Middleware\UserRegisteredUserStatus::class,
         'lfm.path' => \App\Http\Middleware\LfmPath::class,
+        'forcePortuguese' => \App\Http\Middleware\ForcePortuguese::class,
     ];
 
     /**

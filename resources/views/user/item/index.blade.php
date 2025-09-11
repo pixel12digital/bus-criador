@@ -64,7 +64,7 @@
                             @if (!empty($userLanguages))
                                 <select name="language" id="userLanguage" class="form-control">
                                     <option value="" selected disabled>{{ __('Select a Language') }}</option>
-                                    @foreach ($userLanguages as $language)
+                                    @foreach ($userLanguages->where('code', 'pt') as $language)
                                         <option value="{{ $language->code }}"
                                             {{ $language->code == request()->input('language') ? 'selected' : '' }}>
                                             {{ $language->name }}</option>

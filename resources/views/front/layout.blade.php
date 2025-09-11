@@ -233,10 +233,6 @@
     @endif
     <script>
         "use strict";
-
-        function handleSelect(elm) {
-            window.location.href = "{{ route('changeLanguage', '') }}" + "/" + elm.value;
-        }
     </script>
 
     {{-- whatsapp init code --}}

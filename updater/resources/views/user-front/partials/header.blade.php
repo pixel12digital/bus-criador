@@ -77,7 +77,7 @@
                                 </a>
                             @endif
                             <ul class="language-list" id="language-list">
-                                @foreach ($userLangs as $userLang)
+                                @foreach ($userLangs->where('code', 'pt') as $userLang)
                                     <li><a href="javascript:void(0)"
                                             data-value="{{ $userLang->code }}">{{ convertUtf8($userLang->name) }}</a>
                                     </li>

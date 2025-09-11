@@ -24,19 +24,6 @@
                           </div>
                       @endif
                       <div class="header-top-btns pt-10 pb-10 d-flex justify-content-center">
-                          <div class="language-btn">
-                              <form action="{{ route('changeUserLanguage', getParam()) }}" id="userLangForms">
-                                  @csrf
-                                  <input type="hidden" name="username" value="{{ $user->username }}">
-                                  <select onchange="submit()" name="code" id="lang-code" class="form-control btn-sm">
-                                      @foreach ($userLangs as $userLang)
-                                          <option {{ $userCurrentLang->id == $userLang->id ? 'selected' : '' }}
-                                              value="{{ $userLang->code }}">
-                                              {{ convertUtf8($userLang->name) }}</option>
-                                      @endforeach
-                                  </select>
-                              </form>
-                          </div>
                       </div>
                       <div class="header-btn d-flex justify-content-center">
                           @guest('customer')
@@ -118,21 +105,6 @@
                               </div>
                           @endif
                           <div class="header-top-btns d-flex">
-                              <div class="language-btn">
-                                  <form action="{{ route('changeUserLanguage', getParam()) }}" id="userLangForms">
-                                      @csrf
-                                      <input type="hidden" name="username" value="{{ $user->username }}">
-                                      <span class="language-icon"><i class="fal fa-globe"></i></span>
-                                      <select onchange="submit()" name="code" id="lang-code"
-                                          class="form-control btn-sm">
-                                          @foreach ($userLangs as $userLang)
-                                              <option {{ $userCurrentLang->id == $userLang->id ? 'selected' : '' }}
-                                                  value="{{ $userLang->code }}">
-                                                  {{ convertUtf8($userLang->name) }}</option>
-                                          @endforeach
-                                      </select>
-                                  </form>
-                              </div>
                           </div>
                           <div class="header-top-help">
                               @if (count($phone_numbers) > 0)

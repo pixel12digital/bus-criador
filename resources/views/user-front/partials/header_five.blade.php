@@ -55,20 +55,6 @@
                                </li>
                            @endif
                        @endif
-                       <li class=" d-xl-block">
-                           <form action="{{ route('changeUserLanguage', getParam()) }}" id="userLangForms">
-                               @csrf
-                               <input type="hidden" name="username" value="{{ $user->username }}">
-                               <select onchange="submit()" name="code" id="lang-code"
-                                   class="form-control form-control-sm">
-                                   @foreach ($userLangs as $userLang)
-                                       <option {{ $userCurrentLang->id == $userLang->id ? 'selected' : '' }}
-                                           value="{{ $userLang->code }}">{{ convertUtf8($userLang->name) }}
-                                       </option>
-                                   @endforeach
-                               </select>
-                           </form>
-                       </li>
                        <li class="d-xl-none">
                            <div class="navbar-toggler">
                                <span></span>

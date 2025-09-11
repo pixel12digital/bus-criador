@@ -1703,7 +1703,9 @@ class FrontendController extends Controller
 
     public function changeUserLanguage(Request $request, $domain): \Illuminate\Http\RedirectResponse
     {
-        session()->put('user_lang', $request->code);
+        // SEMPRE forçar português - bloqueio total
+        $request->code = 'pt';
+        session()->put('user_lang', 'pt');
         return redirect()->route('front.user.detail.view', $domain);
     }
 

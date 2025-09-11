@@ -60,22 +60,6 @@
 
                 <!-- Navbar Extra  -->
                 <div class="navbar-extra d-flex align-items-center">
-                    <!-- language selection -->
-                    <form action="{{route('changeUserLanguage',getParam())}}" id="userLangForms">
-                        @csrf
-                        <input type="hidden" name="username" value="{{$user->username}}">
-                        <input type="hidden" name="code" id="lang-code" value="">
-                        <div class="language-selection language-selection-two">
-                            @if($userCurrentLang->id)
-                                <a class="language-btn" href="javascript:void(0)">{{convertUtf8($userCurrentLang->name)}}<i class="far fa-angle-down"></i></a>
-                            @endif
-                            <ul class="language-list" id="language-list">
-                                @foreach ($userLangs as $userLang)
-                                    <li><a href="javascript:void(0)" data-value="{{$userLang->code}}">{{convertUtf8($userLang->name)}}</a></li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </form>
                     @if (in_array('Request a Quote',$packagePermissions))
                         @if($userBs->is_quote)
                             <a href="{{route('front.user.quote', getParam())}}" class="main-btn main-btn-3 d-none d-lg-inline-block">{{$keywords['Request_A_Quote'] ?? 'Request A Quote'}}</a>
