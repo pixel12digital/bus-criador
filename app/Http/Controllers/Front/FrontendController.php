@@ -86,6 +86,14 @@ class FrontendController extends Controller
         $lang_id = $currentLang->id;
         $bs = $currentLang->basic_setting;
         $be = $currentLang->basic_extended;
+        
+        // Verificar se as configurações básicas existem
+        if (!$bs) {
+            $bs = (object) ['website_title' => 'Website', 'timezone' => 'America/Sao_Paulo'];
+        }
+        if (!$be) {
+            $be = (object) [];
+        }
 
         $data['processes'] = Process::where('language_id', $lang_id)->orderBy('serial_number', 'ASC')->get();
         $data['features'] = Feature::where('language_id', $lang_id)->orderBy('serial_number', 'ASC')->get();
@@ -236,6 +244,11 @@ class FrontendController extends Controller
             $currentLang = Language::where('is_default', 1)->first();
         }
         $bs = $currentLang->basic_setting;
+        
+        // Verificar se as configurações básicas existem
+        if (!$bs) {
+            $bs = (object) ['website_title' => 'Website', 'timezone' => 'America/Sao_Paulo'];
+        }
 
         $this->validate($request, [
             'username' => 'required|alpha_num|unique:users',

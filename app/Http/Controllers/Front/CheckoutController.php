@@ -66,6 +66,14 @@ class CheckoutController extends Controller
             : (Language::where('is_default', 1)->first());
         $bs = $currentLang->basic_setting;
         $be = $currentLang->basic_extended;
+        
+        // Verificar se as configurações básicas existem
+        if (!$bs) {
+            $bs = (object) ['website_title' => 'Website', 'timezone' => 'America/Sao_Paulo'];
+        }
+        if (!$be) {
+            $be = (object) [];
+        }
 
         $request['status'] = 1;
         $request['mode'] = 'online';
