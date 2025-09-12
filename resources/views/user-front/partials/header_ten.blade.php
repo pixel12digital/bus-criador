@@ -112,18 +112,10 @@
                     </div>
                     <div class="navbar-item d-flex align-items-center justify-content-end">
                         <div class="menu-dropdown">
-                            <form action="{{ route('changeUserLanguage', getParam()) }}" id="userLangForms">
-                                @csrf
-                                <input type="hidden" name="username" value="{{ $user->username }}">
-
-                                <select onchange="submit()" name="code" id="lang-code">
-                                    @foreach ($userLangs as $userLang)
-                                        <option {{ $userCurrentLang->id == $userLang->id ? 'selected' : '' }}
-                                            value="{{ $userLang->code }}">
-                                            {{ convertUtf8($userLang->name) }}</option>
-                                    @endforeach
-                                </select>
-                            </form>
+                            <!-- Idioma fixo: Português -->
+<div class="language-fixed">
+    <span class="language-text">Português</span>
+</div>
 
                         </div>
                         <div class="menu-icon mobile-hide">

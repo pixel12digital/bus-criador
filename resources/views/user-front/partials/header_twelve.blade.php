@@ -111,19 +111,9 @@
             @endauth
         @endif
 
-        <div class="language-selector bordered-style d-flex">
-            <form id="userLangForms" action="{{ route('changeUserLanguage', getParam()) }}">
-                @csrf
-                <input type="hidden" name="username" value="{{ $user->username }}">
-
-                <select onchange="submit()" name="code" id="lang-code">
-                    @foreach ($userLangs as $userLang)
-                        <option {{ $userCurrentLang->id == $userLang->id ? 'selected' : '' }}
-                            value="{{ $userLang->code }}">
-                            {{ convertUtf8($userLang->name) }}</option>
-                    @endforeach
-                </select>
-            </form>
+        <!-- Idioma fixo: Português -->
+        <div class="language-fixed bordered-style d-flex">
+            <span class="language-text">Português</span>
         </div>
 
 

@@ -121,18 +121,10 @@
                                 <a href="#" data-toggle="modal" data-target="#search-modal">
                                     <i class="flaticon-search"></i>
                                 </a>
-                                <form action="{{ route('changeUserLanguage', getParam()) }}" id="userLangForms">
-                                    @csrf
-                                    <input type="hidden" name="username" value="{{ $user->username }}">
-
-                                    <select onchange="submit()" class="language-select" name="code" id="lang-code">
-                                        @foreach ($userLangs as $userLang)
-                                            <option {{ $userCurrentLang->id == $userLang->id ? 'selected' : '' }}
-                                                value="{{ $userLang->code }}">
-                                                {{ convertUtf8($userLang->name) }}</option>
-                                        @endforeach
-                                    </select>
-                                </form>
+                                <!-- Idioma fixo: Português -->
+                                <div class="language-fixed">
+                                    <span class="language-text">Português</span>
+                                </div>
 
                             </div>
                         </div>

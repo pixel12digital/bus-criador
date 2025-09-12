@@ -106,18 +106,10 @@
                                      alt="flag" width="45">
                              </div>
                              <div class="lang-option">
-                                 <form action="{{ route('changeUserLanguage', getParam()) }}" id="userLangForms">
-                                     @csrf
-                                     <input type="hidden" name="username" value="{{ $user->username }}">
-                                     <select class="nice-select" name="code" id="lang-code"
-                                         onchange="this.form.submit()">
-                                         @foreach ($userLangs as $userLang)
-                                             <option {{ $userCurrentLang->id == $userLang->id ? 'selected' : '' }}
-                                                 value="{{ $userLang->code }}">
-                                                 {{ convertUtf8($userLang->name) }}</option>
-                                         @endforeach
-                                     </select>
-                                 </form>
+                                 <!-- Idioma fixo: Português -->
+<div class="language-fixed">
+    <span class="language-text">Português</span>
+</div>
                              </div>
                          </div>
                          <nav class="main-menu">

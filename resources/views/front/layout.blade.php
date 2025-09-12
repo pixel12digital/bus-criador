@@ -231,13 +231,7 @@
             toastr['warning']("{{ __(session('warning')) }}");
         </script>
     @endif
-    <script>
-        "use strict";
-
-        function handleSelect(elm) {
-            window.location.href = "{{ route('changeLanguage', '') }}" + "/" + elm.value;
-        }
-    </script>
+    {{-- Função handleSelect removida - apenas um idioma (Português) --}}
 
     {{-- whatsapp init code --}}
     @if ($bs->is_whatsapp == 1)
