@@ -1,9 +1,10 @@
 <?php
 
 return [
+
     /*
     |--------------------------------------------------------------------------
-    | Password Reminder Language Lines
+    | Password Reset Language Lines
     |--------------------------------------------------------------------------
     |
     | The following language lines are the default lines which match reasons
@@ -12,10 +13,10 @@ return [
     |
     */
 
-    'password'  => 'A senha deve conter pelo menos oito caracteres e ser igual à confirmação.',
-    'reset'     => 'Sua senha foi redefinida!',
-    'sent'      => 'Enviamos um link para redefinir a sua senha por e-mail.',
-    'throttled' => 'Por favor espere antes de tentar novamente.',
-    'token'     => 'Esse código de redefinição de senha é inválido.',
-    'user'      => 'Não conseguimos encontrar nenhum usuário com o endereço de e-mail informado.',
+    'password' => 'As senhas devem ter pelo menos oito caracteres e corresponder à confirmação.',
+    'reset' => 'Sua senha foi redefinida!',
+    'sent' => 'Enviamos por email o link de redefinição de senha!',
+    'token' => 'Este token de redefinição de senha é inválido.',
+    'user' => "Não conseguimos encontrar um usuário com esse endereço de email.",
+
 ];

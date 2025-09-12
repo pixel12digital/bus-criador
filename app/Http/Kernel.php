@@ -61,6 +61,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'checkpermission' => \App\Http\Middleware\CheckPermission::class,
         'setlang' => \App\Http\Middleware\SetLangMiddleware::class,
+        'adminlang' => \App\Http\Middleware\AdminLanguageMiddleware::class,
         'checkstatus' => \App\Http\Middleware\CheckStatus::class,
         'userstatus' => \App\Http\Middleware\UserStatus::class,
         'checkUserPermission' => \App\Http\Middleware\CheckPermissionUser::class,
@@ -69,7 +70,6 @@ class Kernel extends HttpKernel
         'checkWebsiteOwner' => \App\Http\Middleware\CheckWebsiteOwner::class,
         'accountStatus' => \App\Http\Middleware\UserRegisteredUserStatus::class,
         'lfm.path' => \App\Http\Middleware\LfmPath::class,
-        'forcePortuguese' => \App\Http\Middleware\ForcePortuguese::class,
     ];
 
     /**

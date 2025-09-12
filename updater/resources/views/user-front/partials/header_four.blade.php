@@ -61,7 +61,7 @@
                              <input type="hidden" name="username" value="{{ $user->username }}">
                              <select onchange="submit()" name="code" id="lang-code"
                                  class="form-control form-control-sm">
-                                 @foreach ($userLangs->where('code', 'pt') as $userLang)
+                                 @foreach ($userLangs as $userLang)
                                      <option {{ $userCurrentLang->id == $userLang->id ? 'selected' : '' }}
                                          value="{{ $userLang->code }}">{{ convertUtf8($userLang->name) }}</option>
                                  @endforeach

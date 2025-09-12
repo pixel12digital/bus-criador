@@ -59,7 +59,14 @@ class AppServiceProvider extends ServiceProvider
 
                 $bs = $currentLang->basic_setting;
                 $be = $currentLang->basic_extended;
-                Config::set('app.timezone', $bs->timezone);
+                
+                // Verificar se as configurações básicas existem
+                if ($bs && $bs->timezone) {
+                    Config::set('app.timezone', $bs->timezone);
+                } else {
+                    // Usar timezone padrão se não houver configuração
+                    Config::set('app.timezone', 'America/Sao_Paulo');
+                }
 
 
                 if (Menu::where('language_id', $currentLang->id)->count() > 0) {

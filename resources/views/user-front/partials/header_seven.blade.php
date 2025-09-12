@@ -40,6 +40,21 @@
                                                     class="far fa-phone"></i><span>{{ $phone_numbers[0] }}</span></a>
                                         </li>
                                     @endif
+                                    <li class="mt-lg-0 mt-2 pb-md-0 pb-3">
+                                        <form action="{{ route('changeUserLanguage', getParam()) }}" id="userLangForms">
+                                            @csrf
+                                            <input type="hidden" name="username" value="{{ $user->username }}">
+                                            <select onchange="submit()" name="code" id="lang-code"
+                                                class="form-control btn-sm">
+                                                @foreach ($userLangs as $userLang)
+                                                    <option
+                                                        {{ $userCurrentLang->id == $userLang->id ? 'selected' : '' }}
+                                                        value="{{ $userLang->code }}">
+                                                        {{ convertUtf8($userLang->name) }}</option>
+                                                @endforeach
+                                            </select>
+                                        </form>
+                                    </li>
                                     <li>
                                         <div class="info">
                                             @if (in_array('Ecommerce', $packagePermissions) ||

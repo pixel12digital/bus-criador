@@ -62,7 +62,7 @@ $userLanguages = \App\Models\User\Language::where('user_id', \Illuminate\Support
                                     <select name="userLanguage" class="form-control"
                                         onchange="window.location='{{ url()->current() . '?language=' }}'+this.value">
                                         <option value="" selected disabled>{{ __('Select a Language') }}</option>
-                                        @foreach ($userLanguages->where('code', 'pt') as $lang)
+                                        @foreach ($userLanguages as $lang)
                                             <option value="{{ $lang->code }}"
                                                 {{ $lang->code == request()->input('language') ? 'selected' : '' }}>
                                                 {{ $lang->name }}</option>
@@ -214,7 +214,7 @@ $userLanguages = \App\Models\User\Language::where('user_id', \Illuminate\Support
                             <label for="">{{ __('Language') }} **</label>
                             <select name="user_language_id" class="form-control">
                                 <option value="" selected disabled>{{ __('Select a language') }}</option>
-                                @foreach ($userLanguages->where('code', 'pt') as $lang)
+                                @foreach ($userLanguages as $lang)
                                     <option value="{{ $lang->id }}">{{ $lang->name }}</option>
                                 @endforeach
                             </select>

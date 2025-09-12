@@ -127,6 +127,20 @@
                                     @endif
                                 @endif
                                 <li>
+                                    <form action="{{ route('changeUserLanguage', getParam()) }}" id="userLangForms">
+                                        @csrf
+                                        <input type="hidden" name="username" value="{{ $user->username }}">
+                                        <select onchange="submit()" name="code" id="lang-code"
+                                            class="form-control from-control-sm">
+                                            @foreach ($userLangs as $userLang)
+                                                <option {{ $userCurrentLang->id == $userLang->id ? 'selected' : '' }}
+                                                    value="{{ $userLang->code }}">
+                                                    {{ convertUtf8($userLang->name) }}</option>
+                                            @endforeach
+                                        </select>
+                                    </form>
+                                </li>
+                                <li>
                                     <div class="info nav-push-item">
                                         @if (in_array('Ecommerce', $packagePermissions) ||
                                                 in_array('Hotel Booking', $packagePermissions) ||

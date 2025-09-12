@@ -156,7 +156,7 @@
                             <label for="">{{ __('Language') }} **</label>
                             <select id="language" name="user_language_id" class="form-control">
                                 <option value="" selected disabled>{{ __('Select Language') }}</option>
-                                @foreach ($userLanguages->where('code', 'pt') as $lang)
+                                @foreach ($userLanguages as $lang)
                                     <option value="{{ $lang->id }}">{{ $lang->name }}</option>
                                 @endforeach
                             </select>

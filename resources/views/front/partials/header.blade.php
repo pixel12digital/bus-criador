@@ -72,6 +72,21 @@
                 </div>
                 <div class="more-option mobile-item">
                     <div class="item">
+                        <div class="language">
+                            @if (!empty($currentLang))
+                                <select onchange="handleSelect(this)" class="select">
+                                    @foreach ($langs as $key => $lang)
+                                        <option value="{{ $lang->code }}"
+                                            {{ $currentLang->code === $lang->code ? 'selected' : '' }}>
+                                            {{ $lang->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="item">
 
                         @guest('web')
                             <a href="{{ route('user.login') }}" target="_blank" class="btn btn-md btn-primary"

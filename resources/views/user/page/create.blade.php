@@ -50,7 +50,7 @@
                                  <option value="" selected disabled>{{__('Select a language')}}</option>
                                  @if(!is_null($userDefaultLang))
                                     @if (!empty($userLanguages))
-                                       @foreach ($userLanguages->where('code', 'pt') as $lang)
+                                       @foreach ($userLanguages as $lang)
                                        <option value="{{$lang->id}}">{{$lang->name}}</option>
                                        @endforeach
                                     @endif

@@ -99,6 +99,27 @@
                  </div>
                  <div class="col-lg-10 col-md-8 col-5">
                      <div class="menu-right-area text-right">
+                         <div class="lang-select">
+                             <div class="lang-img">
+                                 <img class="lazy"
+                                     data-src=" {{ asset('assets/front/img/theme9') }}/icons/languages.png"
+                                     alt="flag" width="45">
+                             </div>
+                             <div class="lang-option">
+                                 <form action="{{ route('changeUserLanguage', getParam()) }}" id="userLangForms">
+                                     @csrf
+                                     <input type="hidden" name="username" value="{{ $user->username }}">
+                                     <select class="nice-select" name="code" id="lang-code"
+                                         onchange="this.form.submit()">
+                                         @foreach ($userLangs as $userLang)
+                                             <option {{ $userCurrentLang->id == $userLang->id ? 'selected' : '' }}
+                                                 value="{{ $userLang->code }}">
+                                                 {{ convertUtf8($userLang->name) }}</option>
+                                         @endforeach
+                                     </select>
+                                 </form>
+                             </div>
+                         </div>
                          <nav class="main-menu">
                              <ul class="list-inline">
 

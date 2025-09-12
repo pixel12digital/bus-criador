@@ -935,7 +935,7 @@ Route::domain($domain)->group(function () {
     });
 
 
-    Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin', 'checkstatus', 'Demo']], function () {
+    Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin', 'checkstatus', 'Demo', 'adminlang']], function () {
 
         // RTL check
         Route::get('/rtlcheck/{langid}', 'Admin\LanguageController@rtlcheck')->name('admin.rtlcheck');
@@ -1414,7 +1414,7 @@ if (array_key_exists('host', $parsedUrl)) {
         $prefix = '';
     }
 }
-Route::group(['domain' => $domain, 'prefix' => $prefix, 'middleware' => ['forcePortuguese']], function () {
+Route::group(['domain' => $domain, 'prefix' => $prefix], function () {
     Route::get('/', 'Front\FrontendController@userDetailView')->name('front.user.detail.view');
 
     Route::group(['middleware' => ['routeAccess:Service']], function () {
@@ -1742,7 +1742,7 @@ Route::group(['domain' => $domain, 'prefix' => $prefix, 'middleware' => ['forceP
     });
     Route::get('/vcard/{id}', 'Front\FrontendController@vcard')->name('front.user.vcard');
     Route::get('/vcard-import/{id}', 'Front\FrontendController@vcardImport')->name('front.user.vcardImport');
-    Route::get('/user/changelanguage', 'Front\FrontendController@changeUserLanguage')->middleware('forcePortuguese')->name('changeUserLanguage');
+    Route::get('/user/changelanguage', 'Front\FrontendController@changeUserLanguage')->name('changeUserLanguage');
     // user logout attempt route
     Route::get('/logout',  'Front\CustomerController@logoutSubmit')->name('customer.logout');
     Route::group(['middleware' => ['routeAccess:Custom Page']], function () {
