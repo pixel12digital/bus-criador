@@ -10,3 +10,43 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 .idea/*
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.production
+.env.staging
+.env.pull
+.env.saved
+.env.current
+
+# Arquivos de cache e temporários
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*
+/storage/app/*
+!/storage/app/.gitignore
+!/storage/framework/.gitignore
+!/storage/logs/.gitignore
+
+# Arquivos de uploads e mídia
+/public/assets/admin/img/propics/*
+/public/assets/front/invoices/*
+/storage/digital_products/*
+
+# Arquivos de backup
+*.sql
+*.bak
+backup_*.sql
+backup_remote.sql
+
+# Arquivos temporários
+*.tmp
+*.temp
+ave()
+menus
+
+# Arquivos de configuração específicos do servidor
+.htaccess.local
+config/database.php.local
