@@ -70,6 +70,10 @@
     </style>
     @php
         $primaryRgbColor = hex2rgb($bs->base_color);
+        // Se hex2rgb retornar false, usar valores padrão
+        if (!$primaryRgbColor || !is_array($primaryRgbColor)) {
+            $primaryRgbColor = ['red' => 0, 'green' => 0, 'blue' => 0];
+        }
     @endphp
     <style>
         :root {

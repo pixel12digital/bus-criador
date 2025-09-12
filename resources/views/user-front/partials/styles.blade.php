@@ -46,6 +46,10 @@
         $footer_color = 'ff5f00';
     }
     $base_rgb = hex2rgb('#' . $baseColor);
+    // Se hex2rgb retornar false, usar valores padrão
+    if (!$base_rgb || !is_array($base_rgb)) {
+        $base_rgb = ['red' => 0, 'green' => 0, 'blue' => 0];
+    }
     
 @endphp
 {{-- version 4,5,6 --}}

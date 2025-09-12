@@ -60,6 +60,10 @@ class QrController extends Controller
 
         // set default values for all params of qr image, if there is no value for a param
         $color = hex2rgb($request->color);
+        // Se hex2rgb retornar false, usar valores padrão
+        if (!$color || !is_array($color)) {
+            $color = ['red' => 0, 'green' => 0, 'blue' => 0];
+        }
 
         $directory = public_path('assets/user/img/qr/');
         @mkdir($directory, 0775, true);

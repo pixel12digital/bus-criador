@@ -134,6 +134,11 @@ if (!function_exists('slug_create')) {
 if (!function_exists('hex2rgb')) {
     function hex2rgb($colour)
     {
+        // Verificar se $colour não é null ou vazio
+        if (empty($colour) || !is_string($colour)) {
+            return false;
+        }
+        
         if ($colour[0] == '#') {
             $colour = str_replace("#", "", $colour);
         }
