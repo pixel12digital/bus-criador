@@ -47,7 +47,7 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-lg-10">
-                            <div class="card-title">{{ __('Update Section Titles') }}</div>
+                            <div class="card-title">{{ __('Atualizar Títulos das Seções') }}</div>
                         </div>
                         <div class="col-lg-2">
                             @if (!empty($langs))

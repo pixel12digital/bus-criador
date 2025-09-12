@@ -195,7 +195,14 @@
 	for ($i=1; $i <= 12; $i++) { 
 		$monthNum  = $i;
 		$dateObj   = DateTime::createFromFormat('!m', $monthNum);
-		$months[] = $dateObj->format('M');
+		
+		// Usar meses em português
+		$monthNames = [
+			1 => 'Jan', 2 => 'Fev', 3 => 'Mar', 4 => 'Abr',
+			5 => 'Mai', 6 => 'Jun', 7 => 'Jul', 8 => 'Ago',
+			9 => 'Set', 10 => 'Out', 11 => 'Nov', 12 => 'Dez'
+		];
+		$months[] = $monthNames[$i];
 
 		$inFound = 0;
 		foreach ($incomes as $key => $income) {

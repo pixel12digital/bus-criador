@@ -57,7 +57,7 @@ class SubdomainController extends Controller
         $user->subdomain_status = $request->status;
         $user->save();
 
-        $request->session()->flash('success', 'Status updated successfully');
+        $request->session()->flash('success', __('Status updated successfully'));
         return back();
     }
 }

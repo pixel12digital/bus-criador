@@ -17,11 +17,16 @@ class AdminLanguageMiddleware
      */
     public function handle($request, Closure $next)
     {
-        // Forçar português (ID 176) para o admin
-        app()->setLocale('en');
+        // Sempre usar português brasileiro como padrão localmente
+        if (app()->environment('local')) {
+            app()->setLocale('pt-BR');
+            session(['lang' => 'pt-BR']);
+            return $next($request);
+        }
         
-        // Também definir na sessão para consistência
-        session(['lang' => 'en']);
+        // Para produção, usar português como padrão do admin
+        app()->setLocale('pt-BR');
+        session(['lang' => 'pt-BR']);
         
         return $next($request);
     }

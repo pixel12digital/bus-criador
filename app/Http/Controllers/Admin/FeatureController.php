@@ -30,7 +30,7 @@ class FeatureController extends Controller
     public function store(Request $request)
     {
         $messages = [
-            'language_id.required' => 'The language field is required'
+            'language_id.required' => __('The language field is required')
         ];
         $img = $request->file('image');
         $allowedExts = array('jpg', 'png', 'jpeg');
@@ -47,7 +47,7 @@ class FeatureController extends Controller
                     if (!empty($img)) {
                         $ext = $img->getClientOriginalExtension();
                         if (!in_array($ext, $allowedExts)) {
-                            return $fail("Only png, jpg, jpeg image is allowed");
+                            return $fail(__("Only png, jpg, jpeg image is allowed"));
                         }
                     }
                 },
@@ -73,7 +73,7 @@ class FeatureController extends Controller
         $feature->serial_number = $request->serial_number;
         $feature->save();
 
-        Session::flash('success', 'Feature added successfully!');
+        Session::flash('success', __('Feature added successfully!'));
         return "success";
     }
 
@@ -91,7 +91,7 @@ class FeatureController extends Controller
                     if (!empty($img)) {
                         $ext = $img->getClientOriginalExtension();
                         if (!in_array($ext, $allowedExts)) {
-                            return $fail("Only png, jpg, jpeg image is allowed");
+                            return $fail(__("Only png, jpg, jpeg image is allowed"));
                         }
                     }
                 },
@@ -113,7 +113,7 @@ class FeatureController extends Controller
         $feature->serial_number = $request->serial_number;
         $feature->save();
 
-        Session::flash('success', 'Feature updated successfully!');
+        Session::flash('success', __('Feature updated successfully!'));
         return back();
     }
 
@@ -124,7 +124,7 @@ class FeatureController extends Controller
         @unlink(public_path('assets/front/img/features/' . $feature->image));
         $feature->delete();
 
-        Session::flash('success', 'Feature deleted successfully!');
+        Session::flash('success', __('Feature deleted successfully!'));
         return back();
     }
 }

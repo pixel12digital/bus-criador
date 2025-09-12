@@ -35,7 +35,7 @@ class CustomDomainController extends Controller
         $be->cname_record_section_text = clean($request->cname_record_section_text);
         $be->save();
 
-        $request->session()->flash('success', 'Request Texts updated successfully');
+        $request->session()->flash('success', __('Request Texts updated successfully'));
         return back();
     }
 
@@ -117,7 +117,7 @@ class CustomDomainController extends Controller
             }
         }
 
-        $request->session()->flash('success', 'Status updated successfully');
+        $request->session()->flash('success', __('Status updated successfully'));
         return back();
     }
 
@@ -185,14 +185,14 @@ class CustomDomainController extends Controller
             }
         }
 
-        Session::flash('success', 'Mail sent successfully!');
+        Session::flash('success', __('Mail sent successfully!'));
         return "success";
     }
 
     public function delete(Request $request)
     {
         UserCustomDomain::findOrFail($request->domain_id)->delete();
-        $request->session()->flash('success', 'Custom domain deleted successfully!');
+        $request->session()->flash('success', __('Custom domain deleted successfully!'));
         return redirect()->back();
     }
 
@@ -203,7 +203,7 @@ class CustomDomainController extends Controller
         foreach ($ids as $id) {
             UserCustomDomain::findOrFail($id)->delete();
         }
-        $request->session()->flash('success', 'Custom domains deleted successfully!');
+        $request->session()->flash('success', __('Custom domains deleted successfully!'));
         return "success";
     }
 }

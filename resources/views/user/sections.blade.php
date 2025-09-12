@@ -10,7 +10,7 @@
 
 @section('content')
     <div class="page-header">
-        <h4 class="page-title">{{ __('Section Customization') }}</h4>
+        <h4 class="page-title">{{ __('Customização de Seções') }}</h4>
         <ul class="breadcrumbs">
             <li class="nav-home">
                 <a href="{{ route('admin.dashboard') }}">
@@ -27,7 +27,7 @@
                 <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-                <a href="#">{{ __('Section Customization') }}</a>
+                <a href="#">{{ __('Customização de Seções') }}</a>
             </li>
         </ul>
     </div>
@@ -39,7 +39,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="card-title">{{ __('Customize Sections') }}</div>
+                                <div class="card-title">{{ __('Personalizar Seções') }}</div>
                             </div>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                                         $userBs->theme == 'home_twelve' ||
                                         $userBs->theme == 'home_three')
                                     <div class="form-group">
-                                        <label>{{ __('About Section') }} **</label>
+                                        <label>{{ __('Seção de Introdução') }} **</label>
                                         <div class="selectgroup w-100">
                                             <label class="selectgroup-item">
                                                 <input type="radio" name="intro_section" value="1"
@@ -105,7 +105,7 @@
                                             $userBs->theme == 'home_twelve' ||
                                             $userBs->theme == 'home_three'))
                                     <div class="form-group">
-                                        <label>{{ __('Portfolio Section') }} **</label>
+                                        <label>{{ __('Seção de Portfólio') }} **</label>
                                         <div class="selectgroup w-100">
                                             <label class="selectgroup-item">
                                                 <input type="radio" name="portfolio_section" value="1"
@@ -135,7 +135,7 @@
                                             $userBs->theme == 'home_twelve' ||
                                             $userBs->theme == 'home_seven'))
                                     <div class="form-group">
-                                        <label>{{ __('Featured Services Section') }} **</label>
+                                        <label>{{ __('Seção de Serviços em Destaque') }} **</label>
                                         <div class="selectgroup w-100">
                                             <label class="selectgroup-item">
                                                 <input type="radio" name="featured_services_section" value="1"
@@ -155,7 +155,7 @@
 
                                 @if ($userBs->theme == 'home_one' || $userBs->theme == 'home_three' || $userBs->theme == 'home_nine')
                                     <div class="form-group">
-                                        <label>{{ __('Why Choose Us Section') }} **</label>
+                                        <label>{{ __('Seção Por Que Nos Escolher') }} **</label>
                                         <div class="selectgroup w-100">
                                             <label class="selectgroup-item">
                                                 <input type="radio" name="why_choose_us_section" value="1"
@@ -174,7 +174,7 @@
                                 @endif
                                 @if (!empty($permissions) && in_array('Portfolio', $permissions) && $userBs->theme == 'home_twelve')
                                     <div class="form-group">
-                                        <label>{{ __('Job & Education Section') }} **</label>
+                                        <label>{{ __('Seção de Trabalho e Educação') }} **</label>
                                         <div class="selectgroup w-100">
                                             <label class="selectgroup-item">
                                                 <input type="radio" name="job_education_section" value="1"
@@ -311,7 +311,7 @@
                                         $userBs->theme == 'home_three')
                                     @if (!empty($permissions) && in_array('Testimonial', $permissions))
                                         <div class="form-group">
-                                            <label>{{ __('Testimonial Section') }} **</label>
+                                            <label>{{ __('Seção de Depoimentos') }} **</label>
                                             <div class="selectgroup w-100">
                                                 <label class="selectgroup-item">
                                                     <input type="radio" name="testimonials_section" value="1"
@@ -341,7 +341,7 @@
                                             $userBs->theme == 'home_twelve' ||
                                             $userBs->theme == 'home_seven'))
                                     <div class="form-group">
-                                        <label>{{ __('Blog Section') }} **</label>
+                                        <label>{{ __('Seção de Blog') }} **</label>
                                         <div class="selectgroup w-100">
                                             <label class="selectgroup-item">
                                                 <input type="radio" name="blogs_section" value="1"
@@ -415,7 +415,7 @@
                                             $userBs->theme === 'home_two' ||
                                             $userBs->theme === 'home_six'))
                                     <div class="form-group">
-                                        <label>{{ __('Work Process Section') }} **</label>
+                                        <label>{{ __('Seção de Processo de Trabalho') }} **</label>
                                         <div class="selectgroup w-100">
                                             <label class="selectgroup-item">
                                                 <input type="radio" name="work_process_section" value="1"
@@ -442,9 +442,9 @@
                                         $userBs->theme == 'home_three')
                                     <div class="form-group">
                                         @if ($userBs->theme == 'home_eleven')
-                                            <label>{{ __('Donor Section') }} **</label>
+                                            <label>{{ __('Seção de Doadores') }} **</label>
                                         @else
-                                            <label>{{ __('Brands Section') }} **</label>
+                                            <label>{{ __('Seção de Parceiros') }} **</label>
                                         @endif
                                         <div class="selectgroup w-100">
                                             <label class="selectgroup-item">
@@ -471,7 +471,7 @@
                                         $userBs->theme == 'home_six' ||
                                         $userBs->theme == 'home_seven')
                                     <div class="form-group">
-                                        <label>{{ __('Top Footer Section') }} **</label>
+                                        <label>{{ __('Seção Superior do Rodapé') }} **</label>
                                         <div class="selectgroup w-100">
                                             <label class="selectgroup-item">
                                                 <input type="radio" name="top_footer_section" value="1"
@@ -590,7 +590,7 @@
                                 @endif
                                 @if ($userBs->theme == 'home_eight' || $userBs->theme == 'home_ten' || $userBs->theme == 'home_eleven')
                                     <div class="form-group">
-                                        <label>{{ __('Feature Section') }} **</label>
+                                        <label>{{ __('Seção de Recursos') }} **</label>
                                         <div class="selectgroup w-100">
                                             <label class="selectgroup-item">
                                                 <input type="radio" name="featured_section" value="1"
@@ -798,7 +798,7 @@
                                     </div>
                                 @endif
                                 <div class="form-group">
-                                    <label>{{ __('Copyright Section') }} **</label>
+                                    <label>{{ __('Seção de Direitos Autorais') }} **</label>
                                     <div class="selectgroup w-100">
                                         <label class="selectgroup-item">
                                             <input type="radio" name="copyright_section" value="1"

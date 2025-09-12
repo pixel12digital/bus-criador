@@ -37,6 +37,8 @@
 <script src="{{ asset('assets/admin/js/plugin/jscolor/jscolor.js') }}"></script>
 <!-- Datatable -->
 <script src="{{ asset('assets/admin/js/plugin/datatables.min.js') }}"></script>
+<!-- DataTables Portuguese Configuration -->
+<script src="{{ asset('assets/admin/js/datatables-pt-br.js') }}"></script>
 {{-- date range  --}}
 <script src="{{ asset('assets/admin/js/moment.min.js') }}"></script>
 <script src="{{ asset('assets/admin/js/daterangepicker.min.js') }}"></script>
@@ -91,7 +93,7 @@
     var content = {};
 
     content.message = '{{ session('success') }}';
-    content.title = 'Success';
+    content.title = '{{ __('Success') }}';
     content.icon = 'fa fa-bell';
 
     $.notify(content, {
@@ -114,7 +116,7 @@
     var content = {};
 
     content.message = '{{ session('warning') }}';
-    content.title = 'Warning';
+    content.title = '{{ __('Warning') }}';
     content.icon = 'fa fa-bell';
 
     $.notify(content, {

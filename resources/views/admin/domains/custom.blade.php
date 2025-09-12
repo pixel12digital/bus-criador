@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="page-header">
-    <h4 class="page-title">{{empty(request()->input('type')) ? 'All' : ucfirst(request()->input('type'))}} Custom Domains</h4>
+    <h4 class="page-title">{{empty(request()->input('type')) ? __('All') : ucfirst(request()->input('type'))}} {{__('Custom Domains')}}</h4>
     <ul class="breadcrumbs">
         <li class="nav-home">
             <a href="{{route('admin.dashboard')}}">
@@ -37,8 +37,8 @@
                             @if (!empty(request()->input('type')))
                                 <input type="hidden" name="type" value="{{request()->input('type')}}">
                             @endif
-                            <input name="username" class="min-w-250 form-control mr-2" type="text" placeholder="Search by Username" value="{{request()->input('username')}}">
-                            <input name="domain" class="min-w-250 form-control" type="text" placeholder="Search by Domain" value="{{request()->input('domain')}}">
+                            <input name="username" class="min-w-250 form-control mr-2" type="text" placeholder="{{__('Search by Username')}}" value="{{request()->input('username')}}">
+                            <input name="domain" class="min-w-250 form-control" type="text" placeholder="{{__('Search by Domain')}}" value="{{request()->input('domain')}}">
                             <button type="submit" class="d-none"></button>
                         </form>
                     </div>
@@ -154,7 +154,7 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="">{{__('Email Address')}} **</label>
-                                    <input id="inemail" type="text" class="form-control" name="email" value="" placeholder="Enter email">
+                                    <input id="inemail" type="text" class="form-control" name="email" value="" placeholder="{{__('Enter email')}}">
                                     <p id="eerremail" class="mb-0 text-danger em"></p>
                                 </div>
                                 <div class="form-group">

@@ -57,6 +57,26 @@ class AppServiceProvider extends ServiceProvider
                     $currentLang = Language::where('is_default', 1)->first();
                 }
 
+                // Se não encontrar idioma, usar português como fallback
+                if (!$currentLang) {
+                    $currentLang = Language::where('code', 'pt-BR')->first();
+                    if (!$currentLang) {
+                        $currentLang = Language::first(); // Último recurso
+                    }
+                }
+
+                if (!$currentLang) {
+                    // Se ainda não encontrar nenhum idioma, criar um objeto vazio
+                    $currentLang = (object) [
+                        'id' => 1,
+                        'code' => 'pt-BR',
+                        'name' => 'Português',
+                        'basic_setting' => null,
+                        'basic_extended' => null,
+                        'rtl' => 0
+                    ];
+                }
+
                 $bs = $currentLang->basic_setting;
                 $be = $currentLang->basic_extended;
                 

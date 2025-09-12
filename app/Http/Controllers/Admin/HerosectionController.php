@@ -31,7 +31,7 @@ class HerosectionController extends Controller
                     if ($request->hasFile('image')) {
                         $ext = $sideImg->getClientOriginalExtension();
                         if (!in_array($ext, $allowedExts)) {
-                            return $fail("Only png, jpg, jpeg image is allowed");
+                            return $fail(__("Only png, jpg, jpeg image is allowed"));
                         }
                     }
                 },
@@ -41,7 +41,7 @@ class HerosectionController extends Controller
                     if ($request->hasFile('hero_img2')) {
                         $ext = $request->file('hero_img2')->getClientOriginalExtension();
                         if (!in_array($ext, $allowedExts)) {
-                            return $fail("Only png, jpg, jpeg image is allowed");
+                            return $fail(__("Only png, jpg, jpeg image is allowed"));
                         }
                     }
                 },
@@ -51,7 +51,7 @@ class HerosectionController extends Controller
                     if ($request->hasFile('hero_img3')) {
                         $ext = $request->file('hero_img3')->getClientOriginalExtension();
                         if (!in_array($ext, $allowedExts)) {
-                            return $fail("Only png, jpg, jpeg image is allowed");
+                            return $fail(__("Only png, jpg, jpeg image is allowed"));
                         }
                     }
                 },
@@ -61,7 +61,7 @@ class HerosectionController extends Controller
                     if ($request->hasFile('hero_img4')) {
                         $ext = $request->file('hero_img4')->getClientOriginalExtension();
                         if (!in_array($ext, $allowedExts)) {
-                            return $fail("Only png, jpg, jpeg image is allowed");
+                            return $fail(__("Only png, jpg, jpeg image is allowed"));
                         }
                     }
                 },
@@ -71,7 +71,7 @@ class HerosectionController extends Controller
                     if ($request->hasFile('hero_img5')) {
                         $ext = $request->file('hero_img5')->getClientOriginalExtension();
                         if (!in_array($ext, $allowedExts)) {
-                            return $fail("Only png, jpg, jpeg image is allowed");
+                            return $fail(__("Only png, jpg, jpeg image is allowed"));
                         }
                     }
                 },

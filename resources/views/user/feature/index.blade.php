@@ -1,4 +1,30 @@
 @extends('user.layout')
+
+@section('styles')
+<style>
+/* Forçar tradução dos botões de paginação via CSS */
+.paginate_button.previous:not(.disabled) {
+    font-size: 0 !important;
+}
+.paginate_button.previous:not(.disabled)::after {
+    content: "Anterior";
+    font-size: 14px;
+}
+
+.paginate_button.next:not(.disabled) {
+    font-size: 0 !important;
+}
+.paginate_button.next:not(.disabled)::after {
+    content: "Próximo";
+    font-size: 14px;
+}
+
+/* Para botões desabilitados, usar JavaScript */
+.paginate_button.disabled {
+    opacity: 0.5;
+}
+</style>
+@endsection
 @php
     $userDefaultLang = \App\Models\User\Language::where([['user_id', \Illuminate\Support\Facades\Auth::guard('web')->user()->id], ['is_default', 1]])->first();
     $userLanguages = \App\Models\User\Language::where('user_id', \Illuminate\Support\Facades\Auth::guard('web')->user()->id)->get();
@@ -57,7 +83,7 @@
                                                 <input type="file" name="features_section_image" id="image"
                                                     class="form-control">
                                                 <p id="errfeatures_section_image" class="mt-2 mb-0 text-danger em"></p>
-                                                <p class="text-warning mb-0">Upload 625 X 810 image for best quality</p>
+                                                <p class="text-warning mb-0">{{ __('Upload 625 X 810 image for best quality') }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -182,7 +208,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">{{ __('Add Feature') }}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="{{ __('Close') }}">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -252,6 +278,121 @@
 
 @section('scripts')
     <script>
+        // Configuração específica do DataTables para português
+        $(document).ready(function() {
+            if ($.fn.DataTable) {
+                // Configuração do DataTables em português
+                var portugueseConfig = {
+                    "language": {
+                        "sEmptyTable": "Nenhum registro encontrado",
+                        "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+                        "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                        "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                        "sInfoPostFix": "",
+                        "sInfoThousands": ".",
+                        "sLengthMenu": "Mostrar _MENU_ registros por página",
+                        "sLoadingRecords": "Carregando...",
+                        "sProcessing": "Processando...",
+                        "sZeroRecords": "Nenhum registro encontrado",
+                        "sSearch": "Pesquisar:",
+                        "oPaginate": {
+                            "sNext": "Próximo",
+                            "sPrevious": "Anterior",
+                            "sFirst": "Primeiro",
+                            "sLast": "Último"
+                        },
+                        "oAria": {
+                            "sSortAscending": ": Ordenar colunas de forma ascendente",
+                            "sSortDescending": ": Ordenar colunas de forma descendente"
+                        }
+                    }
+                };
+
+                // Aplicar configuração global
+                $.extend($.fn.dataTable.defaults, portugueseConfig);
+
+                // Inicializar DataTables com configuração específica
+                $('#basic-datatables').DataTable(portugueseConfig);
+            }
+
+            // Função para traduzir todos os elementos do DataTables
+            function translateDataTablesElements() {
+                // Traduzir botões de paginação
+                $('.paginate_button.previous').each(function() {
+                    var $btn = $(this);
+                    if ($btn.text().trim() === 'Previous') {
+                        $btn.text('Anterior');
+                    }
+                });
+                $('.paginate_button.next').each(function() {
+                    var $btn = $(this);
+                    if ($btn.text().trim() === 'Next') {
+                        $btn.text('Próximo');
+                    }
+                });
+                
+                // Traduzir campo de busca
+                $('.dataTables_filter label').each(function() {
+                    var text = $(this).text();
+                    if (text.includes('Search:')) {
+                        $(this).text(text.replace('Search:', 'Pesquisar:'));
+                    }
+                });
+
+                // Traduzir dropdown de registros por página
+                $('.dataTables_length label').each(function() {
+                    var text = $(this).text();
+                    if (text.includes('Show')) {
+                        $(this).text(text.replace(/Show\s+(\d+)\s+entries?/i, 'Mostrar $1 registros'));
+                    }
+                });
+
+                // Traduzir informações de paginação
+                $('.dataTables_info').each(function() {
+                    var text = $(this).text();
+                    if (text.includes('Showing')) {
+                        var newText = text.replace(/Showing\s+(\d+)\s+to\s+(\d+)\s+of\s+(\d+)\s+entries?/i, 'Mostrando $1 até $2 de $3 registros');
+                        $(this).text(newText);
+                    }
+                });
+
+                // Traduzir opções do dropdown de registros por página
+                $('.dataTables_length select option').each(function() {
+                    var text = $(this).text();
+                    if (text.includes('entries')) {
+                        $(this).text(text.replace(/entries?/gi, 'registros'));
+                    }
+                });
+            }
+
+            // Executar tradução múltiplas vezes para garantir
+            translateDataTablesElements();
+            setTimeout(translateDataTablesElements, 500);
+            setTimeout(translateDataTablesElements, 1000);
+            setTimeout(translateDataTablesElements, 2000);
+            setTimeout(translateDataTablesElements, 3000);
+
+            // Observar mudanças no DOM para traduzir novos elementos
+            if (window.MutationObserver) {
+                var observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        if (mutation.type === 'childList') {
+                            translateDataTablesElements();
+                        }
+                    });
+                });
+                
+                // Observar mudanças em toda a área do DataTables
+                var dataTablesWrapper = document.querySelector('#basic-datatables_wrapper');
+                if (dataTablesWrapper) {
+                    observer.observe(dataTablesWrapper, {
+                        childList: true,
+                        subtree: true
+                    });
+                }
+            }
+        });
+
         /* ******************** *******************************
                         ==========Form Submit with AJAX Request Start==========
                  ******************************************************/
@@ -306,7 +447,7 @@
                     $(".request-loader").removeClass("show");
                     $(e.target).attr('disabled', false);
                     if (error?.responseJSON?.exception) {
-                        bootnotify(error?.responseJSON?.exception, "Warning", "warning");
+                        bootnotify(error?.responseJSON?.exception, "{{ __('Warning') }}", "warning");
                     }
                 }
             });

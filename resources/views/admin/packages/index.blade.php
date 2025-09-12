@@ -409,4 +409,5 @@
 
 @section('scripts')
     <script src="{{ asset('assets/admin/js/packages.js') }}"></script>
+    <script src="{{ asset('assets/admin/js/datatables-pt-br.js') }}"></script>
 @endsection

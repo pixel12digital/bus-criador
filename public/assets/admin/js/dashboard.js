@@ -6,7 +6,7 @@
         data: {
             labels: months,
             datasets: [{
-                label: "Monthly Income",
+                label: "Renda Mensal",
                 borderColor: "#1d7af3",
                 pointBorderColor: "#FFF",
                 pointBackgroundColor: "#1d7af3",
@@ -51,7 +51,7 @@
         data: {
             labels: months,
             datasets: [{
-                label: "Monthly Premium Users",
+                label: "Usuários Premium Mensais",
                 borderColor: "#1d7af3",
                 pointBorderColor: "#FFF",
                 pointBackgroundColor: "#1d7af3",

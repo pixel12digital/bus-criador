@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="page-header">
-        <h4 class="page-title">{{empty(request()->input('type')) ? 'All' : ucfirst(request()->input('type'))}} {{__('Subdomains')}}</h4>
+        <h4 class="page-title">{{empty(request()->input('type')) ? __('All') : ucfirst(request()->input('type'))}} {{__('Subdomains')}}</h4>
         <ul class="breadcrumbs">
             <li class="nav-home">
                 <a href="{{route('admin.dashboard')}}">
@@ -19,7 +19,7 @@
                 <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-                <a href="#">{{empty(request()->input('type')) ? 'All' : ucfirst(request()->input('type'))}}</a>
+                <a href="#">{{empty(request()->input('type')) ? __('All') : ucfirst(request()->input('type'))}}</a>
             </li>
         </ul>
     </div>
@@ -37,7 +37,7 @@
                                     <input type="hidden" name="type" value="{{request()->input('type')}}">
                                 @endif
                                 <input name="username" class="min-w-250 form-control mr-2" type="text"
-                                       placeholder="Search by Username" value="{{request()->input('username')}}">
+                                       placeholder="{{__('Search by Username')}}" value="{{request()->input('username')}}">
                                 <button type="submit" class="d-none"></button>
                             </form>
                         </div>

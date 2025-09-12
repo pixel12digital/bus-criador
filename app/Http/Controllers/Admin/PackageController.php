@@ -27,7 +27,7 @@ class PackageController extends Controller
         $be->expiration_reminder = $request->expiration_reminder;
         $be->save();
 
-        $request->session()->flash('success', 'Settings updated successfully!');
+        $request->session()->flash('success', __('Settings updated successfully!'));
         return back();
     }
     public function features()
@@ -49,7 +49,7 @@ class PackageController extends Controller
             $be->save();
         }
 
-        $request->session()->flash('success', 'Features updated successfully!');
+        $request->session()->flash('success', __('Features updated successfully!'));
         return back();
     }
     /**
@@ -99,7 +99,7 @@ class PackageController extends Controller
                     'features' => $features,
 
                 ]);
-                Session::flash('success', "Package Created Successfully");
+                Session::flash('success', __("Package Created Successfully"));
                 return "success";
             });
         } catch (\Throwable $e) {

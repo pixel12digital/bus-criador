@@ -38,7 +38,7 @@
                 data-target="#addUserModal"><i class="fas fa-plus"></i> {{ __('Add User') }}</button>
               <form action="{{ url()->full() }}" class="float-lg-right float-none">
                 <input type="text" name="term" class="form-control min-w-250" value="{{ request()->input('term') }}"
-                  placeholder="Search by Username / Email">
+                  placeholder="Pesquisar por Nome de Usuário / Email">
               </form>
             </div>
           </div>
@@ -197,7 +197,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Add User</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">Adicionar Usuário</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -206,7 +206,7 @@
           <form action="{{ route('register.user.store') }}" method="POST" id="ajaxForm">
             @csrf
             <div class="form-group">
-              <label for="">Username *</label>
+              <label for="">Nome de Usuário *</label>
               <input class="form-control" type="text" name="username">
               <p id="errusername" class="text-danger mb-0 em"></p>
             </div>
@@ -216,16 +216,16 @@
               <p id="erremail" class="text-danger mb-0 em"></p>
             </div>
             <div class="form-group">
-              <label for="">Password *</label>
+              <label for="">Senha *</label>
               <input class="form-control" type="password" name="password">
               <p id="errpassword" class="text-danger mb-0 em"></p>
             </div>
             <div class="form-group">
-              <label for="">Confirm Password *</label>
+              <label for="">Confirmar Senha *</label>
               <input class="form-control" type="password" name="password_confirmation">
             </div>
             <div class="form-group">
-              <label for="">Package / Plan *</label>
+              <label for="">Pacote / Plano *</label>
               <select name="package_id" class="form-control">
                 @if (!empty($packages))
                   @foreach ($packages as $package)
@@ -238,7 +238,7 @@
               <p id="errpackage_id" class="text-danger mb-0 em"></p>
             </div>
             <div class="form-group">
-              <label for="">Payment Gateway *</label>
+              <label for="">Gateway de Pagamento *</label>
               <select name="payment_gateway" class="form-control">
                 @if (!empty($gateways))
                   @foreach ($gateways as $gateway)
@@ -249,17 +249,17 @@
               <p id="errpayment_gateway" class="text-danger mb-0 em"></p>
             </div>
             <div class="form-group">
-              <label for="">Publicly Hidden *</label>
+              <label for="">Oculto Publicamente *</label>
               <select name="online_status" class="form-control">
-                <option value="1">No</option>
-                <option value="0">Yes</option>
+                <option value="1">Não</option>
+                <option value="0">Sim</option>
               </select>
               <p id="erronline_status" class="text-danger mb-0 em"></p>
             </div>
           </form>
         </div>
         <div class="modal-footer text-center">
-          <button id="submitBtn" type="button" class="btn btn-primary">Add User</button>
+          <button id="submitBtn" type="button" class="btn btn-primary">Adicionar Usuário</button>
         </div>
       </div>
     </div>
