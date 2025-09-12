@@ -40,6 +40,9 @@ yarn-error.log
 *.bak
 backup_*.sql
 backup_remote.sql
+backup_scripts.sql
+export_scripts.sql
+*.sql.backup
 
 # Arquivos temporários
 *.tmp
@@ -50,3 +53,6 @@ menus
 # Arquivos de configuração específicos do servidor
 .htaccess.local
 config/database.php.local
+
+# Arquivos de documentação com backups
+documentation/.env.bak
