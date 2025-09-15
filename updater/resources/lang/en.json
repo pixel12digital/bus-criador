@@ -159,5 +159,9 @@
     "continue": "continue",
     "days": "days",
     "Star": "Star",
-    "Credentials Do not Match": "Credentials Do not Match"
+    "Credentials Do not Match": "Credentials Do not Match",
+    "Subdomain & Path URL": "Subdomain & Path URL",
+    "Path Based URL": "Path Based URL",
+    "Domains & URLs": "Domains & URLs",
+    "URL": "URL"
 }
