@@ -110,7 +110,7 @@
                                         <option value="yearly" {{ $package->term == 'yearly' ? 'selected' : '' }}>
                                             {{ __('yearly') }}</option>
                                         <option value="lifetime" {{ $package->term == 'lifetime' ? 'selected' : '' }}>
-                                            {{ 'lifetime' }}</option>
+                                            {{ __('lifetime') }}</option>
                                     </select>
                                     <p id="errterm" class="mb-0 text-danger em"></p>
                                 </div>

@@ -145,7 +145,7 @@
                                                     <h3 class="text-warning">{{__('Payment details')}}</h3>
                                                     @if ($membership->discount > 0)
                                                         <p>
-                                                            <strong>{{__('Package Price')}}: </strong> {{$membership->package_price == 0 ? "Free" : $membership->package_price}}
+                                                            <strong>{{__('Package Price')}}: </strong> {{$membership->package_price == 0 ? __("Free") : $membership->package_price}}
                                                         </p>
                                                         
                                                         <p>
@@ -153,7 +153,7 @@
                                                         </p>
                                                     @endif
                                                     <p>
-                                                        <strong>{{__('Total')}}: </strong> {{$membership->price == 0 ? "Free" : $membership->price}}
+                                                        <strong>{{__('Total')}}: </strong> {{$membership->price == 0 ? __("Free") : $membership->price}}
                                                     </p>
                                                     <p><strong>{{__('Currency')}}: </strong> {{$membership->currency}}
                                                     </p>
@@ -191,7 +191,7 @@
                                                         @if($membership->is_trial == 1)
                                                         {{__('Trial')}}
                                                         @else
-                                                        {{$membership->price == 0 ? "Free" : "Regular"}}
+                                                        {{$membership->price == 0 ? __("Free") : __("Regular")}}
                                                         @endif
                                                     </p>
                                                 </div>
