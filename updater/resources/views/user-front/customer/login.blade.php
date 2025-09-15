@@ -1,16 +1,16 @@
 @extends('user-front.layout')
 
 @section('tab-title')
-    {{ $keywords['Login'] ?? __('Login') }}
+    Entrar
 @endsection
 @section('meta-description', !empty($userSeo) ? $userSeo->meta_description_login : '')
 @section('meta-keywords', !empty($userSeo) ? $userSeo->meta_keyword_login : '')
 
 @section('page-name')
-    {{ $keywords['Login'] ?? __('Log In') }}
+    Entrar
 @endsection
 @section('br-name')
-    {{ $keywords['Login'] ?? __('Log In') }}
+    Entrar
 @endsection
 
 @section('content')
@@ -23,24 +23,24 @@
                     <div class="user-form">
                         <div class="title mb-3">
                             <h4>
-                                {{ $keywords['Login'] ?? __('Log In') }}
+                                Entrar
                             </h4>
                         </div>
                         <form action="{{ route('customer.login_submit', getParam()) }}" method="POST">
                             @csrf
                             <input type="hidden" name="user_id" value="{{ $user->id }}">
                             <div class="form_group">
-                                <label>{{ $keywords['email'] ?? __('Email') }} *</label>
-                                <input type="email" placeholder="{{ $keywords['Enter_Email_Address'] ?? 'Digite seu Email' }}"
+                                <label>Email *</label>
+                                <input type="email" placeholder="Digite seu Email"
                                     class="form_control" name="email" value="{{ old('email') }}">
                                 @error('email')
                                     <p class="text-danger">{{ $message }}</p>
                                 @enderror
                             </div>
                             <div class="form_group">
-                                <label>{{ $keywords['Password'] ?? __('Password') }} *</label>
+                                <label>Senha *</label>
                                 <input type="password" class="form-control" name="password" value="{{ old('password') }}"
-                                    placeholder="{{ $keywords['Enter_Password'] ?? 'Digite sua Senha' }}">
+                                    placeholder="Digite sua Senha">
                                 @error('password')
                                     <p class="text-danger">{{ $message }}</p>
                                 @enderror
@@ -53,7 +53,7 @@
                                         for="checkbox1"><span></span>{{ $keywords['Remember_Me'] ?? 'Remember Me' }}</label> --}}
                                 </div>
                                 <a
-                                    href="{{ route('customer.forget_password', getParam()) }}">{{ $keywords['Lost_your_password'] ?? 'Esqueceu sua senha' }}?</a>
+                                    href="{{ route('customer.forget_password', getParam()) }}">Esqueceu sua senha?</a>
                             </div>
                             <div class="form_group">
                                 @if ($userBs->is_recaptcha == 1)
@@ -71,11 +71,11 @@
                             </div>
                             <div class="form_group">
                                 <button type="submit"
-                                    class="btn">{{ $keywords['Login_Now'] ?? 'ENTRAR AGORA' }}</button>
+                                    class="btn">ENTRAR AGORA</button>
                             </div>
                             <div class="new-user text-center">
-                                <p class="text">{{ $keywords['New_user'] ?? 'Novo usuário' }}? <a
-                                        href="{{ route('customer.signup', getParam()) }}">{{ $keywords['Donot_have_an_account'] ?? "Não tem uma conta" }}?</a>
+                                <p class="text">Novo usuário? <a
+                                        href="{{ route('customer.signup', getParam()) }}">Não tem uma conta?</a>
                                 </p>
                             </div>
                         </form>

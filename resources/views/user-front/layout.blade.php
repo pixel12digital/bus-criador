@@ -87,7 +87,7 @@
                     <ul>
                         <li>
                             <a
-                                href="{{ route('front.user.detail.view', getParam()) }}">{{ $keywords['Home'] ?? 'Home' }}</a>
+                                href="{{ route('front.user.detail.view', getParam()) }}">{{ $keywords['Home'] ?? 'Início' }}</a>
                         </li>
                         <li>@yield('br-name')</li>
                     </ul>

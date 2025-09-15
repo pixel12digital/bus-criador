@@ -102,6 +102,7 @@
                                         <div class="form-group mb-3">
                                             <label>{{ __('Email Address') }}*</label>
                                             <input type="email" name="email" class="form-control"
+                                                placeholder="{{ __('Enter Email Address') }}"
                                                 value="{{ Request::old('email') }}">
                                             @if (Session::has('err'))
                                                 <p class="text-danger mb-2 mt-2">{{ Session::get('err') }}</p>
@@ -113,6 +114,7 @@
                                         <div class="form-group mb-3">
                                             <label>{{ __('Password') }} *</label>
                                             <input type="password" name="password" class="form-control"
+                                                placeholder="{{ __('Enter Password') }}"
                                                 value="{{ Request::old('password') }}">
                                             @error('password')
                                                 <p class="text-danger mb-2 mt-2">{{ $message }}</p>
