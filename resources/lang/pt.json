@@ -169,7 +169,7 @@
     "URL": "URL",
     "Serial Number": "Ordem de Exibição",
     "Package Display Order": "Ordem de Exibição",
-    "The higher the display order number, the later the package will be shown": "Quanto maior o número da ordem, mais tarde o pacote será exibido",
+    "The higher the display order number, the later the package will be shown": "Quanto maior o número da ordem, mais abaixo o pacote será exibido",
     "Free": "Gratuito",
     "entries": "entradas",
     "Regular": "Regular",

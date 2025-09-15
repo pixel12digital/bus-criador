@@ -338,12 +338,11 @@
                                 </div>
 
                                 <div class="form-group  ">
-                                    <label for="">{{ __('Serial Number') }} * </label>
+                                    <label for="">{{ __('Package Display Order') }} * </label>
                                     <input type="number" class="form-control" name="serial_number"
-                                        value="{{ $package->serial_number }}">
+                                        value="{{ $package->serial_number }}" placeholder="1 = primeiro, 2 = segundo, 3 = terceiro">
                                     <p id="errserial_number" class="mb-0 text-danger em"></p>
-                                    <p class="text-warning">The higher the serial number is, the later the feature will be
-                                        shown.
+                                    <p class="text-warning">{{ __('The higher the display order number, the later the package will be shown') }}.
                                     </p>
                                 </div>
                             </form>

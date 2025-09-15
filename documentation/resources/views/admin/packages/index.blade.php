@@ -86,7 +86,7 @@
                                                     </td>
                                                     <td>{{ strlen($package->title) > 30 ? mb_substr($package->title, 0, 30, 'UTF-8') . '...' : $package->title }}
                                                         <span
-                                                            class="badge text-capitalize @if ($package->term == 'monthly') badge-info @elseif($package->term == 'yearly')badge-primary @else badge-success @endif nav-pills ">{{ $package->term }}</span>
+                                                            class="badge text-capitalize @if ($package->term == 'monthly') badge-info @elseif($package->term == 'yearly')badge-primary @else badge-success @endif nav-pills ">{{ __($package->term) }}</span>
                                                     </td>
                                                     <td>
                                                         @if ($package->price == 0)
