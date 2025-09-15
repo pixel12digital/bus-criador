@@ -35,7 +35,7 @@
                     <div class="card-title d-inline-block">{{__('Custom CSS')}}</div>
                 </div>
                 <div class="card-body">
-                    <div class="alert-primary alert">Please do not use <strong class="text-danger">&lt;style&gt;&lt;/style&gt;</strong> tag here. Put the CSS code only</div>
+                    <div class="alert-primary alert">{{ __('Por favor, não use a tag') }} <strong class="text-danger">&lt;style&gt;&lt;/style&gt;</strong> {{ __('aqui. Coloque apenas o código CSS') }}</div>
                     <form action="{{route('user.css.update')}}" id="cssForm" method="POST">
                         @csrf
                         <div class="row justify-content-center">

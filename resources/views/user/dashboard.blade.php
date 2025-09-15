@@ -28,17 +28,17 @@
 
         @if ($pendingPackage)
             <div class="alert alert-warning">
-                You have requested a package which needs an action (Approval / Rejection) by Admin. You will be notified via
-                mail once an action is taken.
+                Você solicitou um pacote que precisa de uma ação (Aprovação / Rejeição) pelo Administrador. Você será notificado via
+                email assim que uma ação for tomada.
             </div>
             <div class="alert alert-warning">
-                <strong>Pending Package: </strong> {{ $pendingPackage->title }}
+                <strong>Pacote Pendente: </strong> {{ $pendingPackage->title }}
                 <span class="badge badge-secondary">{{ $pendingPackage->term }}</span>
-                <span class="badge badge-warning">Decision Pending</span>
+                <span class="badge badge-warning">Decisão Pendente</span>
             </div>
         @else
             <div class="alert alert-warning">
-                Your membership is expired. Please purchase a new package / extend the current package.
+                Sua assinatura expirou. Por favor, compre um novo pacote / estenda o pacote atual.
             </div>
         @endif
     @else
@@ -47,38 +47,38 @@
                 <div class="alert border-left border-primary text-dark">
                     @if ($package_count >= 2)
                         @if ($next_membership->status == 0)
-                            <strong class="text-danger">You have requested a package which needs an action (Approval /
-                                Rejection) by Admin. You will be notified via mail once an action is taken.</strong><br>
+                            <strong class="text-danger">Você solicitou um pacote que precisa de uma ação (Aprovação /
+                                Rejeição) pelo Administrador. Você será notificado via email assim que uma ação for tomada.</strong><br>
                         @elseif ($next_membership->status == 1)
-                            <strong class="text-danger">You have another package to activate after the current package
-                                expires. You cannot purchase / extend any package, until the next package is
-                                activated</strong><br>
+                            <strong class="text-danger">Você tem outro pacote para ativar após o pacote atual
+                                expirar. Você não pode comprar / estender nenhum pacote, até que o próximo pacote seja
+                                ativado</strong><br>
                         @endif
                     @endif
 
-                    <strong>Current Package: </strong> {{ $current_package->title }}
+                    <strong>Pacote Atual: </strong> {{ $current_package->title }}
                     <span class="badge badge-secondary">{{ $current_package->term }}</span>
                     @if ($current_membership->is_trial == 1)
-                        (Expire Date: {{ Carbon\Carbon::parse($current_membership->expire_date)->format('M-d-Y') }})
-                        <span class="badge badge-primary">Trial</span>
+                        (Data de Expiração: {{ Carbon\Carbon::parse($current_membership->expire_date)->format('M-d-Y') }})
+                        <span class="badge badge-primary">{{ __('Teste') }}</span>
                     @else
-                        (Expire Date:
-                        {{ $current_package->term === 'lifetime' ? 'Lifetime' : Carbon\Carbon::parse($current_membership->expire_date)->format('M-d-Y') }})
+                        (Data de Expiração:
+                        {{ $current_package->term === 'lifetime' ? 'Vitalício' : Carbon\Carbon::parse($current_membership->expire_date)->format('M-d-Y') }})
                     @endif
 
                     @if ($package_count >= 2)
                         <div>
-                            <strong>Next Package To Activate: </strong> {{ $next_package->title }} <span
+                            <strong>Próximo Pacote Para Ativar: </strong> {{ $next_package->title }} <span
                                 class="badge badge-secondary">{{ $next_package->term }}</span>
                             @if ($current_package->term != 'lifetime' && $current_membership->is_trial != 1)
                                 (
-                                Activation Date:
+                                Data de Ativação:
                                 {{ Carbon\Carbon::parse($next_membership->start_date)->format('M-d-Y') }},
-                                Expire Date:
-                                {{ $next_package->term === 'lifetime' ? 'Lifetime' : Carbon\Carbon::parse($next_membership->expire_date)->format('M-d-Y') }})
+                                Data de Expiração:
+                                {{ $next_package->term === 'lifetime' ? 'Vitalício' : Carbon\Carbon::parse($next_membership->expire_date)->format('M-d-Y') }})
                             @endif
                             @if ($next_membership->status == 0)
-                                <span class="badge badge-warning">Decision Pending</span>
+                                <span class="badge badge-warning">Decisão Pendente</span>
                             @endif
                         </div>
                     @endif
@@ -341,7 +341,7 @@
                                                                     </div>
                                                                     <div class="modal-body">
                                                                         <h3 class="text-warning">
-                                                                            {{ __('Member details') }}</h3>
+                                                                            {{ __('Detalhes do Membro') }}</h3>
                                                                         <label>{{ __('Name') }}</label>
                                                                         <p>{{ $membership->user->first_name . ' ' . $membership->user->last_name }}
                                                                         </p>
@@ -350,7 +350,7 @@
                                                                         <label>{{ __('Phone') }}</label>
                                                                         <p>{{ $membership->user->phone_number }}</p>
                                                                         <h3 class="text-warning">
-                                                                            {{ __('Payment details') }}</h3>
+                                                                            {{ __('Detalhes do Pagamento') }}</h3>
                                                                         @if ($membership->discount > 0)
                                                                             <p>
                                                                                 <strong>{{ __('Package Price') }}:
@@ -374,24 +374,22 @@
                                                                             {{ $membership->payment_method }}
                                                                         </p>
                                                                         <h3 class="text-warning">
-                                                                            {{ __('Package Details') }}</h3>
+                                                                            {{ __('Detalhes do Pacote') }}</h3>
                                                                         <p><strong>{{ __('Title') }}:
                                                                             </strong>{{ !empty($membership->package) ? $membership->package->title : '' }}
                                                                         </p>
                                                                         <p><strong>{{ __('Term') }}: </strong>
                                                                             {{ !empty($membership->package) ? $membership->package->term : '' }}
                                                                         </p>
-                                                                        <p><strong>Start
-                                                                                Date: </strong>
+                                                                        <p>                                                                                <strong>Data de Início: </strong>
                                                                             @if (\Illuminate\Support\Carbon::parse($membership->start_date)->format('Y') == '9999')
-                                                                                <span class="badge badge-danger">Never
-                                                                                    Activated</span>
+                                                                                <span class="badge badge-danger">Nunca
+                                                                                    Ativado</span>
                                                                             @else
                                                                                 {{ \Illuminate\Support\Carbon::parse($membership->start_date)->format('M-d-Y') }}
                                                                             @endif
                                                                         </p>
-                                                                        <p><strong>Expire
-                                                                                Date: </strong>
+                                                                        <p>                                                                                <strong>Data de Expiração: </strong>
 
                                                                             @if (\Illuminate\Support\Carbon::parse($membership->start_date)->format('Y') == '9999')
                                                                                 -
@@ -399,10 +397,10 @@
                                                                                 @if ($membership->modified == 1)
                                                                                     {{ \Illuminate\Support\Carbon::parse($membership->expire_date)->addDay()->format('M-d-Y') }}
                                                                                     <span
-                                                                                        class="badge badge-primary btn-xs">modified
-                                                                                        by Admin</span>
+                                                                                        class="badge badge-primary btn-xs">modificado
+                                                                                        pelo Admin</span>
                                                                                 @else
-                                                                                    {{ $membership->package->term == 'lifetime' ? 'Lifetime' : \Illuminate\Support\Carbon::parse($membership->expire_date)->format('M-d-Y') }}
+                                                                                    {{ $membership->package->term == 'lifetime' ? 'Vitalício' : \Illuminate\Support\Carbon::parse($membership->expire_date)->format('M-d-Y') }}
                                                                                 @endif
                                                                             @endif
                                                                         </p>
@@ -411,14 +409,14 @@
                                                                             @if ($membership->is_trial == 1)
                                                                                 {{ __('Trial') }}
                                                                             @else
-                                                                                {{ $membership->price == 0 ? 'Free' : 'Regular' }}
+                                                                                {{ $membership->price == 0 ? 'Gratuito' : 'Regular' }}
                                                                             @endif
                                                                         </p>
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-secondary"
                                                                             data-dismiss="modal">
-                                                                            {{ __('Close') }}
+                                                                            {{ __('Fechar') }}
                                                                         </button>
                                                                     </div>
                                                                 </div>

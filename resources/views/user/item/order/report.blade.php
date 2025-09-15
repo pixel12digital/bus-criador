@@ -69,35 +69,35 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="">Payment Status</label>
+                            <label for="">{{ __('Status do Pagamento') }}</label>
                             <select name="payment_status" class="form-control ml-1">
-                                <option value="" selected>All</option>
-                                <option value="Pending" {{request()->input('payment_status') == 'Pending' ? 'selected' : ''}}>Pending</option>
-                                <option value="Completed" {{request()->input('payment_status') == 'Completed' ? 'selected' : ''}}>Completed</option>
+                                <option value="" selected>{{ __('Todos') }}</option>
+                                <option value="Pending" {{request()->input('payment_status') == 'Pending' ? 'selected' : ''}}>{{ __('Pendente') }}</option>
+                                <option value="Completed" {{request()->input('payment_status') == 'Completed' ? 'selected' : ''}}>{{ __('Concluído') }}</option>
                             </select>
                         </div>
 
 
                         <div class="form-group">
-                            <label for="">Order Status</label>
+                            <label for="">{{ __('Status do Pedido') }}</label>
                             <select name="order_status" class="form-control ml-1">
-                                <option value="" selected>All</option>
-                                <option value="pending" {{request()->input('order_status') == 'pending' ? 'selected' : ''}}>Pending</option>
-                                <option value="processing" {{request()->input('order_status') == 'processing' ? 'selected' : ''}}>Processing</option>
-                                <option value="completed" {{request()->input('order_status') == 'completed' ? 'selected' : ''}}>Completed</option>
-                                <option value="rejected" {{request()->input('order_status') == 'rejected' ? 'selected' : ''}}>Rejected</option>
+                                <option value="" selected>{{ __('Todos') }}</option>
+                                <option value="pending" {{request()->input('order_status') == 'pending' ? 'selected' : ''}}>{{ __('Pendente') }}</option>
+                                <option value="processing" {{request()->input('order_status') == 'processing' ? 'selected' : ''}}>{{ __('Processando') }}</option>
+                                <option value="completed" {{request()->input('order_status') == 'completed' ? 'selected' : ''}}>{{ __('Concluído') }}</option>
+                                <option value="rejected" {{request()->input('order_status') == 'rejected' ? 'selected' : ''}}>{{ __('Rejeitado') }}</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-sm ml-1">Submit</button>
+                            <button type="submit" class="btn btn-primary btn-sm ml-1">{{ __('Enviar') }}</button>
                         </div>
                     </form>
               </div>
               <div class="col-lg-2">
                 <form action="{{route('user.orders.export')}}" class="form-inline justify-content-end">
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success btn-sm ml-1" title="CSV Format">Export</button>
+                        <button type="submit" class="btn btn-success btn-sm ml-1" title="CSV Format">{{ __('Exportar') }}</button>
                     </div>
                 </form>
               </div>
@@ -111,7 +111,7 @@
                   <table class="table table-striped mt-3">
                     <thead>
                       <tr>
-                        <th scope="col">Order Number</th>
+                        <th scope="col">{{ __('Número do Pedido') }}</th>
                         <th scope="col">Billing Name</th>
                         <th scope="col">Billing Email</th>
                         <th scope="col">Billing Phone</th>
@@ -124,8 +124,8 @@
                         <th scope="col">Shipping Country</th>
                         <th scope="col">Gateway</th>
                         <th scope="col">Shipping Method</th>
-                        <th scope="col">Payment Status</th>
-                        <th scope="col">Order Status</th>
+                        <th scope="col">{{ __('Status do Pagamento') }}</th>
+                        <th scope="col">{{ __('Status do Pedido') }}</th>
                         <th scope="col">Cart Total</th>
                         <th scope="col">Discount</th>
                         <th scope="col">Tax</th>
@@ -190,7 +190,7 @@
                                   </button>
                                 </div>
                                 <div class="modal-body">
-                                    <img src="{{asset('assets/front/receipt/' . $order->receipt)}}" alt="Receipt" width="100%">
+                                    <img src="{{asset('assets/front/receipt/' . $order->receipt)}}" alt="{{ __('Recibo') }}" width="100%">
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

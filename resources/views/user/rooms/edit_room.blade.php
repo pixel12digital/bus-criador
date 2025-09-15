@@ -207,7 +207,7 @@
                                         <div class="form-group">
                                             <label>{{ __('Address') }}</label>
                                             <input type="text" class="form-control" name="address"
-                                                placeholder="Enter Address" value="{{ $room->address }}">
+                                                placeholder="{{ __('Digite o Endereço') }}" value="{{ $room->address }}">
                                         </div>
                                     </div>
 
@@ -215,7 +215,7 @@
                                         <div class="form-group">
                                             <label>{{ __('Phone') }}</label>
                                             <input type="text" class="form-control" name="phone"
-                                                placeholder="Enter Phone" value="{{ $room->phone }}">
+                                                placeholder="{{ __('Digite o Telefone') }}" value="{{ $room->phone }}">
                                         </div>
                                     </div>
 
@@ -223,7 +223,7 @@
                                         <div class="form-group">
                                             <label>{{ __('Email') }}</label>
                                             <input type="email" class="form-control" name="email"
-                                                placeholder="Enter Email" value="{{ $room->email }}">
+                                                placeholder="{{ __('Digite o Email') }}" value="{{ $room->email }}">
                                         </div>
                                     </div>
                                 </div>
@@ -272,7 +272,7 @@
                                                                 <label>{{ __('Room Title') . '*' }}</label>
                                                                 <input type="text" class="form-control"
                                                                     name="{{ $language->code }}_title"
-                                                                    placeholder="Enter Title"
+                                                                    placeholder="{{ __('Digite o Título') }}"
                                                                     value="{{ !empty($roomContent->title) ? $roomContent->title : '' }}">
                                                             </div>
                                                         </div>
@@ -345,7 +345,7 @@
                                                             <div
                                                                 class="form-group {{ $language->rtl == 1 ? 'rtl text-right' : '' }}">
                                                                 <label>{{ __('Summary') . '*' }}</label>
-                                                                <textarea class="form-control" name="{{ $language->code }}_summary" placeholder="Enter Summary" rows="3">{{ $summary }}</textarea>
+                                                                <textarea class="form-control" name="{{ $language->code }}_summary" placeholder="{{ __('Digite o Resumo') }}" rows="3">{{ $summary }}</textarea>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -646,37 +646,17 @@ if (!function_exists('formatNumber')) {
     }
 }
 
-if (!function_exists('paytabInfo')) {
-    function paytabInfo($type, $user_id = null)
+if (!function_exists('translatePortfolioCategory')) {
+    function translatePortfolioCategory($categoryName)
     {
-        if ($type == 'user') {
-            $paytabs = UserPaymentGeteway::where([['user_id', $user_id], ['keyword', 'paytabs']])->first();
-        } else {
-            $paytabs = PaymentGateway::where('keyword', 'paytabs')->first();
-        }
-        $paytabsInfo = json_decode($paytabs->information, true);
-        if ($paytabsInfo['country'] == 'global') {
-            $currency = 'USD';
-        } elseif ($paytabsInfo['country'] == 'sa') {
-            $currency = 'SAR';
-        } elseif ($paytabsInfo['country'] == 'uae') {
-            $currency = 'AED';
-        } elseif ($paytabsInfo['country'] == 'egypt') {
-            $currency = 'EGP';
-        } elseif ($paytabsInfo['country'] == 'oman') {
-            $currency = 'OMR';
-        } elseif ($paytabsInfo['country'] == 'jordan') {
-            $currency = 'JOD';
-        } elseif ($paytabsInfo['country'] == 'iraq') {
-            $currency = 'IQD';
-        } else {
-            $currency = 'USD';
-        }
-        return [
-            'server_key' => $paytabsInfo['server_key'],
-            'profile_id' => $paytabsInfo['profile_id'],
-            'url'        => $paytabsInfo['api_endpoint'],
-            'currency'   => $currency,
+        $translations = [
+            'Web Development' => __('Desenvolvimento Web'),
+            'Graphics Design' => __('Design Gráfico'),
+            'Graphic Design' => __('Design Gráfico'),
+            'MISC' => __('Diversos'),
+            'Consulting' => __('Consultoria'),
         ];
+        
+        return $translations[$categoryName] ?? $categoryName;
     }
 }

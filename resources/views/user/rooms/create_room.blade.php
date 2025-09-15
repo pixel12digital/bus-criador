@@ -172,7 +172,7 @@
                                         <div class="form-group">
                                             <label>{{ __('Address') }}</label>
                                             <input type="text" class="form-control" name="address"
-                                                placeholder="Enter Address">
+                                                placeholder="{{ __('Digite o Endereço') }}">
                                         </div>
                                     </div>
 
@@ -180,7 +180,7 @@
                                         <div class="form-group">
                                             <label>{{ __('Phone') }}</label>
                                             <input type="text" class="form-control" name="phone"
-                                                placeholder="Enter Phone">
+                                                placeholder="{{ __('Digite o Telefone') }}">
                                         </div>
                                     </div>
 
@@ -188,7 +188,7 @@
                                         <div class="form-group">
                                             <label>{{ __('Email') }}</label>
                                             <input type="email" class="form-control" name="email"
-                                                placeholder="Enter Email">
+                                                placeholder="{{ __('Digite o Email') }}">
                                         </div>
                                     </div>
                                 </div>
@@ -223,7 +223,7 @@
                                                                 <label>{{ __('Room Title') . '*' }}</label>
                                                                 <input type="text" class="form-control"
                                                                     name="{{ $language->code }}_title"
-                                                                    placeholder="Enter Title">
+                                                                    placeholder="{{ __('Digite o Título') }}">
                                                             </div>
                                                         </div>
 

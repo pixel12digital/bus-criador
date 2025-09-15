@@ -12,7 +12,7 @@
         <form action="{{ route('user.course_management.lesson.store_text', ['id' => $lesson->id]) }}" method="POST" id="textForm">
           @csrf
           <div class="form-group {{ $language->rtl == 1 ? 'rtl text-right' : '' }}">
-            <textarea name="text" class="form-control summernote" placeholder="Enter Text" data-height="300"></textarea>
+            <textarea name="text" class="form-control summernote" placeholder="{{ __('Digite o Texto') }}" data-height="300"></textarea>
             <p class="em text-danger mt-2 mb-0 ltr text-left" id="err_text"></p>
           </div>
         </form>

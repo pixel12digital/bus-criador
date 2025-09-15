@@ -46,7 +46,7 @@
                                 @if (!empty($userLanguages))
                                     <select name="userLanguage" class="form-control"
                                         onchange="window.location='{{ url()->current() . '?language=' }}'+this.value">
-                                        <option value="" selected disabled>{{ __('Select a Language') }}</option>
+                                        <option value="" selected disabled>{{ __('Selecionar um Idioma') }}</option>
                                         @foreach ($userLanguages as $lang)
                                             <option value="{{ $lang->code }}"
                                                 {{ $lang->code == request()->input('language') ? 'selected' : '' }}>
@@ -62,7 +62,7 @@
                     <div class="row no-gutters">
                         <div class="col-lg-4">
                             <div class="card border-primary mb-3">
-                                <div class="card-header bg-primary text-white">{{ __('Pre-built Menus') }}</div>
+                                <div class="card-header bg-primary text-white">{{ __('Menus Pré-construídos') }}</div>
                                 <div class="card-body">
                                     <ul class="list-group">
                                         <li class="list-group-item">
@@ -73,7 +73,7 @@
                                                 data-text="{{ $keywords['Home'] ?? 'Home' }}" data-type="home"
                                                 @if ($userBs->theme == 'home_twelve') data-icon="fas fa-home" @endif
                                                 class="addToMenus btn btn-primary btn-sm float-right"
-                                                href="">{{ __('Add to Menus') }}</a>
+                                                href="">{{ __('Adicionar aos Menus') }}</a>
                                         </li>
 
                                         @if (!empty($permissions) && in_array('Service', $permissions))
@@ -86,7 +86,7 @@
                                                     data-text="{{ $keywords['Services'] ?? 'Services' }}"
                                                     data-type="services"
                                                     class="addToMenus btn btn-primary btn-sm float-right"
-                                                    href="">{{ __('Add to Menus') }}</a>
+                                                    href="">{{ __('Adicionar aos Menus') }}</a>
                                             </li>
                                         @endif
                                         @if (!empty($permissions) && in_array('Hotel Booking', $permissions))
@@ -98,7 +98,7 @@
                                                     @if ($userBs->theme == 'home_twelve') data-icon="fas fa-hotel" @endif
                                                     data-text="{{ $keywords['Rooms'] ?? 'Rooms' }}" data-type="rooms"
                                                     class="addToMenus btn btn-primary btn-sm float-right"
-                                                    href="">{{ __('Add to Menus') }}</a>
+                                                    href="">{{ __('Adicionar aos Menus') }}</a>
                                             </li>
                                         @endif
                                         @if (!empty($permissions) && in_array('Course Management', $permissions))
@@ -110,7 +110,7 @@
                                                     @if ($userBs->theme == 'home_twelve') data-icon="fas fa-play" @endif
                                                     data-text="{{ $keywords['Courses'] ?? 'Courses' }}" data-type="courses"
                                                     class="addToMenus btn btn-primary btn-sm float-right"
-                                                    href="">{{ __('Add to Menus') }}</a>
+                                                    href="">{{ __('Adicionar aos Menus') }}</a>
                                             </li>
                                         @endif
                                         @if (!empty($permissions) && in_array('Donation Management', $permissions))
@@ -122,7 +122,7 @@
                                                     @if ($userBs->theme == 'home_twelve') data-icon="fas fa-hand-holding-usd" @endif
                                                     data-text="{{ $keywords['Causes'] ?? 'Causes' }}" data-type="causes"
                                                     class="addToMenus btn btn-primary btn-sm float-right"
-                                                    href="">{{ __('Add to Menus') }}</a>
+                                                    href="">{{ __('Adicionar aos Menus') }}</a>
                                             </li>
                                         @endif
                                         @if (!empty($permissions) && in_array('Blog', $permissions))
@@ -134,7 +134,7 @@
                                                     @if ($userBs->theme == 'home_twelve') data-icon="fas fa-blog" @endif
                                                     data-text="{{ $keywords['Blog'] ?? 'Blog' }}" data-type="blog"
                                                     class="addToMenus btn btn-primary btn-sm float-right"
-                                                    href="">{{ __('Add to Menus') }}</a>
+                                                    href="">{{ __('Adicionar aos Menus') }}</a>
                                             </li>
                                         @endif
 
@@ -143,7 +143,7 @@
                                                     data-text="{{ $keywords['Portfolios'] ?? 'Portfolios' }}"
                                                     data-type="portfolios"
                                                     class="addToMenus btn btn-primary btn-sm float-right"
-                                                    href="">{{ __('Add to Menus') }}</a></li>
+                                                    href="">{{ __('Adicionar aos Menus') }}</a></li>
                                         @endif
 
                                         <li class="list-group-item">
@@ -154,7 +154,7 @@
                                                 @if ($userBs->theme == 'home_twelve') data-icon="fas fa-chalkboard-teacher" @endif
                                                 data-text="{{ $keywords['Contact'] ?? 'Contact' }}" data-type="contact"
                                                 class="addToMenus btn btn-primary btn-sm float-right"
-                                                href="">{{ __('Add to Menus') }}</a>
+                                                href="">{{ __('Adicionar aos Menus') }}</a>
                                         </li>
 
                                         @if (!empty($permissions) && in_array('Team', $permissions))
@@ -166,7 +166,7 @@
                                                     @if ($userBs->theme == 'home_twelve') data-icon="fas fa-user-friends" @endif
                                                     data-text="{{ $keywords['Team'] ?? 'Team' }}" data-type="team"
                                                     class="addToMenus btn btn-primary btn-sm float-right"
-                                                    href="">{{ __('Add to Menus') }}</a>
+                                                    href="">{{ __('Adicionar aos Menus') }}</a>
                                             </li>
                                         @endif
 
@@ -179,7 +179,7 @@
                                                     @if ($userBs->theme == 'home_twelve') data-icon="fas fa-user-md" @endif
                                                     data-text="{{ $keywords['Career'] ?? 'Career' }}" data-type="career"
                                                     class="addToMenus btn btn-primary btn-sm float-right"
-                                                    href="">{{ __('Add to Menus') }}</a>
+                                                    href="">{{ __('Adicionar aos Menus') }}</a>
                                             </li>
                                         @endif
 
@@ -191,7 +191,7 @@
                                                 @if ($userBs->theme == 'home_twelve') data-icon="far fa-question-circle" @endif
                                                 data-text="{{ $keywords['FAQ'] ?? 'FAQ' }}" data-type="faq"
                                                 class="addToMenus btn btn-primary btn-sm float-right"
-                                                href="">{{ __('Add to Menus') }}</a>
+                                                href="">{{ __('Adicionar aos Menus') }}</a>
                                         </li>
                                         @if (!empty($permissions) && in_array('Ecommerce', $permissions))
                                             <li class="list-group-item">
@@ -202,7 +202,7 @@
                                                     @if ($userBs->theme == 'home_twelve') data-icon="far fa-store-alt" @endif
                                                     data-text="{{ $keywords['Shop'] ?? 'Shop' }}" data-type="shop"
                                                     class="addToMenus btn btn-primary btn-sm float-right"
-                                                    href="">{{ __('Add to Menus') }}</a>
+                                                    href="">{{ __('Adicionar aos Menus') }}</a>
                                             </li>
                                             <li class="list-group-item">
                                                 @if ($userBs->theme == 'home_twelve')
@@ -212,7 +212,7 @@
                                                     @if ($userBs->theme == 'home_twelve') data-icon="far fa-cart-plus" @endif
                                                     data-text="{{ $keywords['Cart'] ?? 'Cart' }}" data-type="cart"
                                                     class="addToMenus btn btn-primary btn-sm float-right"
-                                                    href="">{{ __('Add to Menus') }}</a>
+                                                    href="">{{ __('Adicionar aos Menus') }}</a>
                                             </li>
                                             <li class="list-group-item">
                                                 @if ($userBs->theme == 'home_twelve')
@@ -223,7 +223,7 @@
                                                     data-text="{{ $keywords['Checkout'] ?? 'Checkout' }}"
                                                     data-type="checkout"
                                                     class="addToMenus btn btn-primary btn-sm float-right"
-                                                    href="">{{ __('Add to Menus') }}</a>
+                                                    href="">{{ __('Adicionar aos Menus') }}</a>
                                             </li>
                                         @endif
                                         @if (!empty($permissions) && in_array('Custom Page', $permissions))
@@ -234,7 +234,7 @@
                                                     <a data-text="{{ $apage->name }}" data-type="{{ $apage->id }}"
                                                         data-custom="yes"
                                                         class="addToMenus btn btn-primary btn-sm float-right"
-                                                        href="">{{ __('Add to Menus') }}</a>
+                                                        href="">{{ __('Adicionar aos Menus') }}</a>
                                                 </li>
                                             @endforeach
                                         @endif
@@ -246,13 +246,13 @@
                         </div>
                         <div class="col-lg-4">
                             <div class="card border-primary mb-3">
-                                <div class="card-header bg-primary text-white">{{ __('Add / Edit Menu') }}</div>
+                                <div class="card-header bg-primary text-white">{{ __('Adicionar / Editar Menu') }}</div>
                                 <div class="card-body">
                                     <form id="frmEdit" class="form-horizontal">
                                         <input class="item-menu" type="hidden" name="type" value="">
                                         @if ($userBs->theme == 'home_twelve')
                                             <div class="form-group">
-                                                <label for="">{{ __('Icon*') }}</label>
+                                                <label for="">{{ __('Ícone*') }}</label>
                                                 <div class="btn-group d-block">
                                                     <button type="button" class="btn btn-primary iconpicker-component">
                                                         <i class="fas fa heart"></i>
@@ -266,16 +266,16 @@
                                                 <input type="hidden" id="inputIcon" class="item-menu" name="icon">
 
                                                 <div class="text-warning mt-2">
-                                                    <small>{{ __('Click on the dropdown icon to select a icon.') }}</small>
+                                                    <small>{{ __('Clique no ícone suspenso para selecionar um ícone.') }}</small>
                                                 </div>
                                             </div>
                                         @endif
                                         <div id="withUrl">
 
                                             <div class="form-group">
-                                                <label for="text">{{ __('Text') }}</label>
+                                                <label for="text">{{ __('Texto') }}</label>
                                                 <input type="text" class="form-control item-menu" name="text"
-                                                    placeholder="{{ __('Text') }}">
+                                                    placeholder="{{ __('Texto') }}">
                                             </div>
                                             <div class="form-group">
                                                 <label for="href">{{ __('URL') }}</label>
@@ -283,20 +283,20 @@
                                                     placeholder="{{ __('URL') }}">
                                             </div>
                                             <div class="form-group">
-                                                <label for="target">{{ __('Target') }}</label>
+                                                <label for="target">{{ __('Destino') }}</label>
                                                 <select name="target" id="target" class="form-control item-menu">
-                                                    <option value="_self">{{ __('Self') }}</option>
-                                                    <option value="_blank">{{ __('Blank') }}</option>
-                                                    <option value="_top">{{ __('Top') }}</option>
+                                                    <option value="_self">{{ __('Mesmo') }}</option>
+                                                    <option value="_blank">{{ __('Nova Aba') }}</option>
+                                                    <option value="_top">{{ __('Superior') }}</option>
                                                 </select>
                                             </div>
                                         </div>
 
                                         <div id="withoutUrl" style="display: none;">
                                             <div class="form-group">
-                                                <label for="text">{{ __('Text') }}</label>
+                                                <label for="text">{{ __('Texto') }}</label>
                                                 <input type="text" class="form-control item-menu" name="text"
-                                                    placeholder="{{ __('Text') }}">
+                                                    placeholder="{{ __('Texto') }}">
                                             </div>
                                             <div class="form-group">
                                                 <label for="href">{{ __('URL') }}</label>
@@ -304,11 +304,11 @@
                                                     placeholder="{{ __('URL') }}">
                                             </div>
                                             <div class="form-group">
-                                                <label for="target">{{ __('Target') }}</label>
+                                                <label for="target">{{ __('Destino') }}</label>
                                                 <select name="target" class="form-control item-menu">
-                                                    <option value="_self">{{ __('Self') }}</option>
-                                                    <option value="_blank">{{ __('Blank') }}</option>
-                                                    <option value="_top">{{ __('Top') }}</option>
+                                                    <option value="_self">{{ __('Mesmo') }}</option>
+                                                    <option value="_blank">{{ __('Nova Aba') }}</option>
+                                                    <option value="_top">{{ __('Superior') }}</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -316,15 +316,15 @@
                                 </div>
                                 <div class="card-footer">
                                     <button type="button" id="btnUpdate" class="btn btn-primary" disabled><i
-                                            class="fas fa-sync-alt"></i> {{ __('Update') }}</button>
+                                            class="fas fa-sync-alt"></i> {{ __('Atualizar') }}</button>
                                     <button type="button" id="btnAdd" class="btn btn-success"><i
-                                            class="fas fa-plus"></i> {{ __('Add') }}</button>
+                                            class="fas fa-plus"></i> {{ __('Adicionar') }}</button>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="card mb-3">
-                                <div class="card-header bg-primary text-white">{{ __('Website Menus') }}</div>
+                                <div class="card-header bg-primary text-white">{{ __('Menus do Site') }}</div>
                                 <div class="card-body">
                                     <ul id="myEditor" class="sortableLists list-group">
                                     </ul>
@@ -337,7 +337,7 @@
                     <div class="form">
                         <div class="form-group from-show-notify row">
                             <div class="col-12 text-center">
-                                <button id="btnOutput" class="btn btn-success">{{ __('Update Menu') }}</button>
+                                <button id="btnOutput" class="btn btn-success">{{ __('Atualizar Menu') }}</button>
                             </div>
                         </div>
                     </div>

@@ -40,7 +40,7 @@
                                 @if (!empty($userLangs))
                                     <select name="language" class="form-control"
                                         onchange="window.location='{{ url()->current() . '?language=' }}'+this.value">
-                                        <option value="" selected disabled>Select a Language</option>
+                                        <option value="" selected disabled>{{ __('Selecionar um Idioma') }}</option>
                                         @foreach ($userLangs as $lang)
                                             <option value="{{ $lang->code }}"
                                                 {{ $lang->code == request()->input('language') ? 'selected' : '' }}>

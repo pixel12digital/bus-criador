@@ -93,7 +93,7 @@
                                                 {{ $symbol }})
                                                 *</label>
                                             <input type="number" class="form-control ltr" name="goal_amount"
-                                                value="{{ $donation->goal_amount }}" placeholder="Enter Amount">
+                                                value="{{ $donation->goal_amount }}" placeholder="{{ __('Digite o Valor') }}">
                                             <p id="errgoal_amount" class="mb-0 text-danger em"></p>
                                         </div>
                                     </div>
@@ -103,7 +103,7 @@
                                                 ( {{ $symbol }})
                                                 *</label>
                                             <input type="number" class="form-control ltr" name="min_amount"
-                                                value="{{ $donation->min_amount }}" placeholder="Enter Amount">
+                                                value="{{ $donation->min_amount }}" placeholder="{{ __('Digite o Valor') }}">
                                             <small class="text-warning">{{ __('Minimum amount for this cause') }}</small>
                                             <p id="errmin_amount" class="mb-0 text-danger em"></p>
                                         </div>

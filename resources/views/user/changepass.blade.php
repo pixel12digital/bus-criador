@@ -46,7 +46,7 @@
                           @else
                           @if ($errors->first('oldPassMatch'))
                           <span class="text-danger">
-                              {{"Old password doesn't match with the existing password!"}}
+                              {{"A senha antiga não corresponde à senha existente!"}}
                           </span>
                           @endif
                           @endif

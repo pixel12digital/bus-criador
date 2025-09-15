@@ -102,13 +102,13 @@
                                     <p id="errtitle" class="mb-0 text-danger em"></p>
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Category **</label>
+                                    <label for="">{{ __('Categoria') }} **</label>
                                     <select class="form-control" name="category">
-                                        <option value="" selected disabled>Select a category</option>
+                                        <option value="" selected disabled>{{ __('Selecionar uma categoria') }}</option>
                                         @foreach ($categories as $key => $category)
                                             <option value="{{ $category->id }}"
                                                 {{ $category->id == $portfolio->bcategory->id ? 'selected' : '' }}>
-                                                {{ $category->name }}</option>
+                                                {{ translatePortfolioCategory($category->name) }}</option>
                                         @endforeach
                                     </select>
                                     <p id="errcategory" class="mb-0 text-danger em"></p>
@@ -152,7 +152,7 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="">{{ __('Submission Date') }}</label>
+                                            <label for="">{{ __('Data de Submissão') }}</label>
                                             <input type="date" class="form-control" name="submission_date"
                                                 value="{{ $portfolio->submission_date }}">
                                             <p id="errsubmission_date" class="mb-0 text-danger em"></p>
@@ -162,7 +162,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="">{{ __('Website Link') }}</label>
+                                            <label for="">{{ __('Link do Site') }}</label>
                                             <input type="text" class="form-control" name="website_link"
                                                 value="{{ $portfolio->website_link }}">
                                             <p id="errwebsite_link" class="mb-0 text-danger em"></p>

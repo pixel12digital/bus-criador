@@ -32,7 +32,7 @@
                     <div class="col-lg-4 offset-lg-1 mt-2 mt-lg-0">
                         <form action="{{url()->current()}}" class="d-inline-block float-right">
                             <input class="form-control" type="text" name="search"
-                                placeholder="Search by Transaction ID"
+                                placeholder="{{ __('Pesquisar por ID da Transação') }}"
                                 value="{{request()->input('search') ? request()->input('search') : '' }}">
                         </form>
                     </div>
@@ -112,7 +112,7 @@
                                                 <div class="modal-body">
                                                     <img
                                                         src="{{asset('assets/front/img/membership/receipt/' . $membership->receipt)}}"
-                                                        alt="Receipt" width="100%">
+                                                        alt="{{ __('Recibo') }}" width="100%">
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"

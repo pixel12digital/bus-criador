@@ -84,7 +84,7 @@
                 <div class="form-group">
                   <label for="">{{ __('Language*') }}</label>
                   <select name="user_language_id" class="form-control">
-                    <option value="" selected disabled>Select a Language</option>
+                    <option value="" selected disabled>{{ __('Selecionar um Idioma') }}</option>
                     @foreach ($langs as $lang)
                     <option value="{{$lang->id}}">{{$lang->name}}</option>
                     @endforeach
@@ -95,7 +95,7 @@
                 </div>
                 <div class="form-group">
                   <label for="">{{ __('Title*') }}</label>
-                  <input type="text" class="form-control" name="title" placeholder="Enter Title">
+                  <input type="text" class="form-control" name="title" placeholder="{{ __('Digite o Título') }}">
                   @if ($errors->has('title'))
                     <p class="mt-2 mb-0 text-danger">{{ $errors->first('title') }}</p>
                   @endif

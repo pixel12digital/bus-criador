@@ -52,7 +52,7 @@
                                 <div class="form-group">
                                     <label for="">{{ __('Payment Method') }}</label>
                                     <select name="payment_method" class="form-control ml-1">
-                                        <option value="" selected>All</option>
+                                        <option value="" selected>{{ __('Todos') }}</option>
                                         @if (!empty($onPms))
                                             @foreach ($onPms as $onPm)
                                                 <option value="{{ $onPm->keyword }}"
@@ -73,7 +73,7 @@
                                 <div class="form-group">
                                     <label for="">{{ __('Payment Status') }}</label>
                                     <select name="payment_status" class="form-control ml-1">
-                                        <option value="" selected>All</option>
+                                        <option value="" selected>{{ __('Todos') }}</option>
                                         <option value="Pending"
                                             {{ request()->input('payment_status') == 'Pending' ? 'selected' : '' }}>
                                             {{ __('Pending') }}</option>
@@ -187,7 +187,7 @@
                                                             </div>
                                                             <div class="modal-body">
                                                                 <img src="{{ asset('assets/front/receipt/' . $enrolment->receipt) }}"
-                                                                    alt="Receipt" width="100%">
+                                                                    alt="{{ __('Recibo') }}" width="100%">
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary"

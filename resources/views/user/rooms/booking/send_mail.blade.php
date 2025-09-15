@@ -28,7 +28,7 @@
 
                     <div class="form-group">
                         <label for="">{{ __('Message') . '*' }}</label>
-                        <textarea class="form-control summernote" name="message" placeholder="Enter Message" data-height="150"></textarea>
+                        <textarea class="form-control summernote" name="message" placeholder="{{ __('Digite a Mensagem') }}" data-height="150"></textarea>
                         <p id="errmessage" class="mb-0 text-danger em"></p>
                     </div>
                 </form>

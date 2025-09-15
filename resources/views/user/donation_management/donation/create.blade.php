@@ -90,7 +90,7 @@
                                                 {{ $symbol }})
                                                 *</label>
                                             <input type="number" class="form-control ltr" name="goal_amount" value=""
-                                                placeholder="Enter Amount">
+                                                placeholder="{{ __('Digite o Valor') }}">
                                             <p id="errgoal_amount" class="mb-0 text-danger em"></p>
                                         </div>
                                     </div>
@@ -100,7 +100,7 @@
                                                 ( {{ $symbol }})
                                                 *</label>
                                             <input type="number" class="form-control ltr" name="min_amount" value=""
-                                                placeholder="Enter Amount">
+                                                placeholder="{{ __('Digite o Valor') }}">
                                             <small class="text-warning">{{ __('Minimum amount for this cause') }}</small>
                                             <p id="errmin_amount" class="mb-0 text-danger em"></p>
                                         </div>
@@ -146,7 +146,7 @@
                                                                 <label>{{ __('Title') . '*' }}</label>
                                                                 <input type="text" class="form-control"
                                                                     name="{{ $language->code }}_title"
-                                                                    placeholder="Enter Title">
+                                                                    placeholder="{{ __('Digite o Título') }}">
                                                             </div>
                                                         </div>
 

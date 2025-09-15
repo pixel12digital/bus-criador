@@ -87,7 +87,7 @@
                     @elseif(request()->path() == 'user/subdomain') active @endif">
                         <a data-toggle="collapse" href="#domains">
                             <i class="fas fa-link"></i>
-                            <p>{{ __('Domains & URLs') }}</p>
+                            <p>{{ __('Domínios e URLs') }}</p>
                             <span class="caret"></span>
                         </a>
                         <div class="collapse
@@ -109,7 +109,7 @@
                                         class="
                                     @if (request()->path() == 'user/subdomain') active @endif">
                                         <a href="{{ route('user-subdomain') }}">
-                                            <span class="sub-item">{{ __('Subdomain & Path URL') }}</span>
+                                            <span class="sub-item">{{ __('Subdomínio e URL de Caminho') }}</span>
                                         </a>
                                     </li>
                                 @else
@@ -163,7 +163,7 @@
                             @elseif(request()->path() == 'user/item/orders/report') active @endif">
                             <a data-toggle="collapse" href="#category">
                                 <i class="fas fa-store-alt"></i>
-                                <p>Shop Management</p>
+                                <p>{{ __('Shop Management') }}</p>
                                 <span class="caret"></span>
                             </a>
                             <div class="collapse
@@ -192,7 +192,7 @@
                                 <ul class="nav nav-collapse">
                                     <li class="@if (request()->routeIs('user.item.settings')) active @endif">
                                         <a href="{{ route('user.item.settings') . '?language=' . $default->code }}">
-                                            <span class="sub-item">Settings</span>
+                                            <span class="sub-item">{{ __('Settings') }}</span>
                                         </a>
                                     </li>
                                     <li
@@ -200,7 +200,7 @@
                                 @if (request()->path() == 'user/shipping') active
                                 @elseif(request()->routeIs('user.shipping.edit')) active @endif">
                                         <a href="{{ route('user.shipping.index') . '?language=' . $default->code }}">
-                                            <span class="sub-item">Shipping Charges</span>
+                                            <span class="sub-item">{{ __('Shipping Charges') }}</span>
                                         </a>
                                     </li>
                                     <li
@@ -262,7 +262,7 @@
                                                 @elseif(request()->routeIs('user.item.variations')) active @endif">
                                                     <a
                                                         href="{{ route('user.item.index') . '?language=' . $default->code }}">
-                                                        <span class="sub-item">Items</span>
+                                                        <span class="sub-item">{{ __('Items') }}</span>
                                                     </a>
                                                 </li>
                                             </ul>
@@ -273,7 +273,7 @@
                                     <li class="submenu">
                                         <a data-toggle="collapse" href="#manageOrders"
                                             aria-expanded="{{ request()->routeIs('user.all.item.orders') || request()->routeIs('user.pending.item.orders') || request()->routeIs('user.processing.item.orders') || request()->routeIs('user.completed.item.orders') || request()->routeIs('user.rejected.item.orders') || request()->routeIs('user.item.details') || request()->path() == 'admin/product/orders/report' ? 'true' : 'false' }}">
-                                            <span class="sub-item">Manage Orders</span>
+                                            <span class="sub-item">{{ __('Manage Orders') }}</span>
                                             <span class="caret"></span>
                                         </a>
                                         <div class="collapse
@@ -288,32 +288,32 @@
                                             <ul class="nav nav-collapse subnav">
                                                 <li class="@if (request()->path() == 'user/item/all/orders') active @endif">
                                                     <a href="{{ route('user.all.item.orders') }}">
-                                                        <span class="sub-item">All Orders</span>
+                                                        <span class="sub-item">{{ __('All Orders') }}</span>
                                                     </a>
                                                 </li>
                                                 <li class="@if (request()->path() == 'user/item/pending/orders') active @endif">
                                                     <a href="{{ route('user.pending.item.orders') }}">
-                                                        <span class="sub-item">Pending Orders</span>
+                                                        <span class="sub-item">{{ __('Pending Orders') }}</span>
                                                     </a>
                                                 </li>
                                                 <li class="@if (request()->path() == 'user/item/processing/orders') active @endif">
                                                     <a href="{{ route('user.processing.item.orders') }}">
-                                                        <span class="sub-item">Processing Orders</span>
+                                                        <span class="sub-item">{{ __('Processing Orders') }}</span>
                                                     </a>
                                                 </li>
                                                 <li class="@if (request()->path() == 'user/item/completed/orders') active @endif">
                                                     <a href="{{ route('user.completed.item.orders') }}">
-                                                        <span class="sub-item">Completed Orders</span>
+                                                        <span class="sub-item">{{ __('Completed Orders') }}</span>
                                                     </a>
                                                 </li>
                                                 <li class="@if (request()->path() == 'user/item/rejected/orders') active @endif">
                                                     <a href="{{ route('user.rejected.item.orders') }}">
-                                                        <span class="sub-item">Rejected Orders</span>
+                                                        <span class="sub-item">{{ __('Rejected Orders') }}</span>
                                                     </a>
                                                 </li>
                                                 <li class="@if (request()->path() == 'user/item/orders/report') active @endif">
                                                     <a href="{{ route('user.orders.report') }}">
-                                                        <span class="sub-item">Report</span>
+                                                        <span class="sub-item">{{ __('Report') }}</span>
                                                     </a>
                                                 </li>
                                             </ul>
@@ -342,7 +342,7 @@
                             @elseif (request()->routeIs('user.room_bookings.booking_form')) active @endif">
                             <a data-toggle="collapse" href="#rooms">
                                 <i class="fas fa-hotel"></i>
-                                <p class="pr-2">{{ __('Hotel Management') }}</p>
+                                <p class="pr-2">{{ __('Gerenciamento de Hotel') }}</p>
                                 <span class="caret"></span>
                             </a>
                             <div id="rooms"
@@ -397,7 +397,7 @@
                                             @elseif (request()->routeIs('user.rooms_management.edit_room')) active @endif">
                                         <a
                                             href="{{ route('user.rooms_management.rooms') . '?language=' . $default->code }}">
-                                            <span class="sub-item">Rooms</span>
+                                            <span class="sub-item">{{ __('Rooms') }}</span>
                                         </a>
                                     </li>
                                     <li
@@ -615,7 +615,7 @@
                                 @elseif(request()->routeIs('user.donation.report')) active @endif">
                             <a data-toggle="collapse" href="#donation_manage">
                                 <i class="fas fa-hand-holding-usd"></i>
-                                <p>{{ __('Donations & Causes') }}</p>
+                                <p>{{ __('Doações e Causas') }}</p>
                                 <span class="caret"></span>
                             </a>
                             <div class="collapse
@@ -1202,7 +1202,7 @@
                     @elseif(request()->is('user/job-experience/*/edit')) active @endif">
                         <a data-toggle="collapse" href="#experience">
                             <i class="fas fa-user-cog"></i>
-                            <p>{{ __('Exprience') }}</p>
+                            <p>{{ __('Experiência') }}</p>
                             <span class="caret"></span>
                         </a>
                         <div class="collapse
@@ -1218,7 +1218,7 @@
                                 @elseif(request()->is('user/job-experience/*/edit')) active @endif">
                                     <a
                                         href="{{ route('user.job.experiences.index') . '?language=' . $default->code }}">
-                                        <span class="sub-item">Work Exprience</span>
+                                        <span class="sub-item">{{ __('Work Experience') }}</span>
                                     </a>
                                 </li>
                                 <li
@@ -1226,7 +1226,7 @@
                                 @if (request()->path() == 'user/experiences') active
                                 @elseif(request()->is('user/experience/*/edit')) active @endif">
                                     <a href="{{ route('user.experience.index') . '?language=' . $default->code }}">
-                                        <span class="sub-item">Training</span>
+                                        <span class="sub-item">{{ __('Treinamento') }}</span>
                                     </a>
                                 </li>
                             </ul>

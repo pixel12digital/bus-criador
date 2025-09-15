@@ -25,7 +25,7 @@ $langs = \App\Models\User\Language::where('user_id', Auth::guard('web')->user()-
 
 @section('content')
     <div class="page-header">
-        <h4 class="page-title">Shipping Charge</h4>
+        <h4 class="page-title">{{ __('Taxa de Envio') }}</h4>
         <ul class="breadcrumbs">
             <li class="nav-home">
                 <a href="{{ route('user-dashboard') }}">
@@ -36,13 +36,13 @@ $langs = \App\Models\User\Language::where('user_id', Auth::guard('web')->user()-
                 <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-                <a href="#">Shop Management</a>
+                <a href="#">{{ __('Gerenciamento de Loja') }}</a>
             </li>
             <li class="separator">
                 <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-                <a href="#">Shipping Charges</a>
+                <a href="#">{{ __('Taxas de Envio') }}</a>
             </li>
         </ul>
     </div>
@@ -53,13 +53,13 @@ $langs = \App\Models\User\Language::where('user_id', Auth::guard('web')->user()-
                 <div class="card-header">
                     <div class="row">
                         <div class="col-lg-4">
-                            <div class="card-title d-inline-block">Shipping Charge</div>
+                            <div class="card-title d-inline-block">{{ __('Taxa de Envio') }}</div>
                         </div>
                         <div class="col-lg-3">
                             @if (!empty($langs))
                                 <select name="language" class="form-control"
                                     onchange="window.location='{{ url()->current() . '?language=' }}'+this.value">
-                                    <option value="" selected disabled>Select a Language</option>
+                                    <option value="" selected disabled>{{ __('Selecionar um Idioma') }}</option>
                                     @foreach ($langs as $lang)
                                         <option value="{{ $lang->code }}"
                                             {{ $lang->code == request()->input('language') ? 'selected' : '' }}>
@@ -70,7 +70,7 @@ $langs = \App\Models\User\Language::where('user_id', Auth::guard('web')->user()-
                         </div>
                         <div class="col-lg-4 offset-lg-1 mt-2 mt-lg-0">
                             <a href="#" class="btn btn-primary float-right btn-sm" data-toggle="modal"
-                                data-target="#createModal"><i class="fas fa-plus"></i> Add New</a>
+                                data-target="#createModal"><i class="fas fa-plus"></i> {{ __('Adicionar Novo') }}</a>
                         </div>
                     </div>
                 </div>
@@ -78,16 +78,16 @@ $langs = \App\Models\User\Language::where('user_id', Auth::guard('web')->user()-
                     <div class="row">
                         <div class="col-lg-12">
                             @if (count($shippings) == 0)
-                                <h3 class="text-center">No Shipping Charge</h3>
+                                <h3 class="text-center">{{ __('Nenhuma Taxa de Envio') }}</h3>
                             @else
                                 <div class="table-responsive">
                                     <table class="table table-striped mt-3">
                                         <thead>
                                             <tr>
-                                                <th scope="col">Title</th>
-                                                <th scope="col">Text</th>
-                                                <th scope="col">Charge</th>
-                                                <th scope="col">Actions</th>
+                                                <th scope="col">{{ __('Título') }}</th>
+                                                <th scope="col">{{ __('Texto') }}</th>
+                                                <th scope="col">{{ __('Taxa') }}</th>
+                                                <th scope="col">{{ __('Ações') }}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -110,7 +110,7 @@ $langs = \App\Models\User\Language::where('user_id', Auth::guard('web')->user()-
                                                             <span class="btn-label">
                                                                 <i class="fas fa-edit"></i>
                                                             </span>
-                                                            Edit
+                                                            {{ __('Editar') }}
                                                         </a>
                                                         <form class="deleteform d-inline-block"
                                                             action="{{ route('user.shipping.delete') }}" method="post">
@@ -121,7 +121,7 @@ $langs = \App\Models\User\Language::where('user_id', Auth::guard('web')->user()-
                                                                 <span class="btn-label">
                                                                     <i class="fas fa-trash"></i>
                                                                 </span>
-                                                                Delete
+                                                                {{ __('Excluir') }}
                                                             </button>
                                                         </form>
                                                     </td>
@@ -152,7 +152,7 @@ $langs = \App\Models\User\Language::where('user_id', Auth::guard('web')->user()-
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Add Shipping Charge</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">{{ __('Adicionar Taxa de Envio') }}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -172,18 +172,18 @@ $langs = \App\Models\User\Language::where('user_id', Auth::guard('web')->user()-
                             <p id="erruser_language_id" class="mb-0 text-danger em"></p>
                         </div>
                         <div class="form-group">
-                            <label for="">Title **</label>
-                            <input type="text" class="form-control" name="title" value="" placeholder="Enter title">
+                            <label for="">{{ __('Título') }} **</label>
+                            <input type="text" class="form-control" name="title" value="" placeholder="{{ __('Digite o título') }}">
                             <p id="errtitle" class="mb-0 text-danger em"></p>
                         </div>
                         <div class="form-group">
-                            <label for="">Sort Text **</label>
-                            <input type="text" class="form-control" name="text" value="" placeholder="Enter text">
+                            <label for="">{{ __('Texto Curto') }} **</label>
+                            <input type="text" class="form-control" name="text" value="" placeholder="{{ __('Digite o texto') }}">
                             <p id="errtext" class="mb-0 text-danger em"></p>
                         </div>
                         <div class="form-group">
-                            <label for="">Charge ({{$userBs->base_currency_symbol}}) **</label>
-                            <input type="text" class="form-control ltr" name="charge" value="" placeholder="Enter charge">
+                            <label for="">{{ __('Taxa') }} ({{$userBs->base_currency_symbol}}) **</label>
+                            <input type="text" class="form-control ltr" name="charge" value="" placeholder="{{ __('Digite a taxa') }}">
                             <p id="errcharge" class="mb-0 text-danger em"></p>
                         </div>
 
@@ -191,8 +191,8 @@ $langs = \App\Models\User\Language::where('user_id', Auth::guard('web')->user()-
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button id="submitBtn" type="button" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('Fechar') }}</button>
+                    <button id="submitBtn" type="button" class="btn btn-primary">{{ __('Enviar') }}</button>
                 </div>
             </div>
         </div>

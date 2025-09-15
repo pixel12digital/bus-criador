@@ -190,7 +190,7 @@
                                                             </div>
                                                             <div class="modal-body">
                                                                 <img src="{{ asset(\App\Constants\Constant::WEBSITE_DONATION_ATTACHMENT . '/' . $donation->receipt) }}"
-                                                                    alt="Receipt" width="100%">
+                                                                    alt="{{ __('Recibo') }}" width="100%">
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary"

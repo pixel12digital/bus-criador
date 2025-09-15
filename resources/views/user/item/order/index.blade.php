@@ -84,10 +84,10 @@
                         <div class="col-lg-6">
                             <button class="btn btn-danger float-right btn-md ml-4 d-none bulk-delete"
                                 data-href="{{ route('user.item.order.bulk.delete') }}"><i class="flaticon-interface-5"></i>
-                                Delete</button>
+                                {{ __('Excluir') }}</button>
                             <form action="{{ url()->current() }}" class="d-inline-block float-right">
                                 <input class="form-control" type="text" name="search"
-                                    placeholder="Search by Order Number"
+                                    placeholder="{{ __('Pesquisar por Número do Pedido') }}"
                                     value="{{ request()->input('search') ? request()->input('search') : '' }}">
                             </form>
                         </div>
@@ -107,13 +107,13 @@
                                                     <input type="checkbox" class="bulk-check" data-val="all">
                                                 </th>
 
-                                                <th scope="col">Order Number</th>
+                                                <th scope="col">{{ __('Número do Pedido') }}</th>
                                                 <th scope="col">Gateway</th>
                                                 <th scope="col">Total</th>
-                                                <th scope="col">Order Status</th>
-                                                <th scope="col">Payment Status</th>
+                                                <th scope="col">{{ __('Status do Pedido') }}</th>
+                                                <th scope="col">{{ __('Status do Pagamento') }}</th>
                                                 <th scope="col">Receipt</th>
-                                                <th scope="col">Actions</th>
+                                                <th scope="col">{{ __('Ações') }}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -149,16 +149,16 @@
                                                                 onchange="document.getElementById('statusForm{{ $order->id }}').submit();">
                                                                 <option value="Pending"
                                                                     {{ $order->order_status == 'Pending' ? 'selected' : '' }}>
-                                                                    Pending</option>
+                                                                    {{ __('Pendente') }}</option>
                                                                 <option value="processing"
                                                                     {{ $order->order_status == 'processing' ? 'selected' : '' }}>
-                                                                    Processing</option>
+                                                                    {{ __('Processando') }}</option>
                                                                 <option value="completed"
                                                                     {{ $order->order_status == 'completed' ? 'selected' : '' }}>
-                                                                    Completed</option>
+                                                                    {{ __('Concluído') }}</option>
                                                                 <option value="rejected"
                                                                     {{ $order->order_status == 'rejected' ? 'selected' : '' }}>
-                                                                    Rejected</option>
+                                                                    {{ __('Rejeitado') }}</option>
                                                             </select>
                                                         </form>
                                                     </td>
@@ -181,13 +181,13 @@
                                                                     onchange="document.getElementById('paymentStatusForm{{ $order->id }}').submit();">
                                                                     <option value="Pending"
                                                                         {{ $order->payment_status == 'Pending' ? 'selected' : '' }}>
-                                                                        Pending</option>
+                                                                        {{ __('Pendente') }}</option>
                                                                     <option value="Completed"
                                                                         {{ $order->payment_status == 'Completed' ? 'selected' : '' }}>
-                                                                        Completed</option>
+                                                                        {{ __('Concluído') }}</option>
                                                                     <option value="rejected"
                                                                         {{ $order->payment_status == 'rejected' ? 'selected' : '' }}>
-                                                                        Rejected</option>
+                                                                        {{ __('Rejeitado') }}</option>
                                                                 </select>
                                                             </form>
                                                         @endif
@@ -209,7 +209,7 @@
                                                                 type="button" id="dropdownMenuButton"
                                                                 data-toggle="dropdown" aria-haspopup="true"
                                                                 aria-expanded="false">
-                                                                Actions
+                                                                {{ __('Ações') }}
                                                             </button>
                                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                                 <a class="dropdown-item"
@@ -225,7 +225,7 @@
                                                                     <input type="hidden" name="order_id"
                                                                         value="{{ $order->id }}">
                                                                     <button type="submit" class="deletebtn">
-                                                                        Delete
+                                                                        {{ __('Excluir') }}
                                                                     </button>
                                                                 </form>
                                                             </div>
@@ -250,7 +250,7 @@
                                                             </div>
                                                             <div class="modal-body">
                                                                 <img src="{{ asset('assets/front/receipt/' . $order->receipt) }}"
-                                                                    alt="Receipt" width="100%">
+                                                                    alt="{{ __('Recibo') }}" width="100%">
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary"

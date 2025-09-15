@@ -66,7 +66,7 @@
                                 <div class="col-md-4">
                                     <a href="{{ route('customer.orders', getParam()) }}" class="card card-box box-1 mb-3">
                                         <div class="card-info">
-                                            <h5>{{ $keywords['myOrders'] ?? __('My Orders') }}</h5>
+                                            <h5>{{ $keywords['MeusPedidos'] ?? __('Meus Pedidos') }}</h5>
                                             <p>{{ $totalorders }}</p>
                                         </div>
                                     </a>
@@ -75,7 +75,7 @@
                             <div class="col-md-4">
                                 <a href="{{ route('customer.wishlist', getParam()) }}" class="card card-box box-2 mb-3">
                                     <div class="card-info">
-                                        <h5>{{ $keywords['mywishlist'] ?? __('my wishlist') }}</h5>
+                                        <h5>{{ $keywords['MinhaListaDesejos'] ?? __('Minha Lista de Desejos') }}</h5>
                                         <p>{{ $totalwishlist }} </p>
                                     </div>
                                 </a>
@@ -86,7 +86,7 @@
                                 <a class="card card-box box-3 mb-3"
                                     href="{{ route('customer.purchase_history', getParam()) }}">
                                     <div class="card-info">
-                                        <h5>{{ $keywords['Enrolled_Courses'] ?? __('Enrolled Courses') }}</h5>
+                                        <h5>{{ $keywords['CursosInscritos'] ?? __('Cursos Inscritos') }}</h5>
                                         <p>{{ $couseCount }}
                                         </p>
                                     </div>
@@ -99,7 +99,7 @@
                                     <a class="card card-box box-4 mb-3"
                                         href="{{ route('customer.purchase_history', getParam()) }}">
                                         <div class="card-info">
-                                            <h5>{{ $keywords['Room_Bookings'] ?? __('Room Bookings') }}</h5>
+                                            <h5>{{ $keywords['ReservasQuarto'] ?? __('Reservas de Quarto') }}</h5>
                                             <p>{{ $roomBookingCount }}
                                             </p>
                                         </div>

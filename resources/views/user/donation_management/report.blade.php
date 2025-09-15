@@ -36,7 +36,7 @@
                                 <div class="form-group">
                                     <label for="">{{  __('From') }}</label>
                                     <input class="form-control datepicker" type="text" name="from_date"
-                                        placeholder="From"
+                                        placeholder="{{ __('De') }}"
                                         value="{{ request()->input('from_date') ? request()->input('from_date') : '' }}"
                                         required autocomplete="off" />
                                 </div>
@@ -44,7 +44,7 @@
                                 <div class="form-group">
                                     <label for="">{{   __('To') }}</label>
                                     <input class="form-control datepicker ml-1" type="text" name="to_date"
-                                        placeholder="To"
+                                        placeholder="{{ __('Até') }}"
                                         value="{{ request()->input('to_date') ? request()->input('to_date') : '' }}"
                                         required autocomplete="off" />
                                 </div>
