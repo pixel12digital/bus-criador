@@ -41,7 +41,7 @@ class CouponController extends Controller
 
         Coupon::create($input);
 
-        Session::flash('success', __('Coupon added successfully!'));
+        Session::flash('success', __('Cupom adicionado com sucesso!'));
         return "success";
     }
 
@@ -77,7 +77,7 @@ class CouponController extends Controller
         $input['packages'] = $packages;
         $data->fill($input)->save();
 
-        Session::flash('success', __('Coupon updated successfully!'));
+        Session::flash('success', __('Cupom atualizado com sucesso!'));
         return "success";
     }
 
@@ -86,7 +86,7 @@ class CouponController extends Controller
         $coupon = Coupon::find($request->coupon_id);
         $coupon->delete();
 
-        $request->session()->flash('success', __('Coupon deleted successfully!'));
+        $request->session()->flash('success', __('Cupom deletado com sucesso!'));
         return back();
     }
 }

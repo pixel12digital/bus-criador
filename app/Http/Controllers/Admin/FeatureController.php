@@ -73,7 +73,7 @@ class FeatureController extends Controller
         $feature->serial_number = $request->serial_number;
         $feature->save();
 
-        Session::flash('success', __('Feature added successfully!'));
+        Session::flash('success', __('Feature adicionada com sucesso!'));
         return "success";
     }
 
@@ -113,7 +113,7 @@ class FeatureController extends Controller
         $feature->serial_number = $request->serial_number;
         $feature->save();
 
-        Session::flash('success', __('Feature updated successfully!'));
+        Session::flash('success', __('Feature atualizada com sucesso!'));
         return back();
     }
 
@@ -124,7 +124,7 @@ class FeatureController extends Controller
         @unlink(public_path('assets/front/img/features/' . $feature->image));
         $feature->delete();
 
-        Session::flash('success', __('Feature deleted successfully!'));
+        Session::flash('success', __('Feature deletada com sucesso!'));
         return back();
     }
 }

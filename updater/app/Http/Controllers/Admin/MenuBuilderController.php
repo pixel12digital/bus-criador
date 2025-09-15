@@ -42,6 +42,6 @@ class MenuBuilderController extends Controller
         $menu->menus = $request->str;
         $menu->save();
 
-        return response()->json(['status' => 'success', 'message' => 'Menu updated successfully!']);
+        return response()->json(['status' => 'success', 'message' => 'Menu atualizado com sucesso!']);
     }
 }

@@ -198,7 +198,7 @@ class QrController extends Controller
 
         $this->clearFilters($bs);
 
-        Session::flash('success', 'QR Code saved successfully!');
+        Session::flash('success', 'QR Code salvo com sucesso!');
         return back();
     }
 
@@ -241,7 +241,7 @@ class QrController extends Controller
         @unlink(public_path('assets/user/img/qr/' . $qrcode->image));
         $qrcode->delete();
 
-        Session::flash('success', 'QR Code deleted successfully!');
+        Session::flash('success', 'QR Code deletado com sucesso!');
         return back();
     }
     public function bulkDelete(Request $request)

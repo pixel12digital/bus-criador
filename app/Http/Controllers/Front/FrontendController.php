@@ -1018,7 +1018,7 @@ class FrontendController extends Controller
 
         $mailer = new MegaMailer();
         $mailer->mailContactMessage($data);
-        Session::flash('success', 'Mail sent successfully');
+        Session::flash('success', 'Email enviado com sucesso');
         return back();
     }
 
@@ -1053,7 +1053,7 @@ class FrontendController extends Controller
         ";
         $mailer = new MegaMailer();
         $mailer->mailToAdmin($data);
-        Session::flash('success', 'Message sent successfully');
+        Session::flash('success', 'Mensagem enviada com sucesso');
         return back();
     }
 
