@@ -15,7 +15,7 @@
 
 @section('content')
     <div class="page-header">
-        <h4 class="page-title">{{ __('Home Sections') }}</h4>
+        <h4 class="page-title">Seções da Página Inicial</h4>
         <ul class="breadcrumbs">
             <li class="nav-home">
                 <a href="{{ route('user-dashboard') }}">
@@ -26,7 +26,7 @@
                 <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-                <a href="#">{{ __('Home Sections') }}</a>
+                <a href="#">Seções da Página Inicial</a>
             </li>
         </ul>
     </div>
@@ -36,14 +36,14 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-lg-6">
-                            <div class="card-title d-inline-block">{{ __('Home Sections') }}</div>
+                            <div class="card-title d-inline-block">Seções da Página Inicial</div>
                         </div>
                         <div class="col-lg-3 offset-lg-3">
                             @if (!is_null($userDefaultLang))
                                 @if (!empty($userLanguages))
                                     <select name="userLanguage" class="form-control"
                                         onchange="window.location='{{ url()->current() . '?language=' }}'+this.value">
-                                        <option value="" selected disabled>{{ __('Select a Language') }}</option>
+                                        <option value="" selected disabled>Selecionar um Idioma</option>
                                         @foreach ($userLanguages as $lang)
                                             <option value="{{ $lang->code }}"
                                                 {{ $lang->code == request()->input('language') ? 'selected' : '' }}>
@@ -71,33 +71,33 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <br>
-                                                <h3 class="text-warning">{{ __('Skills Section') }}</h3>
+                                                <h3 class="text-warning">Seção de Habilidades</h3>
                                                 <hr class="border-top">
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-6 pr-0">
                                                     <div class="form-group">
-                                                        <label for="">{{ __('Skills Section Title') }}</label>
+                                                        <label for="">Título da Seção de Habilidades</label>
                                                         <input type="hidden" name="types[]" value="skills_title">
                                                         <input type="text" class="form-control" name="skills_title"
-                                                            placeholder="{{ __('Enter skills title') }}"
+                                                            placeholder="Digite o título das habilidades"
                                                             value="{{ $home_setting->skills_title }}">
                                                         <p id="errskills_title" class="mb-0 text-danger em"></p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 pl-0">
                                                     <div class="form-group">
-                                                        <label for="">{{ __('Skills Section Subtitle') }}</label>
+                                                        <label for="">Subtítulo da Seção de Habilidades</label>
                                                         <input type="hidden" name="types[]" value="skills_subtitle">
                                                         <input type="text" class="form-control" name="skills_subtitle"
-                                                            placeholder="{{ __('Enter skills subtitle') }}"
+                                                            placeholder="Digite o subtítulo das habilidades"
                                                             value="{{ $home_setting->skills_subtitle }}">
                                                         <p id="errskills_subtitle" class="mb-0 text-danger em"></p>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="">{{ __('Skills Section Content') }}</label>
+                                                <label for="">Conteúdo da Seção de Habilidades</label>
                                                 <input type="hidden" name="types[]" value="skills_content">
                                                 <textarea class="form-control" name="skills_content" rows="5" placeholder="">{{ $home_setting->skills_content }}</textarea>
                                                 <p id="errskills_content" class="mb-0 text-danger em"></p>
@@ -106,7 +106,7 @@
                                                 <div class="form-group">
                                                     <div class="col-12 mb-2">
                                                         <label
-                                                            for="logo"><strong>{{ __('Skill Image') }}</strong></label>
+                                                            for="logo"><strong>Imagem de Habilidade</strong></label>
                                                     </div>
 
                                                     <div class="col-md-12 showSkillImage mb-3">
@@ -254,27 +254,27 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <br>
-                                                <h3 class="text-warning">{{ __('Service Section') }}</h3>
+                                                <h3 class="text-warning">Seção de Serviços</h3>
                                                 <hr class="border-top">
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-6 pr-0">
                                                     <div class="form-group">
-                                                        <label for="">{{ __('Service Section Title') }}</label>
+                                                        <label for="">Título da Seção de Serviços</label>
                                                         <input type="hidden" name="types[]" value="service_title">
                                                         <input type="text" class="form-control" name="service_title"
-                                                            placeholder="{{ __('Enter service title') }}"
+                                                            placeholder="Digite o título do serviço"
                                                             value="{{ $home_setting->service_title }}">
                                                         <p id="errservice_title" class="mb-0 text-danger em"></p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 pl-0">
                                                     <div class="form-group">
-                                                        <label for="">{{ __('Service Section Subtitle') }}</label>
+                                                        <label for="">Subtítulo da Seção de Serviços</label>
                                                         <input type="hidden" name="types[]" value="service_subtitle">
                                                         <input type="text" class="form-control"
                                                             name="service_subtitle"
-                                                            placeholder="{{ __('Enter service subtitle') }}"
+                                                            placeholder="Digite o subtítulo do serviço"
                                                             value="{{ $home_setting->service_subtitle }}">
                                                         <p id="errservice_subtitle" class="mb-0 text-danger em"></p>
                                                     </div>
@@ -355,16 +355,16 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <br>
-                                                <h3 class="text-warning">{{ __('Portfolio Section') }}</h3>
+                                                <h3 class="text-warning">Seção de Portfólio</h3>
                                                 <hr class="border-top">
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-6 pr-0">
                                                     <div class="form-group">
-                                                        <label for="">{{ __('Portfolio Section Title') }}</label>
+                                                        <label for="">Título da Seção de Portfólio</label>
                                                         <input type="hidden" name="types[]" value="portfolio_title">
                                                         <input type="text" class="form-control" name="portfolio_title"
-                                                            placeholder="{{ __('Enter portfolio title') }}"
+                                                            placeholder="Digite o título do portfólio"
                                                             value="{{ $home_setting->portfolio_title }}">
                                                         <p id="errportfolio_title" class="mb-0 text-danger em"></p>
                                                     </div>
@@ -372,11 +372,11 @@
                                                 <div class="col-lg-6 pl-0">
                                                     <div class="form-group">
                                                         <label
-                                                            for="">{{ __('Portfolio Section Subtitle') }}</label>
+                                                            for="">Subtítulo da Seção de Portfólio</label>
                                                         <input type="hidden" name="types[]" value="portfolio_subtitle">
                                                         <input type="text" class="form-control"
                                                             name="portfolio_subtitle"
-                                                            placeholder="{{ __('Enter Portfolio Subtitle') }}"
+                                                            placeholder="Digite o subtítulo do portfólio"
                                                             value="{{ $home_setting->portfolio_subtitle }}">
                                                         <p id="errportfolio_subtitle" class="mb-0 text-danger em"></p>
                                                     </div>
@@ -412,14 +412,14 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <br>
-                                                <h3 class="text-warning">{{ __('Testimonial Section') }}</h3>
+                                                <h3 class="text-warning">Seção de Depoimentos</h3>
                                                 <hr class="border-top">
                                             </div>
                                             @if ($userBs->theme == 'home_six' || $userBs->theme == 'home_one' || $userBs->theme == 'home_ten')
                                                 <div class="form-group">
                                                     <div class="col-12 mb-2">
                                                         <label
-                                                            for="logo"><strong>{{ __('Testimonial Image') }}</strong></label>
+                                                            for="logo"><strong>Imagem de Depoimento</strong></label>
                                                     </div>
                                                     <div class="col-md-12 showTestimonialImage mb-3">
                                                         <img src="{{ $home_setting->testimonial_image ? asset('assets/front/img/user/home_settings/' . $home_setting->testimonial_image) : asset('assets/admin/img/noimage.jpg') }}"
@@ -435,7 +435,7 @@
                                                     <div class="col-lg-6 pr-0">
                                                         <div class="form-group">
                                                             <label
-                                                                for="">{{ __('Testimonial Section Title') }}</label>
+                                                                for="">Título da Seção de Depoimentos</label>
                                                             <input type="hidden" name="types[]"
                                                                 value="testimonial_title">
                                                             <input type="text" class="form-control"
@@ -447,7 +447,7 @@
                                                     <div class="col-lg-6 pl-0">
                                                         <div class="form-group">
                                                             <label
-                                                                for="">{{ __('Testimonial Section Subtitle') }}</label>
+                                                                for="">Subtítulo da Seção de Depoimentos</label>
                                                             <input type="hidden" name="types[]"
                                                                 value="testimonial_subtitle">
                                                             <input type="text" class="form-control"
@@ -527,26 +527,26 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <br>
-                                                <h3 class="text-warning">{{ __('Blog Section') }}</h3>
+                                                <h3 class="text-warning">Seção de Blog</h3>
                                                 <hr class="border-top">
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-6 pr-0">
                                                     <div class="form-group">
-                                                        <label for="">{{ __('Blog Section Title') }}</label>
+                                                        <label for="">Título da Seção de Blog</label>
                                                         <input type="hidden" name="types[]" value="blog_title">
                                                         <input type="text" class="form-control" name="blog_title"
-                                                            placeholder="{{ __('Enter blog keyword') }}"
+                                                            placeholder="Digite a palavra-chave do blog"
                                                             value="{{ $home_setting->blog_title }}">
                                                         <p id="errblog_title" class="mb-0 text-danger em"></p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 pl-0">
                                                     <div class="form-group">
-                                                        <label for="">{{ __('Blog Section Subtitle') }}</label>
+                                                        <label for="">Subtítulo da Seção de Blog</label>
                                                         <input type="hidden" name="types[]" value="blog_subtitle">
                                                         <input type="text" class="form-control" name="blog_subtitle"
-                                                            placeholder="{{ __('Enter blog title') }}"
+                                                            placeholder="Digite o título do blog"
                                                             value="{{ $home_setting->blog_subtitle }}">
                                                         <p id="errblog_subtitle" class="mb-0 text-danger em"></p>
                                                     </div>
@@ -556,12 +556,12 @@
                                                 <div class="row">
                                                     <div class="col-lg-6 pr-0">
                                                         <div class="form-group">
-                                                            <label for="">{{ __('View All Blog Text') }}</label>
+                                                            <label for="">Texto Ver Todos os Blogs</label>
                                                             <input type="hidden" name="types[]"
                                                                 value="view_all_blog_text">
                                                             <input type="text" class="form-control"
                                                                 name="view_all_blog_text"
-                                                                placeholder="{{ __('Enter view all blog text') }}"
+                                                                placeholder="Digite o texto ver todos os blogs"
                                                                 value="{{ $home_setting->view_all_blog_text }}">
                                                             <p id="errview_all_blog_text" class="mb-0 text-danger em"></p>
                                                         </div>
@@ -581,14 +581,14 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <br>
-                                                <h3 class="text-warning">{{ __('FAQ Section') }}</h3>
+                                                <h3 class="text-warning">Seção de FAQ</h3>
                                                 <hr class="border-top">
                                             </div>
                                             @if ($userBs->theme == 'home_three')
                                                 <div class="form-group">
                                                     <div class="col-12 mb-2">
                                                         <label
-                                                            for="logo"><strong>{{ __('FAQ Section Image') }}</strong></label>
+                                                            for="logo"><strong>Imagem da Seção FAQ</strong></label>
                                                     </div>
                                                     <div class="col-md-12 showFAQSectionImage mb-3">
                                                         <img src="{{ $home_setting->faq_section_image ? asset('assets/front/img/user/home_settings/' . $home_setting->faq_section_image) : asset('assets/admin/img/noimage.jpg') }}"
@@ -603,23 +603,23 @@
                                             <div class="row">
                                                 <div class="col-lg-6 pr-0">
                                                     <div class="form-group">
-                                                        <label for="">{{ __('FAQ Section Title') }}*</label>
+                                                        <label for="">Título da Seção FAQ*</label>
                                                         <input type="hidden" name="types[]" value="faq_section_title">
                                                         <input type="text" class="form-control"
                                                             name="faq_section_title"
-                                                            placeholder="{{ __('Enter faq section title') }}"
+                                                            placeholder="Digite o título da seção FAQ"
                                                             value="{{ $home_setting->faq_section_title }}">
                                                         <p id="errfaq_section_title" class="mb-0 text-danger em"></p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 pl-0">
                                                     <div class="form-group">
-                                                        <label for="">{{ __('FAQ Section Subtitle') }}*</label>
+                                                        <label for="">Subtítulo da Seção FAQ*</label>
                                                         <input type="hidden" name="types[]"
                                                             value="faq_section_subtitle">
                                                         <input type="text" class="form-control"
                                                             name="faq_section_subtitle"
-                                                            placeholder="{{ __('Enter faq section subtitle') }}"
+                                                            placeholder="Digite o subtítulo da seção FAQ"
                                                             value="{{ $home_setting->faq_section_subtitle }}">
                                                         <p id="errfaq_section_subtitle" class="mb-0 text-danger em"></p>
                                                     </div>
@@ -969,7 +969,7 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <br>
-                                                <h3 class="text-warning">{{ __('Newsletter Section') }}</h3>
+                                                <h3 class="text-warning">Seção de Newsletter</h3>
                                                 <hr class="border-top">
                                             </div>
                                             <div class="row">
@@ -979,7 +979,7 @@
                                                             <div class="row">
                                                                 <div class="col-12 mb-2">
                                                                     <label
-                                                                        for="logo"><strong>{{ __('Newsletter Image') }}</strong></label>
+                                                                        for="logo"><strong>Imagem da Newsletter</strong></label>
                                                                 </div>
                                                                 <div class="col-md-12 showNewsletterImage mb-3">
                                                                     <img src="{{ $home_setting->newsletter_image ? asset('assets/front/img/user/home_settings/' . $home_setting->newsletter_image) : asset('assets/admin/img/noimage.jpg') }}"
@@ -999,7 +999,7 @@
                                                             <div class="row">
                                                                 <div class="col-12 mb-2">
                                                                     <label
-                                                                        for="logo"><strong>{{ __('Newsletter Background Image') }}</strong></label>
+                                                                        for="logo"><strong>Imagem de Fundo da Newsletter</strong></label>
                                                                 </div>
                                                                 <div class="col-md-12 showNewsletterImage2 mb-3">
                                                                     <img src="{{ $home_setting->newsletter_snd_image ? asset('assets/front/img/user/home_settings/' . $home_setting->newsletter_snd_image) : asset('assets/admin/img/noimage.jpg') }}"
@@ -1019,11 +1019,11 @@
                                                 <div class="col-lg-6 pr-0">
                                                     <div class="form-group">
                                                         <label
-                                                            for="">{{ __('Newsletter Section Title') }}</label>
+                                                            for="">Título da Seção de Newsletter</label>
                                                         <input type="hidden" name="types[]" value="newsletter_title">
                                                         <input type="text" class="form-control"
                                                             name="newsletter_title"
-                                                            placeholder="{{ __('Newsletter section title') }}"
+                                                            placeholder="Título da seção newsletter"
                                                             value="{{ $home_setting->newsletter_title }}">
                                                         <p id="errnewsletter_title" class="mb-0 text-danger em"></p>
                                                     </div>
@@ -1031,15 +1031,15 @@
                                                 <div class="col-lg-6 pr-0">
                                                     <div class="form-group">
                                                         <label
-                                                            for="">{{ __('Newsletter Section Subtitle') }}</label>
+                                                            for="">Subtítulo da Seção de Newsletter</label>
                                                         <input type="hidden" name="types[]" value="newsletter_subtitle">
                                                         @if ($userBs->theme == 'home_ten')
-                                                            <textarea class="form-control" placeholder="{{ __('Newsletter section subtitle') }}" name="newsletter_subtitle"
+                                                            <textarea class="form-control" placeholder="Subtítulo da seção newsletter" name="newsletter_subtitle"
                                                                 id=""rows="4">{{ $home_setting->newsletter_subtitle }}</textarea>
                                                         @else
                                                             <input type="text" class="form-control"
                                                                 name="newsletter_subtitle"
-                                                                placeholder="{{ __('Newsletter section subtitle') }}"
+                                                                placeholder="Subtítulo da seção newsletter"
                                                                 value="{{ $home_setting->newsletter_subtitle }}">
                                                         @endif
                                                         <p id="errnewsletter_subtitle" class="mb-0 text-danger em"></p>
@@ -1059,7 +1059,7 @@
                         <div class="form-group from-show-notify row">
                             <div class="col-12 text-center">
                                 <button type="submit" id="submitBtn"
-                                    class="btn btn-success">{{ __('Update') }}</button>
+                                    class="btn btn-success">Atualizar</button>
                             </div>
                         </div>
                     </div>
