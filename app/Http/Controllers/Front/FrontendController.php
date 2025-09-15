@@ -56,6 +56,7 @@ use App\Models\User\DonationManagement\DonationDetail;
 use App\Models\User\HotelBooking\Room;
 use App\Models\User\HotelBooking\RoomContent;
 use App\Models\User\Language as UserLanguage;
+use App\Models\Segment;
 use App\Traits\MiscellaneousTrait;
 use Illuminate\Validation\Rule;
 
@@ -76,7 +77,7 @@ class FrontendController extends Controller
         Config::set('mail.encryption', $be->encryption);
         Config::set('mail.encryption', $be->encryption);
     }
-    public function index()
+    public function index($segment = null)
     {
         if (session()->has('lang')) {
             $currentLang = Language::where('code', session()->get('lang'))->first();
@@ -84,8 +85,38 @@ class FrontendController extends Controller
             $currentLang = Language::where('is_default', 1)->first();
         }
         $lang_id = $currentLang->id;
+        
+        // Buscar segmento se especificado
+        $segmentData = null;
+        if ($segment) {
+            $segmentData = Segment::findBySlug($segment);
+            if (!$segmentData) {
+                abort(404, 'Segmento não encontrado');
+            }
+        }
+        
         $bs = $currentLang->basic_setting;
         $be = $currentLang->basic_extended;
+        
+        // Se há segmento, usar suas configurações para hero section
+        if ($segmentData) {
+            $be = (object) array_merge((array) $be, [
+                'hero_section_title' => $segmentData->hero_section_title,
+                'hero_section_subtitle' => $segmentData->hero_section_subtitle,
+                'hero_section_text' => $segmentData->hero_section_text,
+                'hero_section_button_text' => $segmentData->hero_section_button_text,
+                'hero_section_button_url' => $segmentData->hero_section_button_url,
+                'hero_section_secound_button_text' => $segmentData->hero_section_secound_button_text,
+                'hero_section_secound_button_url' => $segmentData->hero_section_secound_button_url,
+                'hero_img' => $segmentData->hero_img,
+                'hero_img2' => $segmentData->hero_img2,
+                'hero_img3' => $segmentData->hero_img3,
+                'hero_img4' => $segmentData->hero_img4,
+                'hero_img5' => $segmentData->hero_img5,
+                'custom_css' => $segmentData->custom_css,
+                'custom_js' => $segmentData->custom_js,
+            ]);
+        }
         
         // Verificar se as configurações básicas existem
         if (!$bs) {
@@ -95,8 +126,20 @@ class FrontendController extends Controller
             $be = (object) [];
         }
 
-        $data['processes'] = Process::where('language_id', $lang_id)->orderBy('serial_number', 'ASC')->get();
-        $data['features'] = Feature::where('language_id', $lang_id)->orderBy('serial_number', 'ASC')->get();
+        // Buscar dados específicos do segmento ou gerais
+        $segmentId = $segmentData ? $segmentData->id : null;
+        
+        $data['processes'] = Process::where('language_id', $lang_id)
+            ->when($segmentId, function($query) use ($segmentId) {
+                $query->where('segment_id', $segmentId);
+            })
+            ->orderBy('serial_number', 'ASC')->get();
+            
+        $data['features'] = Feature::where('language_id', $lang_id)
+            ->when($segmentId, function($query) use ($segmentId) {
+                $query->where('segment_id', $segmentId);
+            })
+            ->orderBy('serial_number', 'ASC')->get();
         $data['featured_users'] = User::where([
             ['featured', 1],
             ['status', 1]
@@ -120,25 +163,40 @@ class FrontendController extends Controller
             })->orderBy('template_serial_number', 'ASC')->get();
 
         $data['testimonials'] = Testimonial::where('language_id', $lang_id)
+            ->when($segmentId, function($query) use ($segmentId) {
+                $query->where('segment_id', $segmentId);
+            })
             ->orderBy('serial_number', 'ASC')
             ->get();
         $data['blogs'] = Blog::where('language_id', $lang_id)->orderBy('id', 'DESC')->take(3)->get();
 
-        $data['packages'] = Package::query()->where('status', '1')->where('featured', '1')->get();
+        $data['packages'] = Package::where('status', '1')
+            ->when($segmentId, function($query) use ($segmentId) {
+                $query->where('segment_id', $segmentId);
+            })
+            ->where('featured', '1')->get();
         $data['partners'] = Partner::where('language_id', $lang_id)
+            ->when($segmentId, function($query) use ($segmentId) {
+                $query->where('segment_id', $segmentId);
+            })
             ->orderBy('serial_number', 'ASC')
             ->get();
 
         $data['seo'] = Seo::where('language_id', $lang_id)->first();
 
         $terms = [];
-        if (Package::query()->where('status', '1')->where('featured', '1')->where('term', 'monthly')->count() > 0) {
+        $packagesQuery = Package::where('status', '1')->where('featured', '1');
+        if ($segmentId) {
+            $packagesQuery->where('segment_id', $segmentId);
+        }
+        
+        if ($packagesQuery->where('term', 'monthly')->count() > 0) {
             $terms[] = 'Mensal';
         }
-        if (Package::query()->where('status', '1')->where('featured', '1')->where('term', 'yearly')->count() > 0) {
+        if ($packagesQuery->where('term', 'yearly')->count() > 0) {
             $terms[] = 'Anual';
         }
-        if (Package::query()->where('status', '1')->where('featured', '1')->where('term', 'lifetime')->count() > 0) {
+        if ($packagesQuery->where('term', 'lifetime')->count() > 0) {
             $terms[] = 'Vitalício';
         }
         $data['terms'] = $terms;
@@ -148,6 +206,10 @@ class FrontendController extends Controller
         $data['allPfeatures'] = json_decode($allPfeatures, true);
 
         $data['vcards'] = UserVcard::where('preview_template', 1)->where([['status', 1], ['show_in_home', 1]])->orderBy('template_serial_number', 'ASC')->take(3)->get();
+        
+        // Adicionar dados do segmento se existir
+        $data['segment'] = $segmentData;
+        $data['segment_slug'] = $segment;
 
         return view('front.index', $data);
     }

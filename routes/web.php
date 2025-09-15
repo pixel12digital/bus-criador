@@ -33,6 +33,13 @@ Route::domain($domain)->group(function () {
 
     Route::group(['middleware' => 'setlang'], function () {
         Route::get('/', 'Front\FrontendController@index')->name('front.index');
+        
+        // Rotas para segmentos
+        Route::get('/agencia', 'Front\FrontendController@index')->name('front.segment.agencia');
+        Route::get('/consultor', 'Front\FrontendController@index')->name('front.segment.consultor');
+        Route::get('/ecommerce', 'Front\FrontendController@index')->name('front.segment.ecommerce');
+        Route::get('/servicos', 'Front\FrontendController@index')->name('front.segment.servicos');
+        
         Route::get('/templates', 'Front\FrontendController@templates')->name('front.templates');
         Route::get('/vcards', 'Front\FrontendController@vcards')->name('front.vcards');
         Route::post('/subscribe', 'Front\FrontendController@subscribe')->name('front.subscribe');
