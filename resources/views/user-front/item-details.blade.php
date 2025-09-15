@@ -347,7 +347,7 @@
                                         @else
                                             <div class="review-login mt-40">
                                                 <a class="boxed-btn d-inline-block mr-2"
-                                                    href="{{ route('customer.login', getParam()) }}">{{ $keywords['Login'] ?? __('Login') }}</a>
+                                                    href="{{ route('customer.login', getParam()) }}">{{ $keywords['Login'] ?? 'Entrar' }}</a>
                                                 {{ $keywords['to_leave_a_review'] ?? __('to leave a review') }}
                                             </div>
                                         @endif

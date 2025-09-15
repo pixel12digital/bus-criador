@@ -114,7 +114,7 @@
                                                     @endif
                                                     @if ($package->price == 0)
                                                         <a href="{{ route('front.register.view', ['status' => 'regular', 'id' => $package->id]) }}"
-                                                            class="btn btn-lg btn-outline no-animation">{{ __('Signup') }}</a>
+                                                            class="btn btn-lg btn-outline no-animation">Cadastrar</a>
                                                     @else
                                                         <a href="{{ route('front.register.view', ['status' => 'regular', 'id' => $package->id]) }}"
                                                             class="btn btn-lg btn-outline no-animation">{{ __('Purchase') }}</a>

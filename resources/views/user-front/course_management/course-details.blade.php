@@ -249,7 +249,7 @@
                                             @elseif($userBs->theme == 'home_four') template-btn
                                             @elseif($userBs->theme == 'home_five') template-btn
                                             @elseif($userBs->theme == 'home_nine') btn
-                                            @else main-btn @endif">{{ $keywords['Login'] ?? __('Login') }}</a>
+                                            @else main-btn @endif">{{ $keywords['Login'] ?? 'Entrar' }}</a>
                   @endguest
                   @auth('customer')
                     <div class="rating-form-area">

@@ -42,12 +42,12 @@
                                 @guest('customer')
                                     <a href="{{ route('customer.login', getParam()) }}" class="top-btn"> <i
                                             class="fal fa-sign-in-alt">
-                                        </i> {{ $keywords['Login'] ?? __('Login') }}</a>
+                                        </i> {{ $keywords['Login'] ?? 'Entrar' }}</a>
 
 
                                     <a href="{{ route('customer.signup', getParam()) }}" class="top-btn active-btn"> <i
                                             class="fal fa-user-plus">
-                                        </i> {{ $keywords['Signup'] ?? __('Signup') }}</a>
+                                        </i> {{ $keywords['Signup'] ?? 'Cadastrar' }}</a>
                                 @endguest
                                 @auth('customer')
                                     <a href="{{ route('customer.dashboard', getParam()) }}" class="top-btn"> <i
@@ -122,7 +122,7 @@
                                     <i class="flaticon-search"></i>
                                 </a>
                                 <!-- Idioma fixo: Português -->
-                                <div class="language-fixed">
+                                <div class="language-fixed" style="display: none;">
                                     <span class="language-text">Português</span>
                                 </div>
 

@@ -71,7 +71,7 @@
                     </ul>
                 </div>
                 <div class="more-option mobile-item">
-                    <div class="item">
+                    <div class="item" style="display: none;">
                         <div class="language">
                             <span class="language-text">Português</span>
                         </div>
@@ -81,12 +81,12 @@
 
                         @guest('web')
                             <a href="{{ route('user.login') }}" target="_blank" class="btn btn-md btn-primary"
-                                title="Login">
-                                {{ __('Login') }}</a>
+                                title="Entrar">
+                                Entrar</a>
                         @endguest
                         @auth('web')
-                            <a href="{{ route('user-dashboard') }}" class="btn btn-md btn-primary" title="Dashboard">
-                                {{ __('Dashboard') }}</a>
+                            <a href="{{ route('user-dashboard') }}" class="btn btn-md btn-primary" title="Painel">
+                                Painel</a>
                         @endauth
                     </div>
                 </div>

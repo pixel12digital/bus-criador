@@ -4,13 +4,13 @@
 @section('meta-keywords', !empty($seo) ? $seo->login_meta_keywords : '')
 
 @section('pagename')
-    - {{ __('Login') }}
+    - Entrar
 @endsection
 @section('breadcrumb-title')
-    {{ __('Login') }}
+    Entrar
 @endsection
 @section('breadcrumb-link')
-    {{ __('Login') }}
+    Entrar
 @endsection
 
 @section('content')

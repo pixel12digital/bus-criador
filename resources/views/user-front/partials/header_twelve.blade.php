@@ -93,26 +93,26 @@
             @guest('customer')
                 <a href="{{ route('customer.login', getParam()) }}" class="main-btn filled-btn"> <i
                         class="fal fa-sign-in-alt">
-                    </i> {{ $keywords['Login'] ?? __('Login') }}</a>
+                    </i> {{ $keywords['Login'] ?? 'Entrar' }}</a>
 
 
                 <a href="{{ route('customer.signup', getParam()) }}" class="main-btn filled-btn"> <i
                         class="fal fa-user-plus">
-                    </i> {{ $keywords['Signup'] ?? __('Signup') }}</a>
+                    </i> {{ $keywords['Signup'] ?? 'Cadastrar' }}</a>
             @endguest
             @auth('customer')
                 <a href="{{ route('customer.dashboard', getParam()) }}" class="main-btn filled-btn">
                     <i class="far fa-tachometer-fast"></i>
-                    {{ $keywords['Dashboard'] ?? __('Dashboard') }} </a>
+                    {{ $keywords['Dashboard'] ?? 'Painel' }} </a>
 
                 <a href="{{ route('customer.logout', getParam()) }}" class="main-btn filled-btn"><i
                         class="fal fa-sign-out-alt"></i>
-                    {{ $keywords['Logout'] ?? __('Logout') }}</a>
+                    {{ $keywords['Logout'] ?? 'Sair' }}</a>
             @endauth
         @endif
 
         <!-- Idioma fixo: Português -->
-        <div class="language-fixed bordered-style d-flex">
+        <div class="language-fixed bordered-style d-flex" style="display: none;">
             <span class="language-text">Português</span>
         </div>
 

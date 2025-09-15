@@ -1,15 +1,15 @@
 @extends('user-front.layout')
 @section('tab-title')
-    {{ $currentLanguageInfo->pageHeading->signup_title ?? __('Signup') }}
+    {{ $currentLanguageInfo->pageHeading->signup_title ?? 'Cadastrar' }}
 @endsection
 @section('meta-description', !empty($userSeo) ? $userSeo->meta_description_signup : '')
 @section('meta-keywords', !empty($userSeo) ? $userSeo->meta_keyword_signup : '')
 
 @section('page-name')
-    {{ $keywords['Signup'] ?? __('Signup') }}
+    {{ $keywords['Signup'] ?? 'Cadastrar' }}
 @endsection
 @section('br-name')
-    {{ $keywords['Signup'] ?? __('Signup') }}
+    {{ $keywords['Signup'] ?? 'Cadastrar' }}
 @endsection
 @section('content')
     <!--====== user-area-section part Start ======-->
@@ -28,7 +28,7 @@
                     <div class="user-form">
                         <div class="title mb-3">
                             <h4>
-                                {{ $keywords['Signup'] ?? __('Signup') }}
+                                {{ $keywords['Signup'] ?? 'Cadastrar' }}
                             </h4>
                         </div>
                         <form action="{{ route('customer.signup.submit', getParam()) }}" method="POST">

@@ -35,13 +35,13 @@
                                  @guest('customer')
                                      <li>
                                          <a href="{{ route('customer.login', getParam()) }}">
-                                             <i class="fas fa-sign-in-alt mr-2"></i> {{ $keywords['Login'] ?? __('Login') }}
+                                             <i class="fas fa-sign-in-alt mr-2"></i> {{ $keywords['Login'] ?? 'Entrar' }}
                                          </a>
                                      </li>
                                      <li>
                                          <a href="{{ route('customer.signup', getParam()) }}">
                                              <i class="fas fa-user-plus mr-2"></i>
-                                             {{ $keywords['Signup'] ?? __('Singup') }}
+                                             {{ $keywords['Signup'] ?? 'Cadastrar' }}
                                          </a>
                                      </li>
                                  @endguest
@@ -51,14 +51,14 @@
                                          <a href="{{ route('customer.dashboard', getParam()) }}">
 
                                              <i class="far fa-tachometer-fast mr-2"></i>
-                                             {{ $keywords['Dashboard'] ?? __('Dashboard') }}
+                                             {{ $keywords['Dashboard'] ?? 'Painel' }}
                                          </a>
                                      </li>
 
                                      <li>
                                          <a href="{{ route('customer.logout', getParam()) }}">
                                              <i class="fas fa-sign-out-alt mr-2"></i>
-                                             {{ $keywords['Logout'] ?? __('Logout') }}
+                                             {{ $keywords['Logout'] ?? 'Sair' }}
                                          </a>
                                      </li>
                                  @endauth
@@ -105,7 +105,7 @@
                                      data-src=" {{ asset('assets/front/img/theme9') }}/icons/languages.png"
                                      alt="flag" width="45">
                              </div>
-                             <div class="lang-option">
+                             <div class="lang-option" style="display: none;">
                                  <!-- Idioma fixo: Português -->
 <div class="language-fixed">
     <span class="language-text">Português</span>

@@ -126,7 +126,7 @@
                                         </li>
                                     @endif
                                 @endif
-                                <li>
+                                <li style="display: none;">
                                     <!-- Idioma fixo: Português -->
                                     <div class="language-fixed">
                                         <span class="language-text">Português</span>
@@ -139,9 +139,9 @@
                                                 in_array('Course Management', $packagePermissions))
                                             @guest('customer')
                                                 <a
-                                                    href="{{ route('customer.login', getParam()) }}">{{ $keywords['Login'] ?? __('Login') }}</a>
+                                                    href="{{ route('customer.login', getParam()) }}">{{ $keywords['Login'] ?? 'Entrar' }}</a>
                                                 <a
-                                                    href="{{ route('customer.signup', getParam()) }}">{{ $keywords['Signup'] ?? __('Signup') }}</a>
+                                                    href="{{ route('customer.signup', getParam()) }}">{{ $keywords['Signup'] ?? 'Cadastrar' }}</a>
                                             @endguest
                                             @auth('customer')
                                                 @php $authUserInfo = Auth::guard('customer')->user(); @endphp

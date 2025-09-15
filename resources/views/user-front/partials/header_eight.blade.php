@@ -23,7 +23,7 @@
                               </ul>
                           </div>
                       @endif
-                      <div class="header-top-btns pt-10 pb-10 d-flex justify-content-center">
+                      <div class="header-top-btns pt-10 pb-10 d-flex justify-content-center" style="display: none;">
                           <div class="language-btn">
                               <!-- Idioma fixo: Português -->
 <div class="language-fixed">
@@ -34,7 +34,7 @@
                       <div class="header-btn d-flex justify-content-center">
                           @guest('customer')
                               <a class="main-btn"
-                                  href="{{ route('customer.login', getParam()) }}">{{ $keywords['Login'] ?? __('Login') }}</a>
+                                  href="{{ route('customer.login', getParam()) }}">{{ $keywords['Login'] ?? 'Entrar' }}</a>
                           @endguest
                           @auth('customer')
                               <a class="main-btn"
@@ -110,7 +110,7 @@
                                   </ul>
                               </div>
                           @endif
-                          <div class="header-top-btns d-flex">
+                          <div class="header-top-btns d-flex" style="display: none;">
                               <div class="language-btn">
                                   <!-- Idioma fixo: Português -->
 <div class="language-fixed">
@@ -122,9 +122,9 @@
                               @if (count($phone_numbers) > 0)
                                   @foreach ($phone_numbers as $phone_number)
                                       @if ($loop->last)
-                                          <p>{{ $keywords['Need_help'] ?? __('Need help?') }} <a
+                                          <p>{{ $keywords['Need_help'] ?? 'Precisa de ajuda?' }} <a
                                                   href="tel: {{ $phone_number }}">
-                                                  {{ $keywords['Talk_to_an_expert'] ?? __('Talk to an expert') }}:
+                                                  {{ $keywords['Talk_to_an_expert'] ?? 'Fale com um especialista' }}:
                                                   {{ $phone_number }}</a>
                                           </p>
                                       @endif
@@ -347,7 +347,7 @@
                                       in_array('Course Management', $packagePermissions))
                                   @guest('customer')
                                       <a class="main-btn"
-                                          href="{{ route('customer.login', getParam()) }}">{{ $keywords['Login'] ?? __('Login') }}</a>
+                                          href="{{ route('customer.login', getParam()) }}">{{ $keywords['Login'] ?? 'Entrar' }}</a>
                                   @endguest
                                   @auth('customer')
                                       <a class="main-btn"

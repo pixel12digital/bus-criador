@@ -36,22 +36,22 @@
                                         <li>
                                             <a href="{{ route('customer.login', getParam()) }}"> <i
                                                     class="fal fa-sign-in-alt">
-                                                </i> {{ $keywords['Login'] ?? __('Login') }}</a>
+                                                </i> {{ $keywords['Login'] ?? 'Entrar' }}</a>
                                         </li>
 
                                         <li> <a href="{{ route('customer.signup', getParam()) }}"> <i
                                                     class="fal fa-user-plus">
-                                                </i> {{ $keywords['Signup'] ?? __('Signup') }}</a>
+                                                </i> {{ $keywords['Signup'] ?? 'Cadastrar' }}</a>
                                         </li>
                                     @endguest
                                     @auth('customer')
                                         <li><a href="{{ route('customer.dashboard', getParam()) }}">
                                                 <i class="far fa-tachometer-fast"></i>
-                                                {{ $keywords['Dashboard'] ?? __('Dashboard') }} </a></li>
+                                                {{ $keywords['Dashboard'] ?? 'Painel' }} </a></li>
 
                                         <li><a href="{{ route('customer.logout', getParam()) }}"><i
                                                     class="fal fa-sign-out-alt"></i>
-                                                {{ $keywords['Logout'] ?? __('Logout') }}</a></li>
+                                                {{ $keywords['Logout'] ?? 'Sair' }}</a></li>
                                     @endauth
                                 @endif
                             </ul>
@@ -111,7 +111,7 @@
                         </div>
                     </div>
                     <div class="navbar-item d-flex align-items-center justify-content-end">
-                        <div class="menu-dropdown">
+                        <div class="menu-dropdown" style="display: none;">
                             <!-- Idioma fixo: Português -->
 <div class="language-fixed">
     <span class="language-text">Português</span>
