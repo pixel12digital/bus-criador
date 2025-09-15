@@ -95,7 +95,7 @@
                                     <a href="{{ route('front.index') }}" class="icon-link" title="Go back to home"><i
                                             class="fal fa-home"></i></a>
                                     <div class="title">
-                                        <h3 class="mb-4">{{ __('login') }} </h3>
+                                        <h3 class="mb-4">{{ __('Entrar') }} </h3>
                                     </div>
                                     <form action="{{ route('user.login') }}" method="post" enctype="multipart/form-data">
                                         @csrf

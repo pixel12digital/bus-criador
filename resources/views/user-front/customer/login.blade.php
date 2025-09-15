@@ -31,7 +31,7 @@
                             <input type="hidden" name="user_id" value="{{ $user->id }}">
                             <div class="form_group">
                                 <label>{{ $keywords['email'] ?? __('Email') }} *</label>
-                                <input type="email" placeholder="{{ $keywords['Enter_Email_Address'] ?? __('Enter Email Address') }}"
+                                <input type="email" placeholder="{{ $keywords['Enter_Email_Address'] ?? 'Digite seu Email' }}"
                                     class="form_control" name="email" value="{{ old('email') }}">
                                 @error('email')
                                     <p class="text-danger">{{ $message }}</p>
@@ -40,7 +40,7 @@
                             <div class="form_group">
                                 <label>{{ $keywords['Password'] ?? __('Password') }} *</label>
                                 <input type="password" class="form-control" name="password" value="{{ old('password') }}"
-                                    placeholder="{{ $keywords['Enter_Password'] ?? __('Enter Password') }}">
+                                    placeholder="{{ $keywords['Enter_Password'] ?? 'Digite sua Senha' }}">
                                 @error('password')
                                     <p class="text-danger">{{ $message }}</p>
                                 @enderror
@@ -53,7 +53,7 @@
                                         for="checkbox1"><span></span>{{ $keywords['Remember_Me'] ?? 'Remember Me' }}</label> --}}
                                 </div>
                                 <a
-                                    href="{{ route('customer.forget_password', getParam()) }}">{{ $keywords['Lost_your_password'] ?? __('Lost your password') . '?' }}?</a>
+                                    href="{{ route('customer.forget_password', getParam()) }}">{{ $keywords['Lost_your_password'] ?? 'Esqueceu sua senha' }}?</a>
                             </div>
                             <div class="form_group">
                                 @if ($userBs->is_recaptcha == 1)
@@ -71,11 +71,11 @@
                             </div>
                             <div class="form_group">
                                 <button type="submit"
-                                    class="btn">{{ $keywords['Login_Now'] ?? __('Login Now') }}</button>
+                                    class="btn">{{ $keywords['Login_Now'] ?? 'ENTRAR AGORA' }}</button>
                             </div>
                             <div class="new-user text-center">
-                                <p class="text">{{ $keywords['New_user'] ?? 'New user' }}? <a
-                                        href="{{ route('customer.signup', getParam()) }}">{{ $keywords['Donot_have_an_account'] ?? "Don't have an account" }}?</a>
+                                <p class="text">{{ $keywords['New_user'] ?? 'Novo usuário' }}? <a
+                                        href="{{ route('customer.signup', getParam()) }}">{{ $keywords['Donot_have_an_account'] ?? "Não tem uma conta" }}?</a>
                                 </p>
                             </div>
                         </form>

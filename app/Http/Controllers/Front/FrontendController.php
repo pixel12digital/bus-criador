@@ -133,13 +133,13 @@ class FrontendController extends Controller
 
         $terms = [];
         if (Package::query()->where('status', '1')->where('featured', '1')->where('term', 'monthly')->count() > 0) {
-            $terms[] = 'Monthly';
+            $terms[] = 'Mensal';
         }
         if (Package::query()->where('status', '1')->where('featured', '1')->where('term', 'yearly')->count() > 0) {
-            $terms[] = 'Yearly';
+            $terms[] = 'Anual';
         }
         if (Package::query()->where('status', '1')->where('featured', '1')->where('term', 'lifetime')->count() > 0) {
-            $terms[] = 'Lifetime';
+            $terms[] = 'Vitalício';
         }
         $data['terms'] = $terms;
 
