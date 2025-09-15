@@ -141,7 +141,7 @@ class HerosectionController extends Controller
 
         $be->save();
 
-        Session::flash('success', 'Hero Section updated successfully!');
+        Session::flash('success', 'Seção Hero atualizada com sucesso!');
         return "success";
     }
 
@@ -176,7 +176,7 @@ class HerosectionController extends Controller
             $be->save();
         }
 
-        Session::flash('success', 'Informations updated successfully!');
+        Session::flash('success', 'Informações atualizadas com sucesso!');
         return "success";
     }
 }

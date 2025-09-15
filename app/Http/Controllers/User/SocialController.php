@@ -33,7 +33,7 @@ class SocialController extends Controller
         $social->user_id = Auth::id();
         $social->save();
 
-        Session::flash('success', 'New link added successfully!');
+        Session::flash('success', 'Novo link adicionado com sucesso!');
         return back();
     }
 
@@ -58,7 +58,7 @@ class SocialController extends Controller
         $social->user_id = Auth::id();
         $social->save();
 
-        Session::flash('success', 'Social link updated successfully!');
+        Session::flash('success', 'Link social atualizado com sucesso!');
         return back();
     }
 
@@ -68,7 +68,7 @@ class SocialController extends Controller
         $social = Social::where('user_id', Auth::id())->where('id', $request->socialid)->firstOrFail();
         $social->delete();
 
-        Session::flash('success', 'Social link deleted successfully!');
+        Session::flash('success', 'Link social deletado com sucesso!');
         return back();
     }
 }

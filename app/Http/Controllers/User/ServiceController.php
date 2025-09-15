@@ -123,7 +123,7 @@ class ServiceController extends Controller
         $blog = new UserService();
         $blog->create($input);
 
-        Session::flash('success', 'Service added successfully!');
+        Session::flash('success', 'Serviço adicionado com sucesso!');
         return "success";
     }
 
@@ -207,7 +207,7 @@ class ServiceController extends Controller
         }
         $input['content'] = Purifier::clean($request->content);
         $service->update($input);
-        Session::flash('success', 'Service updated successfully!');
+        Session::flash('success', 'Serviço atualizado com sucesso!');
         return "success";
     }
 
@@ -224,7 +224,7 @@ class ServiceController extends Controller
             @unlink(public_path('assets/front/img/user/services/' . $service->image));
         }
         $service->delete();
-        Session::flash('success', 'Service deleted successfully!');
+        Session::flash('success', 'Serviço deletado com sucesso!');
         return back();
     }
 
@@ -238,7 +238,7 @@ class ServiceController extends Controller
             }
             $service->delete();
         }
-        Session::flash('success', 'Service deleted successfully!');
+        Session::flash('success', 'Serviço deletado com sucesso!');
         return "success";
     }
 
@@ -248,9 +248,9 @@ class ServiceController extends Controller
         $member->featured = $request->featured;
         $member->save();
         if ($request->featured == 1) {
-            Session::flash('success', 'Featured successfully!');
+            Session::flash('success', 'Destacado com sucesso!');
         } else {
-            Session::flash('success', 'Unfeatured successfully!');
+            Session::flash('success', 'Removido do destaque com sucesso!');
         }
         return back();
     }

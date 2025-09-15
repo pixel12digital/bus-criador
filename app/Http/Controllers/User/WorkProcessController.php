@@ -39,7 +39,7 @@ class WorkProcessController extends Controller
                 'language_id' => $request->user_language_id,
                 'user_id' => Auth::id()
         ]);
-        $request->session()->flash('success', 'Work process added successfully!');
+        $request->session()->flash('success', 'Processo de trabalho adicionado com sucesso!');
         return redirect()->back();
     }
 
@@ -63,14 +63,14 @@ class WorkProcessController extends Controller
         $input = $request->all();
         $input['text'] = Purifier::clean($request->text);
         $skill->update($input);
-        $request->session()->flash('success', 'Work process updated successfully!');
+        $request->session()->flash('success', 'Processo de trabalho atualizado com sucesso!');
         return redirect()->back();
     }
 
     public function delete(Request $request)
     {
         WorkProcess::findOrFail($request->work_process_id)->delete();
-        $request->session()->flash('success', 'Work process deleted successfully!');
+        $request->session()->flash('success', 'Processo de trabalho deletado com sucesso!');
         return redirect()->back();
     }
 }

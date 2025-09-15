@@ -32,7 +32,7 @@ class UserController extends Controller
         $user->update([
             'status' => $request->status,
         ]);
-        Session::flash('success', 'Status update successfully!');
+        Session::flash('success', 'Status atualizado com sucesso!');
         return back();
     }
     public function emailStatus(Request $request)
@@ -259,7 +259,7 @@ class UserController extends Controller
         $user->password = bcrypt($request->password);
         $user->save();
 
-        Session::flash('success', 'Password changed successfully!');
+        Session::flash('success', 'Senha alterada com sucesso!');
 
         return redirect()->back();
     }
@@ -364,7 +364,7 @@ class UserController extends Controller
         // user image unlinking
         @unlink(public_path('assets/user/img/users/' . $user->image));
         $user->delete();
-        Session::flash('success', 'Customer deleted successfully!');
+        Session::flash('success', 'Cliente deletado com sucesso!');
         return back();
     }
 
@@ -398,7 +398,7 @@ class UserController extends Controller
             'password' => Hash::make($request->password)
         ]);
 
-        $request->session()->flash('success', 'Password updated successfully!');
+        $request->session()->flash('success', 'Senha atualizada com sucesso!');
         return back();
     }
     public function view($id)
@@ -458,7 +458,7 @@ class UserController extends Controller
             @unlink(public_path('assets/user/img/users/' . $user->image));
             $user->delete();
         }
-        Session::flash('success', 'Customer(s) deleted successfully!');
+        Session::flash('success', 'Cliente(s) deletado(s) com sucesso!');
         return 'success';
     }
 

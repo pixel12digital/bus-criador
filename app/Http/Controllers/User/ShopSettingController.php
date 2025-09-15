@@ -47,7 +47,7 @@ class ShopSettingController extends Controller
         $data = new UserShippingCharge();
         $data->create($input);
 
-        Session::flash('success', 'Shipping Charge added successfully!');
+        Session::flash('success', 'Taxa de envio adicionada com sucesso!');
         return "success";
     }
 
@@ -74,7 +74,7 @@ class ShopSettingController extends Controller
         $data = UserShippingCharge::findOrFail($request->shipping_id);
         $data->update($request->all());
 
-        Session::flash('success', 'Shipping charge update successfully!');
+        Session::flash('success', 'Taxa de envio atualizada com sucesso!');
         return "success";
     }
 
@@ -83,7 +83,7 @@ class ShopSettingController extends Controller
     {
         $data = UserShippingCharge::findOrFail($request->shipping_id);
         $data->delete();
-        Session::flash('success', 'Shipping charge delete successfully!');
+        Session::flash('success', 'Taxa de envio deletada com sucesso!');
         return back();
     }
 }

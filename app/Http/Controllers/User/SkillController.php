@@ -79,7 +79,7 @@ class SkillController extends Controller
         $skill = new Skill;
         $skill->create($input);
 
-        Session::flash('success', 'Skill added successfully!');
+        Session::flash('success', 'Habilidade adicionada com sucesso!');
         return "success";
     }
 
@@ -123,7 +123,7 @@ class SkillController extends Controller
         $input['slug'] = $slug;
         $input['user_id'] = Auth::id();
         $skill->update($input);
-        Session::flash('success', 'Skill updated successfully!');
+        Session::flash('success', 'Habilidade atualizada com sucesso!');
         return "success";
     }
 
@@ -131,7 +131,7 @@ class SkillController extends Controller
     {
         $skill = Skill::where('user_id', Auth::user()->id)->where('id', $request->skill_id)->firstOrFail();
         $skill->delete();
-        Session::flash('success', 'Skill deleted successfully!');
+        Session::flash('success', 'Habilidade deletada com sucesso!');
         return back();
     }
     public function bulkDelete(Request $request)
@@ -141,7 +141,7 @@ class SkillController extends Controller
             $skill = Skill::where('user_id', Auth::user()->id)->where('id', $id)->firstOrFail();
             $skill->delete();
         }
-        Session::flash('success', 'Skills deleted successfully!');
+        Session::flash('success', 'Habilidades deletadas com sucesso!');
         return "success";
     }
 }

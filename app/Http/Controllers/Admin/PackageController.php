@@ -193,7 +193,7 @@ class PackageController extends Controller
                     }
                 }
                 $package->delete();
-                Session::flash('success', 'Package deleted successfully!');
+                Session::flash('success', 'Pacote deletado com sucesso!');
                 return back();
             });
         } catch (\Throwable $e) {

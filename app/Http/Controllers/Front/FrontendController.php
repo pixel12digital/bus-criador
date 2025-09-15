@@ -1567,7 +1567,7 @@ class FrontendController extends Controller
 
         $mail->send();
 
-        Session::flash('success', 'Quote request sent successfully');
+        Session::flash('success', 'Solicitação de orçamento enviada com sucesso');
         return back();
     }
 

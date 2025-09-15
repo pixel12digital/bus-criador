@@ -55,7 +55,7 @@ class SubscriberController extends Controller
         ]);
         $request['user_id'] = $user->id;
         Subscriber::create($request->all());
-        Session::flash('success', 'You subscribed successfully!');
+        Session::flash('success', 'Você se inscreveu com sucesso!');
         return back();
     }
 
@@ -83,7 +83,7 @@ class SubscriberController extends Controller
         $info->email = $request->email;
         $info->from_name = $request->from_name;
         $info->save();
-        Session::flash('success', 'Mail information saved successfully!');
+        Session::flash('success', 'Informações de email salvas com sucesso!');
         return back();
     }
 
@@ -146,7 +146,7 @@ class SubscriberController extends Controller
 
         $mail->send();
 
-        Session::flash('success', 'Mail sent successfully!');
+        Session::flash('success', 'Email enviado com sucesso!');
         return back();
     }
 
@@ -154,7 +154,7 @@ class SubscriberController extends Controller
     public function delete(Request $request)
     {
         Subscriber::findOrFail($request->subscriber_id)->delete();
-        Session::flash('success', 'Subscriber deleted successfully!');
+        Session::flash('success', 'Inscrito deletado com sucesso!');
         return back();
     }
 
@@ -164,7 +164,7 @@ class SubscriberController extends Controller
         foreach ($ids as $id) {
             Subscriber::findOrFail($id)->delete();
         }
-        Session::flash('success', 'Subscribers deleted successfully!');
+        Session::flash('success', 'Inscritos deletados com sucesso!');
         return "success";
     }
 }

@@ -98,7 +98,7 @@ class TestimonialController extends Controller
         $blog = new UserTestimonial();
         $blog->create($input);
 
-        Session::flash('success', 'Testimonial added successfully!');
+        Session::flash('success', 'Depoimento adicionado com sucesso!');
         return "success";
     }
 
@@ -178,7 +178,7 @@ class TestimonialController extends Controller
         }
         $input['content'] = Purifier::clean($request->content);
         $service->update($input);
-        Session::flash('success', 'Testimonial updated successfully!');
+        Session::flash('success', 'Depoimento atualizado com sucesso!');
         return "success";
     }
 
@@ -195,7 +195,7 @@ class TestimonialController extends Controller
             @unlink(public_path('assets/front/img/user/testimonials/' . $service->image));
         }
         $service->delete();
-        Session::flash('success', 'Testimonial deleted successfully!');
+        Session::flash('success', 'Depoimento deletado com sucesso!');
         return back();
     }
 
@@ -209,7 +209,7 @@ class TestimonialController extends Controller
             }
             $service->delete();
         }
-        Session::flash('success', 'Testimonial deleted successfully!');
+        Session::flash('success', 'Depoimento deletado com sucesso!');
         return "success";
     }
 }

@@ -252,7 +252,7 @@ class QrController extends Controller
             @unlink(public_path('assets/user/img/qr/' . $qrcode->image));
             $qrcode->delete();
         }
-        Session::flash('success', 'QR Codes deleted successfully!');
+        Session::flash('success', 'QR Codes deletados com sucesso!');
         return "success";
     }
 }

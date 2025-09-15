@@ -97,7 +97,7 @@ class VcardController extends Controller
         $service = new UserVcardService();
         $service->create($input);
 
-        Session::flash('success', 'Service added successfully!');
+        Session::flash('success', 'Serviço adicionado com sucesso!');
         return "success";
     }
 
@@ -154,7 +154,7 @@ class VcardController extends Controller
             $input['image'] = $filename;
         }
         $service->update($input);
-        Session::flash('success', 'Service updated successfully!');
+        Session::flash('success', 'Serviço atualizado com sucesso!');
         return "success";
     }
 
@@ -167,7 +167,7 @@ class VcardController extends Controller
     public function serviceDelete(Request $request)
     {
         $this->deleteService($request->service_id);
-        Session::flash('success', 'Service deleted successfully!');
+        Session::flash('success', 'Serviço deletado com sucesso!');
         return back();
     }
     public function deleteService($id)
@@ -183,7 +183,7 @@ class VcardController extends Controller
         foreach ($ids as $id) {
             $this->deleteService($id);
         }
-        Session::flash('success', 'Services deleted successfully!');
+        Session::flash('success', 'Serviços deletados com sucesso!');
         return "success";
     }
 
@@ -295,7 +295,7 @@ class VcardController extends Controller
         }
         $vcard->information = json_encode($infoArr);
         $vcard->save();
-        $request->session()->flash('success', 'Vcard added successfully');
+        $request->session()->flash('success', 'Vcard adicionado com sucesso');
         return 'success';
     }
 
@@ -407,7 +407,7 @@ class VcardController extends Controller
         }
         $vcard->information = json_encode($infoArr);
         $vcard->save();
-        $request->session()->flash('success', 'Vcard updated successfully');
+        $request->session()->flash('success', 'Vcard atualizado com sucesso');
         return 'success';
     }
 
@@ -420,7 +420,7 @@ class VcardController extends Controller
     public function delete(Request $request)
     {
         $this->deleteVcard($request->vcard_id);
-        Session::flash('success', 'Vcard deleted successfully!');
+        Session::flash('success', 'Vcard deletado com sucesso!');
         return back();
     }
     public function deleteVcard($id)
@@ -458,7 +458,7 @@ class VcardController extends Controller
         foreach ($ids as $id) {
             $this->deleteVcard($id);
         }
-        Session::flash('success', 'Vcards deleted successfully!');
+        Session::flash('success', 'Vcards deletados com sucesso!');
         return "success";
     }
 
@@ -532,7 +532,7 @@ class VcardController extends Controller
         $project = new UserVcardProject();
         $project->create($input);
 
-        Session::flash('success', 'Project added successfully!');
+        Session::flash('success', 'Projeto adicionado com sucesso!');
         return "success";
     }
 
@@ -590,7 +590,7 @@ class VcardController extends Controller
         }
         $project->update($input);
 
-        Session::flash('success', 'Project updated successfully!');
+        Session::flash('success', 'Projeto atualizado com sucesso!');
         return "success";
     }
 
@@ -603,7 +603,7 @@ class VcardController extends Controller
     public function projectDelete(Request $request)
     {
         $this->deleteProject($request->project_id);
-        Session::flash('success', 'Project deleted successfully!');
+        Session::flash('success', 'Projeto deletado com sucesso!');
         return back();
     }
 
@@ -621,7 +621,7 @@ class VcardController extends Controller
         foreach ($ids as $id) {
             $this->deleteProject($id);
         }
-        Session::flash('success', 'Projects deleted successfully!');
+        Session::flash('success', 'Projetos deletados com sucesso!');
         return "success";
     }
 
@@ -690,7 +690,7 @@ class VcardController extends Controller
         $testimonial = new UserVcardTestimonial();
         $testimonial->create($input);
 
-        Session::flash('success', 'Testimonial added successfully!');
+        Session::flash('success', 'Depoimento adicionado com sucesso!');
         return "success";
     }
 
@@ -745,7 +745,7 @@ class VcardController extends Controller
         }
         $testimonial->update($input);
 
-        Session::flash('success', 'Testimonial updated successfully!');
+        Session::flash('success', 'Depoimento atualizado com sucesso!');
         return "success";
     }
 
@@ -758,7 +758,7 @@ class VcardController extends Controller
     public function testimonialDelete(Request $request)
     {
         $this->deleteTestimonial($request->testimonial_id);
-        Session::flash('success', 'Testimonial deleted successfully!');
+        Session::flash('success', 'Depoimento deletado com sucesso!');
         return back();
     }
     public function deleteTestimonial($id)
@@ -774,7 +774,7 @@ class VcardController extends Controller
         foreach ($ids as $id) {
             $this->deleteTestimonial($id);
         }
-        Session::flash('success', 'Testimonials deleted successfully!');
+        Session::flash('success', 'Depoimentos deletados com sucesso!');
         return "success";
     }
 
@@ -793,7 +793,7 @@ class VcardController extends Controller
         $vcard->video = $request->video;
         $vcard->about = clean($request->about);
         $vcard->save();
-        $request->session()->flash('success', 'About & video updated successfully');
+        $request->session()->flash('success', 'Sobre e vídeo atualizados com sucesso');
         return 'success';
     }
 
@@ -821,7 +821,7 @@ class VcardController extends Controller
             $vcard->preferences = json_encode($preferences);
         }
         $vcard->save();
-        $request->session()->flash('success', 'Preferences updated successfully');
+        $request->session()->flash('success', 'Preferências atualizadas com sucesso');
         return 'success';
     }
     public function color($id)
@@ -852,7 +852,7 @@ class VcardController extends Controller
             $vcard->website_url_icon_color = $request->website_url_icon_color;
         }
         $vcard->save();
-        $request->session()->flash('success', 'Colors updated successfully');
+        $request->session()->flash('success', 'Cores atualizadas com sucesso');
         return 'success';
     }
 
@@ -885,7 +885,7 @@ class VcardController extends Controller
         $vcard->keywords = $upKeywords;
         $vcard->save();
 
-        $request->session()->flash('success', 'Colors updated successfully');
+        $request->session()->flash('success', 'Cores atualizadas com sucesso');
         return 'success';
     }
 }

@@ -94,7 +94,7 @@ class SkillCategoryController extends Controller
         $bcategory->serial_number = $request->serial_number;
         $bcategory->save();
 
-        Session::flash('success', 'Skill category added successfully!');
+        Session::flash('success', 'Categoria de habilidade adicionada com sucesso!');
         return "success";
     }
 
@@ -153,7 +153,7 @@ class SkillCategoryController extends Controller
         $bcategory->serial_number = $request->serial_number;
         $bcategory->save();
 
-        Session::flash('success', 'Skill category updated successfully!');
+        Session::flash('success', 'Categoria de habilidade atualizada com sucesso!');
         return "success";
     }
 
@@ -175,7 +175,7 @@ class SkillCategoryController extends Controller
             return back();
         }
         $bcategory->delete();
-        Session::flash('success', 'Skill category deleted successfully!');
+        Session::flash('success', 'Categoria de habilidade deletada com sucesso!');
         return back();
     }
 
@@ -196,7 +196,7 @@ class SkillCategoryController extends Controller
             $bcategory->delete();
         }
 
-        Session::flash('success', 'Skill categories deleted successfully!');
+        Session::flash('success', 'Categorias de habilidade deletadas com sucesso!');
         return "success";
     }
 }

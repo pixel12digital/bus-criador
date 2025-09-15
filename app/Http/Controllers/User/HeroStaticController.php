@@ -78,7 +78,7 @@ class HeroStaticController extends Controller
                 ]
             );
         }
-        session()->flash('success', 'Static info updated successfully!');
+        session()->flash('success', 'Informações estáticas atualizadas com sucesso!');
         return redirect()->back();
     }
 }
