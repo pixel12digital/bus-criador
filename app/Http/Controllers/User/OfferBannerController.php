@@ -60,7 +60,7 @@ class OfferBannerController extends Controller
         $offer->text_3 = $request->text_3;
         $offer->url = $request->url;
         $offer->save();
-        Session::flash('success', 'Offer Banner added successfully!');
+        Session::flash('success', 'Banner de oferta adicionado com sucesso!');
         return "success";
     }
     public function update(Request $request)
@@ -93,7 +93,7 @@ class OfferBannerController extends Controller
         $offer->text_3 = $request->text_3;
         $offer->url = $request->url;
         $offer->save();
-        Session::flash('success', 'Offer Banner updated successfully!');
+        Session::flash('success', 'Banner de oferta atualizado com sucesso!');
         return back();
     }
     public function delete(Request $request)
@@ -101,7 +101,7 @@ class OfferBannerController extends Controller
         $offer = UserOfferBanner::findOrFail($request->offer_id);
         @unlink(public_path('assets/front/img/user/offers/' . $offer->image));
         $offer->delete();
-        Session::flash('success', 'Offer Banner  deleted successfully!');
+        Session::flash('success', 'Banner de oferta deletado com sucesso!');
         return back();
     }
 }

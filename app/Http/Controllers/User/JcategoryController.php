@@ -73,7 +73,7 @@ class JcategoryController extends Controller
         $jcategory->user_id = Auth::id();
         $jcategory->save();
 
-        Session::flash('success', 'Category added successfully!');
+        Session::flash('success', 'Categoria adicionada com sucesso!');
         return "success";
     }
 
@@ -97,7 +97,7 @@ class JcategoryController extends Controller
         $jcategory->serial_number = $request->serial_number;
         $jcategory->save();
 
-        Session::flash('success', 'Category updated successfully!');
+        Session::flash('success', 'Categoria atualizada com sucesso!');
         return "success";
     }
 
@@ -110,7 +110,7 @@ class JcategoryController extends Controller
         }
         $jcategory->delete();
 
-        Session::flash('success', 'Category deleted successfully!');
+        Session::flash('success', 'Categoria deletada com sucesso!');
         return back();
     }
 
@@ -129,7 +129,7 @@ class JcategoryController extends Controller
             $jcategory = Jcategory::where('user_id', Auth::user()->id)->where('id', $id)->firstOrFail();
             $jcategory->delete();
         }
-        Session::flash('success', 'Job categories deleted successfully!');
+        Session::flash('success', 'Categorias de vagas deletadas com sucesso!');
         return "success";
     }
 }

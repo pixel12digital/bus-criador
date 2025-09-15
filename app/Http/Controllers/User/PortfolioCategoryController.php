@@ -88,7 +88,7 @@ class PortfolioCategoryController extends Controller
         $bcategory->serial_number = $request->serial_number;
         $bcategory->save();
 
-        Session::flash('success', 'Portfolio category added successfully!');
+        Session::flash('success', 'Categoria de portfólio adicionada com sucesso!');
         return "success";
     }
 
@@ -147,7 +147,7 @@ class PortfolioCategoryController extends Controller
         $bcategory->serial_number = $request->serial_number;
         $bcategory->save();
 
-        Session::flash('success', 'Portfolio category updated successfully!');
+        Session::flash('success', 'Categoria de portfólio atualizada com sucesso!');
         return "success";
     }
 
@@ -170,7 +170,7 @@ class PortfolioCategoryController extends Controller
             return back();
         }
         $bcategory->delete();
-        Session::flash('success', 'Portfolio category deleted successfully!');
+        Session::flash('success', 'Categoria de portfólio deletada com sucesso!');
         return back();
     }
 
@@ -191,7 +191,7 @@ class PortfolioCategoryController extends Controller
             $bcategory->delete();
         }
 
-        Session::flash('success', 'Portfolio categories deleted successfully!');
+        Session::flash('success', 'Categorias de portfólio deletadas com sucesso!');
         return "success";
     }
 
@@ -207,7 +207,7 @@ class PortfolioCategoryController extends Controller
         } else {
             $action = 'Un featured';
         }
-        Session::flash('success', 'Portfolio category ' . $action . ' successfully!');
+        Session::flash('success', 'Categoria de portfólio ' . $action . ' com sucesso!');
         return redirect()->back();
     }
 }

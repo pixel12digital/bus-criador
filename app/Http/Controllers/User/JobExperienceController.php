@@ -95,7 +95,7 @@ class JobExperienceController extends Controller
         $newJobExperience->language_id = $request->user_language_id;
         $newJobExperience->user_id = Auth::id();
         $newJobExperience->save();
-        Session::flash('success', 'Job experience added successfully!');
+        Session::flash('success', 'Experiência profissional adicionada com sucesso!');
         return "success";
     }
 
@@ -155,7 +155,7 @@ class JobExperienceController extends Controller
         $newJobExperience->serial_number = $request->serial_number;
         $newJobExperience->user_id = Auth::id();
         $newJobExperience->save();
-        Session::flash('success', 'Job experience updated successfully!');
+        Session::flash('success', 'Experiência profissional atualizada com sucesso!');
         return "success";
     }
 
@@ -173,7 +173,7 @@ class JobExperienceController extends Controller
     public function delete(Request $request)
     {
         JobExperience::where('user_id', Auth::user()->id)->where('id', $request->id)->firstOrFail()->delete();
-        Session::flash('success', 'Job experience deleted successfully!');
+        Session::flash('success', 'Experiência profissional deletada com sucesso!');
         return back();
     }
 
@@ -183,7 +183,7 @@ class JobExperienceController extends Controller
         foreach ($ids as $id) {
             JobExperience::where('user_id', Auth::user()->id)->where('id', $id)->firstOrFail()->delete();
         }
-        Session::flash('success', 'Job experience deleted successfully!');
+        Session::flash('success', 'Experiência profissional deletada com sucesso!');
         return "success";
     }
 }

@@ -225,7 +225,7 @@ class ItemController extends Controller
             $adContent->meta_description = $request[$language->code . '_meta_keyword'];
             $adContent->save();
         }
-        Session::flash('success', 'Item added successfully!');
+        Session::flash('success', 'Item adicionado com sucesso!');
         return "success";
     }
     public function edit(Request $request, $id)
@@ -399,7 +399,7 @@ class ItemController extends Controller
             $adContent->meta_description = $request[$language->code . '_meta_keyword'];
             $adContent->save();
         }
-        Session::flash('success', 'Product updated successfully!');
+        Session::flash('success', 'Produto atualizado com sucesso!');
         return "success";
     }
     public function feature(Request $request)
@@ -410,9 +410,9 @@ class ItemController extends Controller
         $item->save();
 
         if ($request->is_feature == 1) {
-            Session::flash('success', 'Item featured successfully!');
+            Session::flash('success', 'Item destacado com sucesso!');
         } else {
-            Session::flash('success', 'Item unfeatured successfully!');
+            Session::flash('success', 'Item removido do destaque com sucesso!');
         }
         return back();
     }
@@ -422,9 +422,9 @@ class ItemController extends Controller
         $item->special_offer = $request->special_offer;
         $item->save();
         if ($request->special_offer == 1) {
-            Session::flash('success', 'Item added to Special offer successfully!');
+            Session::flash('success', 'Item adicionado à oferta especial com sucesso!');
         } else {
-            Session::flash('success', 'Item remove from Special offer successfully!');
+            Session::flash('success', 'Item removido da oferta especial com sucesso!');
         }
         return back();
     }
@@ -441,7 +441,7 @@ class ItemController extends Controller
         $item->itemContents()->delete();
         $item->delete();
         // @unlink('core/storage/digital_products/' . $product->download_file);
-        Session::flash('success', 'Item deleted successfully!');
+        Session::flash('success', 'Item deletado com sucesso!');
         return back();
     }
 
@@ -458,7 +458,7 @@ class ItemController extends Controller
             $item->itemContents()->delete();
             $item->delete();
         }
-        Session::flash('success', 'Product deleted successfully!');
+        Session::flash('success', 'Produto deletado com sucesso!');
         return "success";
     }
     public function variationStore(Request $request)
@@ -495,7 +495,7 @@ class ItemController extends Controller
         }
         // deleting null data
         UserItemVariation::where('item_id', $request->item_id)->where('variant_name', null)->delete();
-        Session::flash('success', 'Variations added successfully!');
+        Session::flash('success', 'Variações adicionadas com sucesso!');
         return "success";
     }
 
@@ -590,7 +590,7 @@ class ItemController extends Controller
         $shopsettings->catalog_mode = $request->catalog_mode;
         $shopsettings->tax = $request->tax ? $request->tax : 0.00;
         $shopsettings->save();
-        Session::flash('success', 'Shop setting updated successfully!');
+        Session::flash('success', 'Configurações da loja atualizadas com sucesso!');
         return "success";
     }
     public function slider(Request $request)
@@ -670,7 +670,7 @@ class ItemController extends Controller
         $item->flash_percentage = $request->flash_percentage;
         $item->flash = 1;
         $item->save();
-        Session::flash('success', 'Flash sale information set successfully');
+        Session::flash('success', 'Informações de promoção relâmpago definidas com sucesso');
         return "success";
     }
 

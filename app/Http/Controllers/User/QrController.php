@@ -206,7 +206,7 @@ class QrController extends Controller
         $bs = BasicSetting::where('user_id', Auth::user()->id)->first();
         $this->clearFilters($bs, 'clear');
 
-        Session::flash('success', 'Cleared all filters');
+        Session::flash('success', 'Todos os filtros limpos');
         return back();
     }
 

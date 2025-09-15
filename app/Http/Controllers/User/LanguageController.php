@@ -82,7 +82,7 @@ class LanguageController extends Controller
         }
 
 
-        Session::flash('success', 'Language added successfully!');
+        Session::flash('success', 'Idioma adicionado com sucesso!');
         return "success";
     }
 
@@ -129,7 +129,7 @@ class LanguageController extends Controller
         $language->user_id = Auth::guard('web')->user()->id;
         $language->save();
 
-        Session::flash('success', 'Language updated successfully!');
+        Session::flash('success', 'Idioma atualizado com sucesso!');
         return "success";
     }
 

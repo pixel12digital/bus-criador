@@ -33,7 +33,7 @@ class QuoteController extends Controller
             $bs->is_quote = $request->is_quote;
             $bs->save();
         }
-        Session::flash('success', 'Page status updated successfully!');
+        Session::flash('success', 'Status da página atualizado com sucesso!');
         return back();
     }
 
@@ -127,7 +127,7 @@ class QuoteController extends Controller
             }
         }
 
-        Session::flash('success', 'Input field added successfully!');
+        Session::flash('success', 'Campo de entrada adicionado com sucesso!');
         return "success";
     }
 
@@ -136,7 +136,7 @@ class QuoteController extends Controller
         $input = QuoteInput::where('user_id', Auth::user()->id)->where('id', $request->input_id)->firstOrFail();
         $input->quote_input_options()->delete();
         $input->delete();
-        Session::flash('success', 'Input field deleted successfully!');
+        Session::flash('success', 'Campo de entrada deletado com sucesso!');
         return back();
     }
 
@@ -218,7 +218,7 @@ class QuoteController extends Controller
                 $op->save();
             }
         }
-        Session::flash('success', 'Input field updated successfully!');
+        Session::flash('success', 'Campo de entrada atualizado com sucesso!');
         return "success";
     }
 
@@ -275,7 +275,7 @@ class QuoteController extends Controller
         $quote->status = $request->status;
         $quote->save();
 
-        Session::flash('success', 'Status changed successfully!');
+        Session::flash('success', 'Status alterado com sucesso!');
         return back();
     }
 
@@ -347,14 +347,14 @@ class QuoteController extends Controller
             }
         }
 
-        Session::flash('success', 'Mail sent successfully!');
+        Session::flash('success', 'Email enviado com sucesso!');
         return "success";
     }
 
     public function delete(Request $request)
     {
         Quote::where('user_id', Auth::user()->id)->where('id', $request->quote_id)->firstOrFail()->delete();
-        Session::flash('success', 'Quote request deleted successfully!');
+        Session::flash('success', 'Solicitação de orçamento deletada com sucesso!');
         return back();
     }
 
@@ -364,7 +364,7 @@ class QuoteController extends Controller
         foreach ($ids as $id) {
             Quote::where('user_id', Auth::user()->id)->where('id', $id)->firstOrFail()->delete();
         }
-        Session::flash('success', 'Quote requests deleted successfully!');
+        Session::flash('success', 'Solicitações de orçamento deletadas com sucesso!');
         return "success";
     }
 }

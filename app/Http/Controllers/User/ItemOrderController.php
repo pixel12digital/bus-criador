@@ -182,7 +182,7 @@ class ItemOrderController extends Controller
                 // die($e->getMessage());
             }
         }
-        Session::flash('success', 'Order status changed successfully!');
+        Session::flash('success', 'Status do pedido alterado com sucesso!');
         return back();
     }
 
@@ -293,7 +293,7 @@ class ItemOrderController extends Controller
             }
         }
 
-        Session::flash('success', 'Payment status changed successfully!');
+        Session::flash('success', 'Status do pagamento alterado com sucesso!');
         return back();
     }
 
@@ -352,7 +352,7 @@ class ItemOrderController extends Controller
             }
         }
 
-        Session::flash('success', 'Mail sent successfully!');
+        Session::flash('success', 'Email enviado com sucesso!');
         return "success";
     }
 
@@ -377,7 +377,7 @@ class ItemOrderController extends Controller
             $order->delete();
         }
 
-        Session::flash('success', 'Orders deleted successfully!');
+        Session::flash('success', 'Pedidos deletados com sucesso!');
         return "success";
     }
 
@@ -391,7 +391,7 @@ class ItemOrderController extends Controller
         }
         $order->delete();
 
-        Session::flash('success', 'Item order deleted successfully!');
+        Session::flash('success', 'Pedido de item deletado com sucesso!');
         return back();
     }
 

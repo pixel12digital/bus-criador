@@ -123,7 +123,7 @@ class BlogController extends Controller
         $blog = new Blog;
         $blog->create($input);
 
-        Session::flash('success', 'Blog added successfully!');
+        Session::flash('success', 'Blog adicionado com sucesso!');
         return "success";
     }
 
@@ -205,7 +205,7 @@ class BlogController extends Controller
         }
         $input['content'] = Purifier::clean($request->content);
         $blog->update($input);
-        Session::flash('success', 'Blog updated successfully!');
+        Session::flash('success', 'Blog atualizado com sucesso!');
         return "success";
     }
 
@@ -231,7 +231,7 @@ class BlogController extends Controller
             @unlink(public_path('assets/front/img/user/blogs/' . $blog->image));
         }
         $blog->delete();
-        Session::flash('success', 'Blog deleted successfully!');
+        Session::flash('success', 'Blog deletado com sucesso!');
         return back();
     }
 
@@ -245,7 +245,7 @@ class BlogController extends Controller
             }
             $blog->delete();
         }
-        Session::flash('success', 'Blogs deleted successfully!');
+        Session::flash('success', 'Blogs deletados com sucesso!');
         return "success";
     }
 }

@@ -99,9 +99,9 @@ class MemberController extends Controller
         $member->featured = $request->featured;
         $member->save();
         if ($request->featured == 1) {
-            Session::flash('success', 'Featured successfully!');
+            Session::flash('success', 'Destacado com sucesso!');
         } else {
-            Session::flash('success', 'Unfeatured successfully!');
+            Session::flash('success', 'Removido do destaque com sucesso!');
         }
         return back();
     }

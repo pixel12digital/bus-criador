@@ -181,7 +181,7 @@ class PortfolioController extends Controller
             @unlink(public_path('assets/front/img/user/portfolios/' . $exSlider->image));
         }
 
-        Session::flash('success', 'Portfolio added successfully!');
+        Session::flash('success', 'Portfólio adicionado com sucesso!');
         return "success";
     }
 
@@ -277,7 +277,7 @@ class PortfolioController extends Controller
         if (!isset($request->featured)) $input["featured"] = "0";
         $input['content'] = Purifier::clean($request->content);
         $portfolio->update($input);
-        Session::flash('success', 'Portfolio updated successfully!');
+        Session::flash('success', 'Portfólio atualizado com sucesso!');
         return "success";
     }
 
@@ -307,7 +307,7 @@ class PortfolioController extends Controller
         }
         @unlink(public_path('assets/front/img/user/portfolios/' . $portfolio->image));
         $portfolio->delete();
-        Session::flash('success', 'Portfolio deleted successfully!');
+        Session::flash('success', 'Portfólio deletado com sucesso!');
         return back();
     }
 
@@ -323,7 +323,7 @@ class PortfolioController extends Controller
             @unlink(public_path('assets/front/img/user/portfolios/' . $portfolio->image));
             $portfolio->delete();
         }
-        Session::flash('success', 'Portfolios deleted successfully!');
+        Session::flash('success', 'Portfólios deletados com sucesso!');
         return "success";
     }
 
@@ -338,9 +338,9 @@ class PortfolioController extends Controller
         $member->featured = $request->featured;
         $member->save();
         if ($request->featured == 1) {
-            Session::flash('success', 'Featured successfully!');
+            Session::flash('success', 'Destacado com sucesso!');
         } else {
-            Session::flash('success', 'Unfeatured successfully!');
+            Session::flash('success', 'Removido do destaque com sucesso!');
         }
         return back();
     }

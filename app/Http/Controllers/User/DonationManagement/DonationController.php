@@ -198,7 +198,7 @@ class DonationController extends Controller
             ]);
         }
 
-        Session::flash('success', 'Donation updated successfully!');
+        Session::flash('success', 'Doação atualizada com sucesso!');
         return "success";
     }
 
@@ -241,7 +241,7 @@ class DonationController extends Controller
 
 
         $donation->delete();
-        Session::flash('success', 'Donation deleted successfully!');
+        Session::flash('success', 'Doação deletada com sucesso!');
         return back();
     }
     public function paymentDelete(Request $request)
@@ -254,7 +254,7 @@ class DonationController extends Controller
             }
         }
         $donation_detail->delete();
-        Session::flash('success', 'Payment deleted successfully!');
+        Session::flash('success', 'Pagamento deletado com sucesso!');
         return back();
     }
     public function bulkPaymentDelete(Request $request)
@@ -272,7 +272,7 @@ class DonationController extends Controller
             $donation_detail->delete();
         }
 
-        Session::flash('success', 'Donations deleted successfully!');
+        Session::flash('success', 'Doações deletadas com sucesso!');
         return "success";
     }
 
@@ -304,7 +304,7 @@ class DonationController extends Controller
 
                 $donation->delete();
             }
-            Session::flash('success', 'Donation deleted successfully!');
+            Session::flash('success', 'Doação deletada com sucesso!');
             return "success";
         });
     }
@@ -350,13 +350,13 @@ class DonationController extends Controller
             } else {
                 $donation->update(['status' => 'completed']);
             }
-            Session::flash('success', 'Donation payment updated successfully!');
+            Session::flash('success', 'Pagamento da doação atualizado com sucesso!');
         } elseif ($request->status == "rejected") {
             $donation->update(['status' => 'rejected']);
-            Session::flash('success', 'Donation payment rejected successfully!');
+            Session::flash('success', 'Pagamento da doação rejeitado com sucesso!');
         } else {
             $donation->update(['status' => 'pending']);
-            Session::flash('success', 'Donation payment to pending successfully!');
+            Session::flash('success', 'Pagamento da doação alterado para pendente com sucesso!');
         }
 
         return redirect()->back();

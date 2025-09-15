@@ -32,7 +32,7 @@ class ColorController extends Controller
         $data->secondary_color = $request->secondary_color;
         $data->save();
 
-        Session::flash('success', 'Site Colors updated successfully!');
+        Session::flash('success', 'Cores do site atualizadas com sucesso!');
         return back();
     }
 }

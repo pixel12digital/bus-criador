@@ -107,7 +107,7 @@ class JobController extends Controller
         $in['read_before_apply'] = clean($request->read_before_apply);
         Job::create($in);
 
-        Session::flash('success', 'Job posted successfully!');
+        Session::flash('success', 'Vaga publicada com sucesso!');
         return "success";
     }
 
@@ -166,7 +166,7 @@ class JobController extends Controller
 
         $job->fill($in)->save();
 
-        Session::flash('success', 'Job details updated successfully!');
+        Session::flash('success', 'Detalhes da vaga atualizados com sucesso!');
         return "success";
     }
 
@@ -175,7 +175,7 @@ class JobController extends Controller
         $job = Job::where('user_id', Auth::user()->id)->where('id', $request->job_id)->firstOrFail();
         $job->delete();
 
-        Session::flash('success', 'Job deleted successfully!');
+        Session::flash('success', 'Vaga deletada com sucesso!');
         return back();
     }
 
@@ -187,7 +187,7 @@ class JobController extends Controller
             Job::where('user_id', Auth::user()->id)->where('id', $id)->firstOrFail()->delete();
         }
 
-        Session::flash('success', 'Jobs deleted successfully!');
+        Session::flash('success', 'Vagas deletadas com sucesso!');
         return "success";
     }
 

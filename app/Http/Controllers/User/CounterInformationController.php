@@ -67,7 +67,7 @@ class CounterInformationController extends Controller
 
         $counterInformation = new CounterInformation;
         $counterInformation->create($input);
-        Session::flash('success', 'Counter Information added successfully!');
+        Session::flash('success', 'Informações do contador adicionadas com sucesso!');
         return "success";
     }
 
@@ -109,14 +109,14 @@ class CounterInformationController extends Controller
         $input['user_id'] = Auth::id();
         $input['icon'] = $request->icon === null ? $counterInformation->icon : $request->icon;
         $counterInformation->update($input);
-        Session::flash('success', 'Counter Information updated successfully!');
+        Session::flash('success', 'Informações do contador atualizadas com sucesso!');
         return "success";
     }
 
     public function delete(Request $request)
     {
         CounterInformation::where('user_id', Auth::user()->id)->where('id', $request->counter_information_id)->firstOrFail()->delete();
-        Session::flash('success', 'Counter Information deleted successfully!');
+        Session::flash('success', 'Informações do contador deletadas com sucesso!');
         return back();
     }
     public function bulkDelete(Request $request)
@@ -125,7 +125,7 @@ class CounterInformationController extends Controller
         foreach ($ids as $id) {
             CounterInformation::where('user_id', Auth::user()->id)->where('id', $id)->firstOrFail()->delete();
         }
-        Session::flash('success', 'Counter Information bulk-deleted successfully!');
+        Session::flash('success', 'Informações do contador deletadas em lote com sucesso!');
         return "success";
     }
 }

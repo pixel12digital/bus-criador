@@ -200,7 +200,7 @@ class LessonContentController extends Controller
             $content->save();
         }
 
-        Session::flash('success', 'Video preview updated successfully!');
+        Session::flash('success', 'Preview do vídeo atualizado com sucesso!');
         return "success";
     }
 

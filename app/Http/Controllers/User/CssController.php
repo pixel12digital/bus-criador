@@ -29,7 +29,7 @@ class CssController extends Controller
         $data->custom_css = $css;
         $data->save();
 
-        Session::flash('success', 'Custom CSS updated successfully!');
+        Session::flash('success', 'CSS personalizado atualizado com sucesso!');
         return back();
     }
 }

@@ -56,7 +56,7 @@ class CouponController extends Controller
         $input['user_id'] = $userId;
         $data = new UserCoupon();
         $data->create($input);
-        Session::flash('success', 'Coupon added successfully!');
+        Session::flash('success', 'Cupom adicionado com sucesso!');
         return "success";
     }
 
@@ -105,7 +105,7 @@ class CouponController extends Controller
         $data = UserCoupon::find($request->coupon_id);
         $data->fill($input)->save();
 
-        Session::flash('success', 'Coupon updated successfully!');
+        Session::flash('success', 'Cupom atualizado com sucesso!');
         return "success";
     }
 

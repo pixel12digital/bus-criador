@@ -72,7 +72,7 @@ class PageController extends Controller
         $page->meta_description = $request->meta_description;
         $page->save();
 
-        Session::flash('success', 'Page created successfully!');
+        Session::flash('success', 'Página criada com sucesso!');
         return "success";
     }
 
@@ -122,7 +122,7 @@ class PageController extends Controller
         $page->meta_description = $request->meta_description;
         $page->save();
 
-        Session::flash('success', 'Page updated successfully!');
+        Session::flash('success', 'Página atualizada com sucesso!');
         return "success";
     }
 
@@ -131,7 +131,7 @@ class PageController extends Controller
         $pageID = $request->pageid;
         $page = Page::where('user_id', Auth::user()->id)->where('id', $pageID)->firstOrFail();
         $page->delete();
-        Session::flash('success', 'Page deleted successfully!');
+        Session::flash('success', 'Página deletada com sucesso!');
         return redirect()->back();
     }
 
@@ -144,7 +144,7 @@ class PageController extends Controller
             $page->delete();
         }
 
-        Session::flash('success', 'Pages deleted successfully!');
+        Session::flash('success', 'Páginas deletadas com sucesso!');
         return "success";
     }
 

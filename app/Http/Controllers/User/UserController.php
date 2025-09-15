@@ -49,7 +49,7 @@ class UserController extends Controller
         $user->update([
             'email_verified_at' => $v,
         ]);
-        Session::flash('success', 'Email status updated for ' . $user->username);
+        Session::flash('success', 'Status do email atualizado para ' . $user->username);
         return back();
     }
 
@@ -190,7 +190,7 @@ class UserController extends Controller
             $input['photo'] = $name;
         }
         $data->update($input);
-        Session::flash('success', 'Profile Updated Successfully!');
+        Session::flash('success', 'Perfil atualizado com sucesso!');
         return "success";
     }
 
@@ -221,7 +221,7 @@ class UserController extends Controller
         }
 
         $user->update($input);
-        Session::flash('success', 'Successfully change your password');
+        Session::flash('success', 'Senha alterada com sucesso');
         return back();
     }
 
@@ -287,7 +287,7 @@ class UserController extends Controller
 
         Auth::user()->update($request->all());
 
-        Session::flash('success', 'Shipping Details Update Successfully.');
+        Session::flash('success', 'Detalhes de envio atualizados com sucesso.');
         return back();
     }
 
@@ -312,7 +312,7 @@ class UserController extends Controller
 
         Auth::user()->update($request->all());
 
-        Session::flash('success', 'Billing Details Update Successfully.');
+        Session::flash('success', 'Detalhes de cobrança atualizados com sucesso.');
         return back();
     }
 

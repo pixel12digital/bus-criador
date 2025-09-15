@@ -491,7 +491,7 @@ class GatewayController extends Controller
         $in = $request->all();
         $in['user_id'] = Auth::guard('web')->user()->id;
         UserOfflineGateway::create($in);
-        Session::flash('success', 'Gateway added successfully!');
+        Session::flash('success', 'Gateway adicionado com sucesso!');
         return "success";
     }
 
@@ -509,7 +509,7 @@ class GatewayController extends Controller
         }
         $in = $request->except('_token', 'ogateway_id');
         UserOfflineGateway::where('id', $request->ogateway_id)->update($in);
-        Session::flash('success', 'Gateway updated successfully!');
+        Session::flash('success', 'Gateway atualizado com sucesso!');
         return "success";
     }
     public function status(Request $request)
@@ -519,7 +519,7 @@ class GatewayController extends Controller
             $og->item_checkout_status = $request->item_checkout_status;
         }
         $og->save();
-        Session::flash('success', 'Gateway status changed successfully!');
+        Session::flash('success', 'Status do gateway alterado com sucesso!');
         return back();
     }
 
@@ -527,7 +527,7 @@ class GatewayController extends Controller
     {
         $ogateway = UserOfflineGateway::findOrFail($request->ogateway_id);
         $ogateway->delete();
-        Session::flash('success', 'Gateway deleted successfully!');
+        Session::flash('success', 'Gateway deletado com sucesso!');
         return back();
     }
 }

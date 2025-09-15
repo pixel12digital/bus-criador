@@ -88,7 +88,7 @@ class BlogCategoryController extends Controller
         $bcategory->serial_number = $request->serial_number;
         $bcategory->save();
 
-        Session::flash('success', 'Blog category added successfully!');
+        Session::flash('success', 'Categoria de blog adicionada com sucesso!');
         return "success";
     }
 
@@ -147,7 +147,7 @@ class BlogCategoryController extends Controller
         $bcategory->serial_number = $request->serial_number;
         $bcategory->save();
 
-        Session::flash('success', 'Blog category updated successfully!');
+        Session::flash('success', 'Categoria de blog atualizada com sucesso!');
         return "success";
     }
 
@@ -170,7 +170,7 @@ class BlogCategoryController extends Controller
             return back();
         }
         $bcategory->delete();
-        Session::flash('success', 'Blog category deleted successfully!');
+        Session::flash('success', 'Categoria de blog deletada com sucesso!');
         return back();
     }
 
@@ -188,7 +188,7 @@ class BlogCategoryController extends Controller
             $bcategory = BlogCategory::findOrFail($id);
             $bcategory->delete();
         }
-        Session::flash('success', 'Blog categories deleted successfully!');
+        Session::flash('success', 'Categorias de blog deletadas com sucesso!');
         return "success";
     }
 }

@@ -69,7 +69,7 @@ class ItemCategoryController extends Controller
         }
         $data->create($input);
 
-        Session::flash('success', 'Category added successfully!');
+        Session::flash('success', 'Categoria adicionada com sucesso!');
         return "success";
     }
 
@@ -131,7 +131,7 @@ class ItemCategoryController extends Controller
         }
         $data->update($input);
 
-        Session::flash('success', 'Category Update successfully!');
+        Session::flash('success', 'Categoria atualizada com sucesso!');
         return "success";
     }
 
@@ -145,9 +145,9 @@ class ItemCategoryController extends Controller
         $category->save();
 
         if ($request->is_feature == 1) {
-            Session::flash('success', 'Category featured successfully!');
+            Session::flash('success', 'Categoria destacada com sucesso!');
         } else {
-            Session::flash('success', 'Category unfeatured successfully!');
+            Session::flash('success', 'Categoria removida do destaque com sucesso!');
         }
         return back();
     }
@@ -162,7 +162,7 @@ class ItemCategoryController extends Controller
         @unlink(public_path('assets/front/img/user/items/categories/' . $category->image));
         $category->delete();
         $category->subcategories()->delete();
-        Session::flash('success', 'Category deleted successfully!');
+        Session::flash('success', 'Categoria deletada com sucesso!');
         return back();
     }
 

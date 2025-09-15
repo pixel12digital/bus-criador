@@ -148,7 +148,7 @@ class BasicController extends Controller
                 $bs->save();
             }
         }
-        Session::flash('success', 'Favicon update successfully.');
+        Session::flash('success', 'Favicon atualizado com sucesso.');
         return "success";
     }
 
@@ -201,7 +201,7 @@ class BasicController extends Controller
                 $bs->save();
             }
         }
-        Session::flash('success', 'Logo update successfully.');
+        Session::flash('success', 'Logo atualizado com sucesso.');
         return back();
     }
 
@@ -253,7 +253,7 @@ class BasicController extends Controller
                 $bs->save();
             }
         }
-        Session::flash('success', 'Breadcrumb update successfully.');
+        Session::flash('success', 'Breadcrumb atualizado com sucesso.');
         return back();
     }
 
@@ -305,7 +305,7 @@ class BasicController extends Controller
             }
         }
 
-        Session::flash('success', 'Preloader updated successfully.');
+        Session::flash('success', 'Preloader atualizado com sucesso.');
         return back();
     }
 
@@ -390,7 +390,7 @@ class BasicController extends Controller
         $homeText->user_id = Auth::guard('web')->user()->id;
         $homeText->language_id = $request->language_id;
         $homeText->save();
-        Session::flash('success', 'Home page text updated successfully.');
+        Session::flash('success', 'Texto da página inicial atualizado com sucesso.');
         return "success";
     }
 
@@ -468,7 +468,7 @@ class BasicController extends Controller
         $be->cookie_alert_button_text = $request->cookie_alert_button_text;
         $be->save();
 
-        Session::flash('success', 'Cookie alert updated successfully!');
+        Session::flash('success', 'Alerta de cookie atualizado com sucesso!');
         return back();
     }
     public function teamSection(Request $request)
@@ -565,7 +565,7 @@ class BasicController extends Controller
         $homeText->user_id = Auth::guard('web')->user()->id;
         $homeText->language_id = $request->language_id;
         $homeText->save();
-        Session::flash('success', 'About section updated successfully.');
+        Session::flash('success', 'Seção sobre atualizada com sucesso.');
         return "success";
     }
 
@@ -778,7 +778,7 @@ class BasicController extends Controller
         }
         $sections->save();
 
-        Session::flash('success', 'Sections customized successfully!');
+        Session::flash('success', 'Seções personalizadas com sucesso!');
         return back();
     }
 

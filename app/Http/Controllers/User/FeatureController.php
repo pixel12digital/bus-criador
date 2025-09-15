@@ -71,7 +71,7 @@ class FeatureController extends Controller
         $feature->color = $request->color;
         $feature->serial_number = $request->serial_number;
         $feature->save();
-        Session::flash('success', 'Feature added successfully!');
+        Session::flash('success', 'Recurso adicionado com sucesso!');
         return "success";
     }
     public function update(Request $request)
@@ -100,7 +100,7 @@ class FeatureController extends Controller
         $feature->color = $request->color;
         $feature->serial_number = $request->serial_number;
         $feature->save();
-        Session::flash('success', 'Feature updated successfully!');
+        Session::flash('success', 'Recurso atualizado com sucesso!');
         return back();
     }
 
@@ -138,7 +138,7 @@ class FeatureController extends Controller
         $feature = UserFeature::findOrFail($request->feature_id);
         @unlink(public_path('assets/front/img/user/feature/' . $feature->icon));
         $feature->delete();
-        Session::flash('success', 'Feature deleted successfully!');
+        Session::flash('success', 'Recurso deletado com sucesso!');
         return back();
     }
 }

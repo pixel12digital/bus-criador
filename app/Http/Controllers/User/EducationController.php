@@ -83,7 +83,7 @@ class EducationController extends Controller
         $education = new Education();
         $education->create($input);
 
-        Session::flash('success', 'Education added successfully!');
+        Session::flash('success', 'Educação adicionada com sucesso!');
         return "success";
     }
 
@@ -139,7 +139,7 @@ class EducationController extends Controller
         $input['user_id'] = Auth::id();
         $input['short_description'] = Purifier::clean($request->short_description);
         $education->update($input);
-        Session::flash('success', 'Education updated successfully!');
+        Session::flash('success', 'Educação atualizada com sucesso!');
         return "success";
     }
 
@@ -147,7 +147,7 @@ class EducationController extends Controller
     {
         $education = Education::where('user_id', Auth::user()->id)->where('id', $request->id)->firstOrFail();
         $education->delete();
-        Session::flash('success', 'Education deleted successfully!');
+        Session::flash('success', 'Educação deletada com sucesso!');
         return back();
     }
 
@@ -158,7 +158,7 @@ class EducationController extends Controller
             $education = Education::where('user_id', Auth::user()->id)->where('id', $id)->firstOrFail();
             $education->delete();
         }
-        Session::flash('success', 'Education deleted successfully!');
+        Session::flash('success', 'Educação deletada com sucesso!');
         return "success";
     }
 }

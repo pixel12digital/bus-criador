@@ -56,7 +56,7 @@ class ItemSubCategoryController extends Controller
         $input['user_id'] =  Auth::guard('web')->user()->id;
         $input['language_id'] =  $request->user_language_id;
         $data->create($input);
-        Session::flash('success', 'Sub Category added successfully!');
+        Session::flash('success', 'Subcategoria adicionada com sucesso!');
         return "success";
     }
 
@@ -98,7 +98,7 @@ class ItemSubCategoryController extends Controller
         $input = $request->all();
         $input['slug'] =  make_slug($request->name);
         $data->update($input);
-        Session::flash('success', 'Sub Category Update successfully!');
+        Session::flash('success', 'Subcategoria atualizada com sucesso!');
         return "success";
     }
     public function delete(Request $request)
@@ -109,7 +109,7 @@ class ItemSubCategoryController extends Controller
             return back();
         }
         $category->delete();
-        Session::flash('success', 'Subcategory deleted successfully!');
+        Session::flash('success', 'Subcategoria deletada com sucesso!');
         return back();
     }
     public function bulkDelete(Request $request)
@@ -126,7 +126,7 @@ class ItemSubCategoryController extends Controller
             $ItemCategory = UserItemSubCategory::findOrFail($id);
             $ItemCategory->delete();
         }
-        Session::flash('success', 'Item subcategories deleted successfully!');
+        Session::flash('success', 'Subcategorias de itens deletadas com sucesso!');
         return "success";
     }
 
