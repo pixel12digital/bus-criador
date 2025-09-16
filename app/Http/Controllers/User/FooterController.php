@@ -83,7 +83,7 @@ class FooterController extends Controller
         $data->about_company = clean($request->about_company);
         $data->newsletter_text = clean($request->newsletter_text);
         $data->save();
-        $request->session()->flash('success', 'Footer text info updated successfully!');
+        $request->session()->flash('success', __('Footer text info updated successfully!'));
         return 'success';
     }
 
