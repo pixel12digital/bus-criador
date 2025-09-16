@@ -869,5 +869,11 @@
     "To add a Lifetime package as Current Package, You have to remove the next package": "Para adicionar um pacote Vitalício como Pacote Atual, você deve remover o próximo pacote",
     "This user already has a Pending Package. Please take an action (change / remove / approve / reject) for that package first.": "Este usuário já possui um Pacote Pendente. Por favor, tome uma ação (alterar / remover / aprovar / rejeitar) para esse pacote primeiro.",
     "If your current package is trial package, then you have to change / remove the current package first.": "Se seu pacote atual for um pacote de teste, você deve alterar / remover o pacote atual primeiro.",
-    "If your current package is lifetime package, then you have to change / remove the current package first.": "Se seu pacote atual for um pacote vitalício, você deve alterar / remover o pacote atual primeiro."
+    "If your current package is lifetime package, then you have to change / remove the current package first.": "Se seu pacote atual for um pacote vitalício, você deve alterar / remover o pacote atual primeiro.",
+    "Start Date": "Data de Início",
+    "Expire Date": "Data de Expiração",
+    "Never Activated": "Nunca Ativado",
+    "modified by Admin": "modificado pelo Admin",
+    "Free": "Gratuito",
+    "Regular": "Regular"
 }
