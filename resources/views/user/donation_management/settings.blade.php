@@ -38,7 +38,7 @@
                 enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                  <label>{{ __('Donation') }} **</label>
+                  <label>{{ __('Doação') }} **</label>
                   <div class="selectgroup w-100">
                     <label class="selectgroup-item">
                       <input type="radio" name="is_donation" value="1" class="selectgroup-input"
@@ -56,7 +56,7 @@
                   </p>
                 </div>
                 <div class="form-group">
-                  <label>{{ $keywords['Guest_Checkout'] ?? __('Guest Checkout') }} **</label>
+                  <label>{{ $keywords['Guest_Checkout'] ?? __('Checkout de Convidado') }} **</label>
                   <div class="selectgroup w-100">
                     <label class="selectgroup-item">
                       <input type="radio" name="donation_guest_checkout" value="1" class="selectgroup-input"
