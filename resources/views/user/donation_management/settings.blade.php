@@ -52,7 +52,7 @@
                     </label>
                   </div>
                   <p class="text-warning mb-0">
-                    {{ 'By enabling / disabling, you can completely enable / disable the relevant pages of donation system.' }}
+                    {{ 'Ao habilitar / desabilitar, você pode habilitar / desabilitar completamente as páginas relevantes do sistema de doações.' }}
                   </p>
                 </div>
                 <div class="form-group">
@@ -70,7 +70,7 @@
                     </label>
                   </div>
                   <p class="text-warning mb-0">
-                    {{ "If you enable 'guest checkout', then customers can checkout without login" }}
+                    {{ "Se você habilitar 'checkout de convidado', então os clientes podem finalizar a compra sem fazer login" }}
                   </p>
                 </div>
               </form>
