@@ -180,7 +180,7 @@ $selLang = \App\Models\Language::where('code', request()->input('language'))->fi
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <h3 class="text-warning">{{__('User details')}}</h3>
+                                                    <h3 class="text-warning">{{__('Client Profile')}}</h3>
                                                     <label>{{__('Name')}}</label>
                                                     <p>{{!empty($membership->user) ? $membership->user->first_name.' '.$membership->user->last_name : '-'}}</p>
                                                     <label>{{__('Username')}}</label>
@@ -191,7 +191,7 @@ $selLang = \App\Models\Language::where('code', request()->input('language'))->fi
                                                     <p>{{!empty($membership->user) ? $membership->user->email : '-'}}</p>
                                                     <label>{{__('Phone')}}</label>
                                                     <p>{{!empty($membership->user->phone_number) ? $membership->user->phone_number : '-'}}</p>
-                                                    <h3 class="text-warning">{{__('Payment details')}}</h3>
+                                                    <h3 class="text-warning">{{__('Payment Details')}}</h3>
                                                     @if ($membership->discount > 0)
                                                         <p>
                                                             <strong>{{__('Package Price')}}: </strong> {{$membership->package_price == 0 ? __("Free") : $membership->package_price}}

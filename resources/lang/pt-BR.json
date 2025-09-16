@@ -875,5 +875,8 @@
     "Never Activated": "Nunca Ativado",
     "modified by Admin": "modificado pelo Admin",
     "Free": "Gratuito",
-    "Regular": "Regular"
+    "Regular": "Regular",
+    "Client Profile": "Perfil do Cliente",
+    "Payment Details": "Detalhes do Pagamento",
+    "Package Details": "Detalhes do Pacote"
 }
