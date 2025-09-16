@@ -809,5 +809,17 @@
     "Use comma (,) to add multiple Email Addresses": "Use vírgula (,) para adicionar múltiplos endereços de email",
     "Enter Password Again": "Digite a Senha Novamente",
     "Reply To": "Responder Para",
-    "Select a Language": "Selecionar um Idioma"
+    "Select a Language": "Selecionar um Idioma",
+    "Basic Settings": "Configurações Básicas",
+    "Add Social Link": "Adicionar Link Social",
+    "Social Icon": "Ícone Social",
+    "NB: click on the dropdown icon to select a social link icon.": "Observação: clique no ícone de dropdown para selecionar um ícone de link social.",
+    "Enter URL of social media account": "Digite a URL da conta de mídia social",
+    "Enter Serial Number": "Digite o Número de Série",
+    "The higher the serial number is, the later the social link will be shown.": "Quanto maior o número de série, mais tarde o link social será exibido.",
+    "NO LINK ADDED": "NENHUM LINK ADICIONADO",
+    "Serial Number": "Número de Série",
+    "Actions": "Ações",
+    "Enter Cookie Alert Text": "Digite o Texto do Alerta de Cookie",
+    "Enter Counter Info Serial Number": "Digite o Número de Série da Informação do Contador"
 }

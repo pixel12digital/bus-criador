@@ -85,7 +85,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Cookie Alert Text **</label>
-                                    <textarea class="form-control summernote" name="cookie_alert_text" rows="3" placeholder="Enter Cookie Alert Text"
+                                    <textarea class="form-control summernote" name="cookie_alert_text" rows="3" placeholder="{{ __('Enter Cookie Alert Text') }}"
                                         data-height="100" id="cookie_alert_text">{{ replaceBaseUrl($abe->cookie_alert_text) }}</textarea>
                                     <p id="errcontent" class="mb-0 text-danger em"></p>
                                     @if ($errors->has('cookie_alert_text'))

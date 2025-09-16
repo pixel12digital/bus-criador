@@ -118,7 +118,7 @@
                     type="number"
                     class="form-control ltr"
                     name="serial_number"
-                    placeholder="Enter Counter Info Serial Number"
+                    placeholder="{{ __('Enter Counter Info Serial Number') }}"
                     value="{{ $counterInfo->serial_number }}"
                   >
                   <p id="editErr_serial_number" class="mt-1 mb-0 text-danger em"></p>

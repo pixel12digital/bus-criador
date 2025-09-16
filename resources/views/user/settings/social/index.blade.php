@@ -55,7 +55,7 @@
                                 <div class="form-group">
                                     <label for="">{{ __('URL') }} **</label>
                                     <input type="text" class="form-control" name="url" value=""
-                                        placeholder="Enter URL of social media account">
+                                        placeholder="{{ __('Enter URL of social media account') }}">
                                     @if ($errors->has('url'))
                                         <p class="mb-0 text-danger">{{ $errors->first('url') }}</p>
                                     @endif
@@ -63,7 +63,7 @@
                                 <div class="form-group">
                                     <label for="">{{ __('Serial Number') }} **</label>
                                     <input type="number" class="form-control ltr" name="serial_number" value=""
-                                        placeholder="Enter Serial Number">
+                                        placeholder="{{ __('Enter Serial Number') }}">
                                     <p id="errserial_number" class="mb-0 text-danger em"></p>
                                     <p class="text-warning">
                                         <small>{{ __('The higher the serial number is, the later the social link will be shown.') }}</small>
