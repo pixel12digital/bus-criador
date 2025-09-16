@@ -878,5 +878,15 @@
     "Regular": "Regular",
     "Client Profile": "Perfil do Cliente",
     "Payment Details": "Detalhes do Pagamento",
-    "Package Details": "Detalhes do Pacote"
+    "Package Details": "Detalhes do Pacote",
+    "Edit Blog Category": "Editar Categoria do Blog",
+    "Serial Number": "Número de Série",
+    "Enter Serial Number": "Digite o Número de Série",
+    "The higher the serial number is, the later the blog category will be shown.": "Quanto maior o número de série, mais tarde a categoria do blog será exibida.",
+    "Save Changes": "Salvar Alterações",
+    "Content": "Conteúdo",
+    "About Section": "Seção Sobre",
+    "Brand Section": "Seção da Marca",
+    "Why Choose Us Section": "Seção Por Que Nos Escolher",
+    "Sections Hide / Show": "Exibir / Ocultar Seções"
 }

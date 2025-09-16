@@ -858,12 +858,12 @@ $(function ($) {
     $(".request-loader").addClass("show");
 
     swal({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
+      title: 'Tem certeza?',
+      text: "Você não poderá reverter isso!",
       type: 'warning',
       buttons: {
         confirm: {
-          text: 'Yes, delete it!',
+          text: 'Sim, excluir!',
           className: 'btn btn-success'
         },
         cancel: {
@@ -894,12 +894,12 @@ $(function ($) {
     $(".request-loader").addClass("show");
 
     swal({
-      title: 'Are you sure?',
-      text: "You want to close this ticket!",
+      title: 'Tem certeza?',
+      text: "Você quer fechar este ticket!",
       type: 'warning',
       buttons: {
         confirm: {
-          text: 'Yes, close it!',
+          text: 'Sim, fechar!',
           className: 'btn btn-success'
         },
         cancel: {
@@ -968,12 +968,12 @@ $(function ($) {
   $('.bulk-delete').on('click', function () {
 
     swal({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
+      title: 'Tem certeza?',
+      text: "Você não poderá reverter isso!",
       type: 'warning',
       buttons: {
         confirm: {
-          text: 'Yes, delete it!',
+          text: 'Sim, excluir!',
           className: 'btn btn-success'
         },
         cancel: {
