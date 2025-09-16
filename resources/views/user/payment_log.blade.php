@@ -145,7 +145,7 @@
                                                     <h3 class="text-warning">{{__('Payment Details')}}</h3>
                                                     @if ($membership->discount > 0)
                                                         <p>
-                                                            <strong>{{__('Package Price')}}: </strong> {{$membership->package_price == 0 ? __("Free") : $membership->package_price}}
+                                                            <strong>{{__('Package Price')}}: </strong> {{$membership->package_price == 0 ? __("Free") : format_price($membership->package_price)}}
                                                         </p>
                                                         
                                                         <p>
@@ -153,7 +153,7 @@
                                                         </p>
                                                     @endif
                                                     <p>
-                                                        <strong>{{__('Total')}}: </strong> {{$membership->price == 0 ? __("Free") : $membership->price}}
+                                                        <strong>{{__('Total')}}: </strong> {{$membership->price == 0 ? __("Free") : format_price($membership->price)}}
                                                     </p>
                                                     <p><strong>{{__('Currency')}}: </strong> {{$membership->currency}}
                                                     </p>
@@ -168,7 +168,7 @@
                                                         @if (\Illuminate\Support\Carbon::parse($membership->start_date)->format('Y') == '9999')
                                                             <span class="badge badge-danger">{{__('Never Activated')}}</span>
                                                         @else
-                                                            {{\Illuminate\Support\Carbon::parse($membership->start_date)->format('M-d-Y')}} 
+                                                            {{\Illuminate\Support\Carbon::parse($membership->start_date)->format('d/m/Y')}} 
                                                         @endif
                                                     </p>
                                                     <p><strong>{{__('Expire Date')}}: </strong>
@@ -177,10 +177,10 @@
                                                             -
                                                         @else
                                                             @if ($membership->modified == 1)
-                                                                {{\Illuminate\Support\Carbon::parse($membership->expire_date)->addDay()->format('M-d-Y')}}
+                                                                {{\Illuminate\Support\Carbon::parse($membership->expire_date)->addDay()->format('d/m/Y')}}
                                                                 <span class="badge badge-primary btn-xs">{{__('modified by Admin')}}</span>
                                                             @else
-                                                                {{$membership->package->term == 'lifetime' ? __('Lifetime') : \Illuminate\Support\Carbon::parse($membership->expire_date)->format('M-d-Y')}}
+                                                                {{$membership->package->term == 'lifetime' ? __('Lifetime') : \Illuminate\Support\Carbon::parse($membership->expire_date)->format('d/m/Y')}}
                                                             @endif
                                                         @endif
                                                     </p>
