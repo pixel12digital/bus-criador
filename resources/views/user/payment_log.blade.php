@@ -135,14 +135,14 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <h3 class="text-warning">{{__('Member details')}}</h3>
+                                                    <h3 class="text-warning">{{__('Client Profile')}}</h3>
                                                     <label>{{__('Name')}}</label>
                                                     <p>{{$membership->user->first_name.' '.$membership->user->last_name}}</p>
                                                     <label>{{__('Email')}}</label>
                                                     <p>{{$membership->user->email}}</p>
                                                     <label>{{__('Phone')}}</label>
                                                     <p>{{$membership->user->phone_number}}</p>
-                                                    <h3 class="text-warning">{{__('Payment details')}}</h3>
+                                                    <h3 class="text-warning">{{__('Payment Details')}}</h3>
                                                     @if ($membership->discount > 0)
                                                         <p>
                                                             <strong>{{__('Package Price')}}: </strong> {{$membership->package_price == 0 ? __("Free") : $membership->package_price}}
@@ -162,27 +162,25 @@
                                                     <h3 class="text-warning">{{__('Package Details')}}</h3>
                                                     <p><strong>{{__('Title')}}: </strong>{{!empty($membership->package) ? $membership->package->title : ''}}
                                                     </p>
-                                                    <p><strong>{{__('Term')}}: </strong> {{!empty($membership->package) ? $membership->package->term : ''}}
+                                                    <p><strong>{{__('Term')}}: </strong> {{!empty($membership->package) ? __($membership->package->term) : ''}}
                                                     </p>
-                                                    <p><strong>Start
-                                                        Date: </strong>
+                                                    <p><strong>{{__('Start Date')}}: </strong>
                                                         @if (\Illuminate\Support\Carbon::parse($membership->start_date)->format('Y') == '9999')
-                                                            <span class="badge badge-danger">Never Activated</span>
+                                                            <span class="badge badge-danger">{{__('Never Activated')}}</span>
                                                         @else
                                                             {{\Illuminate\Support\Carbon::parse($membership->start_date)->format('M-d-Y')}} 
                                                         @endif
                                                     </p>
-                                                    <p><strong>Expire
-                                                        Date: </strong>
+                                                    <p><strong>{{__('Expire Date')}}: </strong>
                                                         
                                                         @if (\Illuminate\Support\Carbon::parse($membership->start_date)->format('Y') == '9999')
                                                             -
                                                         @else
                                                             @if ($membership->modified == 1)
                                                                 {{\Illuminate\Support\Carbon::parse($membership->expire_date)->addDay()->format('M-d-Y')}}
-                                                                <span class="badge badge-primary btn-xs">modified by Admin</span>
+                                                                <span class="badge badge-primary btn-xs">{{__('modified by Admin')}}</span>
                                                             @else
-                                                                {{$membership->package->term == 'lifetime' ? 'Lifetime' : \Illuminate\Support\Carbon::parse($membership->expire_date)->format('M-d-Y')}}
+                                                                {{$membership->package->term == 'lifetime' ? __('Lifetime') : \Illuminate\Support\Carbon::parse($membership->expire_date)->format('M-d-Y')}}
                                                             @endif
                                                         @endif
                                                     </p>
