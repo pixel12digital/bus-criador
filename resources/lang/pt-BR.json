@@ -947,5 +947,10 @@
     "of": "de",
     "records": "registros",
     "Previous": "Anterior",
-    "Next": "Próximo"
+    "Next": "Próximo",
+    "Edit Testimonial": "Editar Depoimento",
+    "Edit Service": "Editar Serviço",
+    "Occupation": "Ocupação",
+    "Feedback": "Depoimento",
+    "The higher the serial number is, the later the blog will be shown.": "Quanto maior o número de série, mais tarde o blog será exibido."
 }
