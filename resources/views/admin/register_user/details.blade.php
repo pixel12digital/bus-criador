@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('content')
 <div class="page-header">
-   <h4 class="page-title">Customer Details</h4>
+   <h4 class="page-title">{{ __('Customer Details') }}</h4>
    <ul class="breadcrumbs">
       <li class="nav-home">
          <a href="{{route('admin.dashboard')}}">
@@ -12,17 +12,17 @@
          <i class="flaticon-right-arrow"></i>
       </li>
       <li class="nav-item">
-         <a href="#">Customers</a>
+         <a href="#">{{ __('Customers') }}</a>
       </li>
       <li class="separator">
          <i class="flaticon-right-arrow"></i>
       </li>
       <li class="nav-item">
-         <a href="#">Customer Details</a>
+         <a href="#">{{ __('Customer Details') }}</a>
       </li>
    </ul>
 
-   <a href="{{route('admin.register.user')}}" class="btn-md btn btn-primary ml-auto">Back</a>
+   <a href="{{route('admin.register.user')}}" class="btn-md btn btn-primary ml-auto">{{ __('Back') }}</a>
 </div>
 <div class="row">
     <div class="col-md-3">
@@ -120,10 +120,10 @@
 
                             <p class="mb-0">
                                 @if ($currMemb->is_trial == 1)
-                                    (Expire Date: {{Carbon\Carbon::parse($currMemb->expire_date)->format('M-d-Y')}})
-                                    <span class="badge badge-primary">Trial</span>
+                                    ({{ __('Expire Date:') }} {{Carbon\Carbon::parse($currMemb->expire_date)->format('M-d-Y')}})
+                                    <span class="badge badge-primary">{{ __('Trial') }}</span>
                                 @else
-                                    (Expire Date: {{$currPackage->term === 'lifetime' ? "Lifetime" : Carbon\Carbon::parse($currMemb->expire_date)->format('M-d-Y')}})
+                                    ({{ __('Expire Date:') }} {{$currPackage->term === 'lifetime' ? __("Lifetime") : Carbon\Carbon::parse($currMemb->expire_date)->format('M-d-Y')}})
                                 @endif  
                                 @if ($currMemb->status == 0)
                                     <form id="statusForm{{$currMemb->id}}" class="d-inline-block"
@@ -133,16 +133,16 @@
                                         <input type="hidden" name="id" value="{{$currMemb->id}}">
                                         <select class="form-control form-control-sm bg-warning" name="status"
                                             onchange="document.getElementById('statusForm{{$currMemb->id}}').submit();">
-                                            <option value=0 selected>Pending</option>
-                                            <option value=1 >Success</option>
-                                            <option value=2>Rejected</option>
+                                            <option value=0 selected>{{ __('Pending') }}</option>
+                                            <option value=1 >{{ __('Success') }}</option>
+                                            <option value=2>{{ __('Rejected') }}</option>
                                         </select>
                                     </form>
                                 @endif
                             </p>
     
                         @else
-                            <a data-target="#addCurrentPackage" data-toggle="modal" class="btn btn-xs btn-primary text-white"><i class="fas fa-plus"></i> Add Package</a>
+                            <a data-target="#addCurrentPackage" data-toggle="modal" class="btn btn-xs btn-primary text-white"><i class="fas fa-plus"></i> {{ __('Add Package') }}</a>
                         @endif
                     </div>
                 </div>
@@ -171,9 +171,9 @@
                             <p class="mb-0">
                                 @if ($currPackage->term != 'lifetime' && $nextMemb->is_trial != 1) 
                                     (
-                                    Activation Date: 
+                                    {{ __('Activation Date:') }} 
                                     {{Carbon\Carbon::parse($nextMemb->start_date)->format('M-d-Y')}}, 
-                                    Expire Date: {{$nextPackage->term === 'lifetime' ?  "Lifetime" : Carbon\Carbon::parse($nextMemb->expire_date)->format('M-d-Y')}})
+                                    {{ __('Expire Date:') }} {{$nextPackage->term === 'lifetime' ?  __("Lifetime") : Carbon\Carbon::parse($nextMemb->expire_date)->format('M-d-Y')}})
                                 @endif   
                                 @if ($nextMemb->status == 0)
                                     <form id="statusForm{{$nextMemb->id}}" class="d-inline-block"
@@ -183,16 +183,16 @@
                                         <input type="hidden" name="id" value="{{$nextMemb->id}}">
                                         <select class="form-control form-control-sm bg-warning" name="status"
                                             onchange="document.getElementById('statusForm{{$nextMemb->id}}').submit();">
-                                            <option value=0 selected>Pending</option>
-                                            <option value=1 >Success</option>
-                                            <option value=2>Rejected</option>
+                                            <option value=0 selected>{{ __('Pending') }}</option>
+                                            <option value=1 >{{ __('Success') }}</option>
+                                            <option value=2>{{ __('Rejected') }}</option>
                                         </select>
                                     </form>
                                 @endif
                             </p>
                         @else
                             @if (!empty($currPackage))
-                                <a class="btn btn-xs btn-primary text-white" data-toggle="modal" data-target="#addNextPackage"><i class="fas fa-plus"></i> Add Package</a>
+                                <a class="btn btn-xs btn-primary text-white" data-toggle="modal" data-target="#addNextPackage"><i class="fas fa-plus"></i> {{ __('Add Package') }}</a>
                             @else
                                 -
                             @endif
@@ -273,9 +273,9 @@
                     </div>
                     <div class="col-lg-6">
                         @if ($user->email_verified == 1)
-                            <span class="badge badge-success">Verified</span>
+                            <span class="badge badge-success">{{ __('Verified') }}</span>
                         @elseif ($user->email_verified == 0)
-                            <span class="badge badge-danger">Not Verified</span>
+                            <span class="badge badge-danger">{{ __('Not Verified') }}</span>
                         @endif
                     </div>
                 </div>
@@ -285,9 +285,9 @@
                     </div>
                     <div class="col-lg-6">
                         @if ($user->status == 1)
-                            <span class="badge badge-success">Active</span>
+                            <span class="badge badge-success">{{ __('Active') }}</span>
                         @elseif ($user->status == 0)
-                            <span class="badge badge-danger">Banned</span>
+                            <span class="badge badge-danger">{{ __('Banned') }}</span>
                         @endif
                     </div>
                 </div>
