@@ -859,5 +859,15 @@
     "Add Current Package": "Adicionar Pacote Atual",
     "Change Next Package": "Alterar Próximo Pacote",
     "Add Next Package": "Adicionar Próximo Pacote",
-    "Add": "Adicionar"
+    "Add": "Adicionar",
+    "Current Package changed successfully!": "Pacote Atual alterado com sucesso!",
+    "Current Package removed successfully!": "Pacote Atual removido com sucesso!",
+    "Current Package has been added successfully!": "Pacote Atual foi adicionado com sucesso!",
+    "Next Package removed successfully!": "Próximo Pacote removido com sucesso!",
+    "Next Package changed successfully!": "Próximo Pacote alterado com sucesso!",
+    "Next Package has been added successfully!": "Próximo Pacote foi adicionado com sucesso!",
+    "To add a Lifetime package as Current Package, You have to remove the next package": "Para adicionar um pacote Vitalício como Pacote Atual, você deve remover o próximo pacote",
+    "This user already has a Pending Package. Please take an action (change / remove / approve / reject) for that package first.": "Este usuário já possui um Pacote Pendente. Por favor, tome uma ação (alterar / remover / aprovar / rejeitar) para esse pacote primeiro.",
+    "If your current package is trial package, then you have to change / remove the current package first.": "Se seu pacote atual for um pacote de teste, você deve alterar / remover o pacote atual primeiro.",
+    "If your current package is lifetime package, then you have to change / remove the current package first.": "Se seu pacote atual for um pacote vitalício, você deve alterar / remover o pacote atual primeiro."
 }

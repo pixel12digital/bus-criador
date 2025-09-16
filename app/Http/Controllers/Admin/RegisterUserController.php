@@ -1480,7 +1480,7 @@ class RegisterUserController extends Controller
 
         $this->sendMail(NULL, NULL, $request->payment_method, $user, $bs, $be, 'admin_removed_current_package', NULL, $currPackage->title);
 
-        Session::flash('success', 'Current Package removed successfully!');
+        Session::flash('success', __('Current Package removed successfully!'));
         return back();
     }
 
@@ -1541,7 +1541,7 @@ class RegisterUserController extends Controller
 
         // if the user has a next package to activate & selected package is 'lifetime' package
         if (!empty($nextMembership) && $selectedPackage->term == 'lifetime') {
-            Session::flash('membership_warning', 'To add a Lifetime package as Current Package, You have to remove the next package');
+            Session::flash('membership_warning', __('To add a Lifetime package as Current Package, You have to remove the next package'));
             return back();
         }
 
@@ -1604,7 +1604,7 @@ class RegisterUserController extends Controller
         $this->sendMail($selectedMemb, $selectedPackage, $request->payment_method, $user, $bs, $be, 'admin_changed_current_package', $currentPackage->title);
 
 
-        Session::flash('success', 'Current Package changed successfully!');
+        Session::flash('success', __('Current Package changed successfully!'));
         return back();
     }
 
@@ -1646,7 +1646,7 @@ class RegisterUserController extends Controller
 
         $this->sendMail($selectedMemb, $selectedPackage, $request->payment_method, $user, $bs, $be, 'admin_added_current_package');
 
-        Session::flash('success', 'Current Package has been added successfully!');
+        Session::flash('success', __('Current Package has been added successfully!'));
         return back();
     }
 
@@ -1667,7 +1667,7 @@ class RegisterUserController extends Controller
 
         $this->sendMail(NULL, NULL, $request->payment_method, $user, $bs, $be, 'admin_removed_next_package', NULL, $nextPackage->title);
 
-        Session::flash('success', 'Next Package removed successfully!');
+        Session::flash('success', __('Next Package removed successfully!'));
         return back();
     }
 
@@ -1717,7 +1717,7 @@ class RegisterUserController extends Controller
 
         $this->sendMail($selectedMemb, $selectedPackage, $request->payment_method, $user, $bs, $be, 'admin_changed_next_package', $nextPackage->title);
 
-        Session::flash('success', 'Next Package changed successfully!');
+        Session::flash('success', __('Next Package changed successfully!'));
         return back();
     }
 
@@ -1727,7 +1727,7 @@ class RegisterUserController extends Controller
 
         $hasPendingMemb = UserPermissionHelper::hasPendingMembership($userId);
         if ($hasPendingMemb) {
-            Session::flash('membership_warning', 'This user already has a Pending Package. Please take an action (change / remove / approve / reject) for that package first.');
+            Session::flash('membership_warning', __('This user already has a Pending Package. Please take an action (change / remove / approve / reject) for that package first.'));
             return back();
         }
 
@@ -1740,7 +1740,7 @@ class RegisterUserController extends Controller
         $selectedPackage = Package::find($request->package_id);
 
         if ($currMembership->is_trial == 1) {
-            Session::flash('membership_warning', 'If your current package is trial package, then you have to change / remove the current package first.');
+            Session::flash('membership_warning', __('If your current package is trial package, then you have to change / remove the current package first.'));
             return back();
         }
 
@@ -1776,12 +1776,12 @@ class RegisterUserController extends Controller
 
             $this->sendMail($selectedMemb, $selectedPackage, $request->payment_method, $user, $bs, $be, 'admin_added_next_package');
         } else {
-            Session::flash('membership_warning', 'If your current package is lifetime package, then you have to change / remove the current package first.');
+            Session::flash('membership_warning', __('If your current package is lifetime package, then you have to change / remove the current package first.'));
             return back();
         }
 
 
-        Session::flash('success', 'Next Package has been added successfully!');
+        Session::flash('success', __('Next Package has been added successfully!'));
         return back();
     }
 
