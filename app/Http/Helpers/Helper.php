@@ -260,10 +260,14 @@ if (!function_exists('format_price')) {
                 ->first();
         }
         $bex = $currentLang->basic_extended;
+        
+        // Formatar o valor para padrão brasileiro (2 casas decimais, vírgula como separador decimal)
+        $formattedValue = number_format($value, 2, ',', '.');
+        
         if ($bex->base_currency_symbol_position == 'left') {
-            return $bex->base_currency_symbol . $value;
+            return $bex->base_currency_symbol . ' ' . $formattedValue;
         } else {
-            return $value . $bex->base_currency_symbol;
+            return $formattedValue . ' ' . $bex->base_currency_symbol;
         }
     }
 }
